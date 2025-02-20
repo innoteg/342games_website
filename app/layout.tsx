@@ -1,7 +1,6 @@
 import './globals.css';
-
 import { Analytics } from '@vercel/analytics/react';
-import { useThemeStore } from '@/lib/stores'
+import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata = {
   title: 'Next.js App Router + NextAuth + Tailwind CSS',
@@ -14,12 +13,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const theme = useThemeStore((state) => state.theme)
-  
   return (
-    <html lang="en" className={theme}>
+    <ThemeProvider>
       <body className="flex min-h-screen w-full flex-col">{children}</body>
       <Analytics />
-    </html>
+    </ThemeProvider>
   );
 }
