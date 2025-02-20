@@ -1,4 +1,6 @@
-import { NextResponse, NextRequest } from 'next/server';
+import { NextResponse } from 'next/server';
+import type { NextRequest } from 'next/server'
+
 import { auth } from '@/lib/auth';
 
 export async function middleware(request:NextRequest) {
@@ -9,7 +11,7 @@ export async function middleware(request:NextRequest) {
   // if (authResponse) {
   //   return authResponse;
   // }
-
+  console.log(new URL('/new-path', request.url), request.url)
   if (pathname === '/old-path') {
     return NextResponse.redirect(new URL('/new-path', request.url), 301);
   }
@@ -23,4 +25,7 @@ export async function middleware(request:NextRequest) {
   }
 
   return NextResponse.next();
+}
+export const config = {
+  matcher: '/about/:path*',
 }
