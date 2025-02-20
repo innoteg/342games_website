@@ -1,6 +1,26 @@
-export { auth as middleware } from '@/lib/auth';
+import { NextResponse, NextRequest } from 'next/server';
+import { auth } from '@/lib/auth';
 
-// Don't invoke Middleware on some paths
-export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)']
-};
+export async function middleware(request:NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  // const authResponse = await auth(request);
+
+  // if (authResponse) {
+  //   return authResponse;
+  // }
+
+  if (pathname === '/old-path') {
+    return NextResponse.redirect(new URL('/new-path', request.url), 301);
+  }
+
+  if (pathname === '/temporary-path') {
+    return NextResponse.redirect(new URL('/new-temporary-path', request.url), 302);
+  }
+
+  if (pathname === '/non-existent-path') {
+    return new NextResponse('Page not found', { status: 404 });
+  }
+
+  return NextResponse.next();
+}
