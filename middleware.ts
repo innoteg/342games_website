@@ -3,7 +3,7 @@ import type { NextRequest } from 'next/server'
 import { auth } from '@/lib/auth';
 
 // 不需要验证的路由
-const publicRoutes = ['/login', '/error', '/api/auth']
+const publicRoutes = ['/login', '/error', '/api/auth', '']
 
 // 路由权限配置
 const routePermissions = {
@@ -16,50 +16,31 @@ export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // 检查是否是公开路由
-  if (publicRoutes.some(route => pathname.startsWith(route))) {
-    return NextResponse.next();
-  }
+  // if (publicRoutes.some(route => pathname.startsWith(route))) {
+  //   return NextResponse.next();
+  // }
+ 
 
-  // 获取session
-  const session = await auth();
-  
-  // 如果没有session，重定向到登录页
-  if (!session) {
-    const url = new URL('/login', request.url);
-    url.searchParams.set('callbackUrl', encodeURI(request.url));
-    return NextResponse.redirect(url);
-  }
-
-  // 检查路由权限
-  const requiredRoles = routePermissions[pathname as keyof typeof routePermissions]
-  if (requiredRoles) {
-    const userRole = session.user?.role
-    if (!userRole || !requiredRoles.includes(userRole)) {
-      // 用户没有访问权限
-      return NextResponse.redirect(new URL('/unauthorized', request.url))
-    }
-  }
-
-  try {
-    // 获取token
-    const token = request.cookies.get('next-auth.session-token')?.value;
+  // try {
+  //   // 获取token
+  //   const token = request.cookies.get('next-auth.session-token')?.value;
     
-    if (!token) {
-      throw new Error('No token found');
-    }
+  //   if (!token) {
+  //     throw new Error('No token found');
+  //   }
 
-    // 这里可以添加简单的token验证
-    // 例如检查token是否存在
-    if (token.length < 10) {
-      throw new Error('Invalid token');
-    }
+  //   // 这里可以添加简单的token验证
+  //   // 例如检查token是否存在
+  //   if (token.length < 10) {
+  //     throw new Error('Invalid token');
+  //   }
 
-    return NextResponse.next();
-  } catch (error) {
-    // token无效，重定向到登录页
-    const url = new URL('/login', request.url);
-    return NextResponse.redirect(url);
-  }
+  //   return NextResponse.next();
+  // } catch (error) {
+  //   // token无效，重定向到登录页
+  //   const url = new URL('/login', request.url);
+  //   return NextResponse.redirect(url);
+  // }
 }
 
 export const config = {
