@@ -107,3 +107,12 @@ input[type='search']::-ms-clear {
 .font-source-han-sans {
   font-family: var(--font-source-han-sans);
 }
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
