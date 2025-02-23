@@ -19,10 +19,12 @@ export default function RootLayout({
   return (
     // <html lang="en" className={`${arial.variable} ${din.variable} ${sourceHanSansCN.variable}`}>
     <html lang="en" className={inter.className}>
-      <ThemeProvider>
-        <body className="flex min-h-screen w-full flex-col">{children}</body>
-        <Analytics />
-      </ThemeProvider>
+      <body>
+        <ThemeProvider className="flex min-h-screen w-full flex-col">
+          {children}
+          <Analytics />
+        </ThemeProvider>
+      </body>
     </html>
   );
 }

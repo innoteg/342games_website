@@ -3,15 +3,17 @@
 import { useThemeStore } from '@/lib/stores'
 
 export function ThemeProvider({
-  children
+  children,
+  className
 }: {
   children: React.ReactNode
+  className?: string
 }) {
   const theme = useThemeStore((state) => state.theme)
   
   return (
-    <html lang="en" className={theme}>
+    <div className={`${theme} ${className || ''}`}>
       {children}
-    </html>
+    </div>
   )
 } 
