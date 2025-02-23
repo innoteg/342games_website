@@ -21,7 +21,9 @@ export default function RootLayout({
     <html lang="en" className={inter.className}>
       <body>
         <ThemeProvider className="flex min-h-screen w-full flex-col">
-          {children}
+          <main className="mt-[90px]">
+            {children}
+          </main>
           <Analytics />
         </ThemeProvider>
       </body>
