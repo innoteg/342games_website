@@ -1,11 +1,11 @@
-// 'use client'
+'use client'
 
-import { Button } from '@/components/ui/button'
+import { useDevice } from '@/lib/hooks/useDevice'
+import DesktopHeader from './Desktop'
+import MobileHeader from './Mobile'
 
 export default function Header() {
-  return (
-    <div className="flex min-h-screen items-center justify-center">
-     我是头部
-    </div>
-  )
+  const { isMobile } = useDevice()
+
+  return isMobile ? <MobileHeader /> : <DesktopHeader />
 }
