@@ -1,5 +1,7 @@
 import Image from 'next/image';
+import { Button } from '@/components/ui/button'
 import { IMAGE_URLS } from '@/lib/constants/urls'
+
 export default function DesktopHeader() {
   return (
     <>
@@ -17,8 +19,7 @@ export default function DesktopHeader() {
           </nav>
         </div>
         <div className="flex items-center space-x-4">
-          <button className="text-white hover:text-primary">登录</button>
-          <button className="text-white hover:text-primary">注册</button>
+          <Button variant="common">Play Now</Button>
         </div>
       </header>
     </>
