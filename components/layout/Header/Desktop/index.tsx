@@ -50,34 +50,34 @@ const listRender = [
     title: 'My Rune Collection',
     href: '/myRuneCollection',
   },
-  {
-    title: 'Trading Market',
-    href: '/tradingMarket',
-  },
-  {
-    title: 'Web3 Features',
-    href: '/web3Features',
-  },
-  {
-    title: 'Tokenomics',
-    href: '/tokenomics',
-  },
-  {
-    title: 'Meme Coin',
-    href: '/memeCoin',
-  },
-  {
-    title: 'Partners',
-    href: '/partners',
-  },
-  {
-    title: 'Community',
-    href: '/community',
-  },
-  {
-    title: 'Contact Us',
-    href: '/contactUs',
-  },
+  // {
+  //   title: 'Trading Market',
+  //   href: '/tradingMarket',
+  // },
+  // {
+  //   title: 'Web3 Features',
+  //   href: '/web3Features',
+  // },
+  // {
+  //   title: 'Tokenomics',
+  //   href: '/tokenomics',
+  // },
+  // {
+  //   title: 'Meme Coin',
+  //   href: '/memeCoin',
+  // },
+  // {
+  //   title: 'Partners',
+  //   href: '/partners',
+  // },
+  // {
+  //   title: 'Community',
+  //   href: '/community',
+  // },
+  // {
+  //   title: 'Contact Us',
+  //   href: '/contactUs',
+  // },
 ]
 export default function DesktopHeader() {
   return (
@@ -98,30 +98,40 @@ export default function DesktopHeader() {
             </Link>
           </div>
           <div>
-            <NavigationMenu >
-              <NavigationMenuList >
-                
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger className={`${commonItemClassName}`}>Components</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                      <ListItem href="/docs/components/alert" title="Alert">
-                        A component that displays a brief, important message.
-                      </ListItem>
-                      <ListItem href="/docs/components/button" title="Button">
-                        A clickable element that triggers an action.
-                      </ListItem>
-                      {/* Add more components as needed */}
-                    </ul>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <Link href="/docs" legacyBehavior passHref>
-                    <NavigationMenuLink className={`${navigationMenuTriggerStyle()} ${commonItemClassName}`}>
-                      Documentation
-                    </NavigationMenuLink>
-                  </Link>
-                </NavigationMenuItem>
+            <NavigationMenu>
+              <NavigationMenuList className="gap-2">
+                {listRender.map((item) => (
+                  <NavigationMenuItem key={item.href}>
+                    {item.children ? (
+                      // 有子菜单的情况
+                      <>
+                        <NavigationMenuTrigger className={commonItemClassName}>
+                          {item.title}
+                        </NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                          <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
+                            {item.children.map((child) => (
+                              <ListItem
+                                key={child.href}
+                                href={child.href}
+                                title={child.title}
+                              >
+                                {child.title}
+                              </ListItem>
+                            ))}
+                          </ul>
+                        </NavigationMenuContent>
+                      </>
+                    ) : (
+                      // 没有子菜单的情况
+                      <Link href={item.href} legacyBehavior passHref>
+                        <NavigationMenuLink className={`${navigationMenuTriggerStyle()} ${commonItemClassName}`}>
+                          {item.title}
+                        </NavigationMenuLink>
+                      </Link>
+                    )}
+                  </NavigationMenuItem>
+                ))}
               </NavigationMenuList>
             </NavigationMenu>
           </div>
