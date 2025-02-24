@@ -17,10 +17,10 @@ const buttonVariants = cva(
         link: 'text-primary underline-offset-4 hover:underline',
         common: [
           'relative bg-transparent border-0',
-          'before:absolute before:inset-0 before:p-[2px] before:rounded-md before:bg-gradient-to-b from-[#0940B9] to-[#FF00FE]',
+          'before:absolute before:inset-0 before:p-[2px] before:rounded-md before:bg-gradient-to-b from-[#FF00FE] to-[#0940B9]',
           'before:content-[\'\'] before:-z-[1]',
           'after:absolute after:inset-[2px] after:rounded-[5px]',
-          'after:bg-gradient-to-b after:from-[#192F89] after:to-[#C305C3]',
+          'after:bg-gradient-to-b after:from-[#C305C3] after:to-[#192F89]',
           'after:content-[\'\'] after:-z-[1]',
           'text-white text-[20px] leading-4 px-3 py-1',
           'hover:before:opacity-75 hover:after:opacity-90 transition-all'
