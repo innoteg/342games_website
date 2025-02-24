@@ -12,11 +12,7 @@ export default function DesktopHeader() {
           <div className="text-xl font-bold text-white">
             <Image width={128} height={27} src={IMAGE_URLS.HeadIcon} alt='headerIcon'/>
           </div>
-          <nav className="hidden md:flex space-x-4">
-            <a href="#" className="text-white hover:text-primary">首页</a>
-            <a href="#" className="text-white hover:text-primary">产品</a>
-            <a href="#" className="text-white hover:text-primary">关于</a>
-          </nav>
+
         </div>
         <div className="flex items-center space-x-4">
           <Button variant="common">Play Now</Button>

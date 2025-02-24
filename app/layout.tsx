@@ -3,7 +3,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { ThemeProvider } from '@/components/theme-provider';
 // import { arial, din, sourceHanSansCN } from '@/lib/font'
 import { inter } from '@/lib/font'
-
+import { Toaster } from '@/components/ui/toaster';
 
 export const metadata = {
   title: 'Next.js App Router + NextAuth + Tailwind CSS',
@@ -25,6 +25,7 @@ export default function RootLayout({
             {children}
           </main>
           <Analytics />
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
