@@ -61,12 +61,13 @@ export default function Banner() {
   //   getData();
   // });
   return (
-    <div className='flex justify-center items-center w-full py-8'>
+    <div className='w-full py-8'>
       {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
           Loading...
         </div>
       )}
+      <div className='mb-[95px] text-white w-full flex items-center justify-center font-bold text-[50px] leading-[60px]'>Our Games</div>
       <div className='w-full  relative overflow-hidden'>
         <Swiper
           onSwiper={(swiper) => { swiperRef.current = swiper }}
