@@ -8,6 +8,7 @@ import {
 import clsx from 'clsx';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { useThemeStore } from '@/lib/stores'
 
 export function NavItem({
   href,
@@ -19,6 +20,11 @@ export function NavItem({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
+  const setTheme = useThemeStore((state) => state.setTheme)
+  
+  const toggleTheme = () => {
+    setTheme(useThemeStore.getState().theme === 'light' ? 'dark' : 'light')
+  }
 
   return (
     <Tooltip>

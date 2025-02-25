@@ -4,6 +4,7 @@
 
 @layer base {
   :root {
+    
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
 
@@ -74,7 +75,9 @@
     @apply bg-background text-foreground;
   }
 }
-
+html {
+  font-family: var(--font-inter);
+}
 /* Chrome, Safari, Edge, Opera */
 input[type='search']::-webkit-search-cancel-button {
   -webkit-appearance: none;
@@ -89,4 +92,28 @@ input[type='search']::-moz-search-cancel-button {
 /* Microsoft Edge */
 input[type='search']::-ms-clear {
   display: none;
+}
+
+/* 使用 Arial */
+.font-arial {
+  font-family: var(--font-arial);
+}
+
+/* 使用 DIN */
+.font-din {
+  font-family: var(--font-din);
+}
+
+/* 使用思源黑体 */
+.font-source-han-sans {
+  font-family: var(--font-source-han-sans);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
 }
