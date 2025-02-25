@@ -133,7 +133,7 @@ export default function Banner() {
                       {
                         item.description.map((item: string) => {
                           return (
-                            <p className='leading-5 text-[#afaeb1] text-[17px] '>{item}</p>
+                            <p className='leading-5 text-[#afaeb1] text-[17px] ' key={item}>{item}</p>
                           )
                         })
                       }
