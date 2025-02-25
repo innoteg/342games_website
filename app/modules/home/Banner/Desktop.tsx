@@ -140,7 +140,7 @@ export default function Banner() {
                           )
                         })
                       }
-                      <div className='w-full flex w-full'>
+                      <div className='w-full flex'>
                         <Button 
                           variant={`${activeIndex === index ? 'common' : 'common2'}`}
                           className='mt-2 w-full'
