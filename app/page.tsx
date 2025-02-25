@@ -1,16 +1,8 @@
 // 'use client'
+import HomeModule from './modules/home'
 
-import { Button } from '@/components/ui/button'
-import Header from '@/components/layout/Header'
-import Banner from './modules/home/Banner'
-
-
-
-export default function LoginPage() {
+export default function HomePage() {
   return (
-    <div className="flex min-h-screen items-center justify-center">
-      <Header></Header>
-      <Banner></Banner>
-    </div>
+    <HomeModule/>
   )
 }
