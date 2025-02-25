@@ -41,16 +41,19 @@ export const showToast = {
   success: (message: string) => {
     toast.success(message, {
       id: `success-${Date.now()}`,
+      position: 'top-center',
     })
   },
   error: (message: string) => {
     toast.error(message, {
       id: `error-${Date.now()}`,
+      position: 'top-center',
     })
   },
   info: (message: string) => {
     toast(message, {
       id: `info-${Date.now()}`,
+      position: 'top-center',
     })
   },
   custom: (message: string, options?: Record<string, unknown>) => {
@@ -58,6 +61,7 @@ export const showToast = {
       (t) => <ToastContent t={t} message={message} />,
       {
         id: `custom-${Date.now()}`,
+        position: 'top-center',
         ...options,
       }
     )
@@ -71,6 +75,7 @@ export const showToast = {
     }
   ) => {
     return toast.promise(promise, messages, {
+      position: 'top-center',
       loading: {
         style: {
           background: '#333',

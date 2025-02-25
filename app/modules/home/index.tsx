@@ -1,12 +1,8 @@
-// 'use client'
 
-import { Button } from '@/components/ui/button'
 import Header from '@/components/layout/Header'
 import Banner from './Banner'
 import LandingPage from './LandingPage'
-
-
-
+import RunesCollection from './RunesCollection'
 
 export default function HomePage() {
   return (
@@ -14,6 +10,11 @@ export default function HomePage() {
       <Header></Header>
       <LandingPage></LandingPage>
       <Banner></Banner>
+      <div className='w-full flex flex-col justify-center'>
+        <div className='px-[20px] sm:px-[100px] 2xl:px-0 w-full 2xl:w-[1300px] '>
+          <RunesCollection></RunesCollection>
+        </div>
+      </div>
     </div>
   )
 }

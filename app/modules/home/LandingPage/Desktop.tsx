@@ -1,7 +1,6 @@
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import './index.css'
 import { useEffect, useState } from 'react';
 import { openUrl } from '@/lib/utils';
 
@@ -59,7 +58,7 @@ export default function LandingPage() {
             </div>
           </div>
 
-          <div className={`mt-[90px] text-white pl-[180px]`}>
+          <div className={`absolute top-[100px] text-white pl-[180px] z-50`}>
             <div className='text-[110px]'>
               <div className='text-[100px] leading-[120px] font-bold'>Innovative</div>
               <div className='italic text-[40px] leading-[48px]'>Web3 Gaming</div>
