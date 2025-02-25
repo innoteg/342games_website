@@ -1,7 +1,10 @@
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import './index.css'
 import { useEffect, useState } from 'react';
+import { openUrl } from '@/lib/utils';
+
 export default function LandingPage() {
   const [imgOffsetX, setimgOffsetX] = useState('180px')
   useEffect(() => {
@@ -27,14 +30,25 @@ export default function LandingPage() {
 
       {/* 右侧背景和图标 */}
       <div className={`flex items-center shrink-0 w-[50%] relative h-full`}>
-
-        <Image
-          src="/images/deerIcon.png"
-          alt="Deer Icon"
-          width={364}
-          height={795}
+        <motion.div
           className={`-ml-[${imgOffsetX}] absolute z-10`}
-        />
+          animate={{
+            y: [0, -8, -16, -8, 0, 8, 16, 8, 0], // Adjusted keyframes for smoother motion
+          }}
+          transition={{
+            duration: 5, // Adjusted duration for smoother transition
+            ease: [0.42, 0, 0.58, 1], // Custom cubic-bezier for smoother easing
+            repeat: Infinity,
+            repeatType: "mirror", // Ensures the animation reverses smoothly
+          }}
+        >
+          <Image
+            src="/images/deerIcon.png"
+            alt="Deer Icon"
+            width={364}
+            height={795}
+          />
+        </motion.div>
         <div className={`relative w-full h-full`}>
           <div className={`absolute top-[60px] h-full  font-bold select-none opacity-30 w-full`}>
             <div className='text-[110px]  leading-[120px] pl-[180px]'>
@@ -53,8 +67,10 @@ export default function LandingPage() {
             </div>
             <div className='mt-[75px]'>
               <div >
-                <Button variant='common' className='h-[70px] text-[30px] leading-9 px-[28px] py-[13px]'>Play Now</Button>
-                <Button variant='common' className='h-[70px] text-[30px] leading-9 font-normal ml-[63px] px-[28px] py-[13px]'>Learn More</Button>
+                <Button onClick={() => {openUrl('')}}
+                 variant='common' className='h-[70px] text-[30px] leading-9 px-[28px] py-[13px]'>Play Now</Button>
+                <Button onClick={() => {openUrl('')}} 
+                variant='common' className='h-[70px] text-[30px] leading-9 font-normal ml-[63px] px-[28px] py-[13px]'>Learn More</Button>
               </div>
             </div>
           </div>
