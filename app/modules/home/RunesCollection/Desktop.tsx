@@ -3,12 +3,7 @@ import { useDevice } from '@/lib/hooks/useDevice'
 import RunesRankBar from '../RunesRankBar'
 import RunesMilepost from '../RunesMilepost'
 import RunesMarket from '../RunesMarket'
-
-
-import MobileBanner from './Mobile'
-
-export default function Banner() {
-
+export default function RunesCollectionDesktop() {
   return (
     <>
      <div className='w-full flex'>

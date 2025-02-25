@@ -10,7 +10,7 @@ export default function HomePage() {
       <Header></Header>
       <LandingPage></LandingPage>
       <Banner></Banner>
-      <div className='w-full flex flex-col justify-center'>
+      <div className='w-full flex flex-col justify-center items-center'>
         <div className='px-[20px] sm:px-[100px] 2xl:px-0 w-full 2xl:w-[1300px] '>
           <RunesCollection></RunesCollection>
         </div>

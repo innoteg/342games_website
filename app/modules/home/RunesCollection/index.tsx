@@ -1,11 +1,11 @@
 'use client'
 
 import { useDevice } from '@/lib/hooks/useDevice'
-import DesktopBanner from './Desktop'
-import MobileBanner from './Mobile'
+import RunesCollectionDesktop from './Desktop'
+import RunesCollectionMobile from './Mobile'
 
-export default function Banner() {
+export default function RunesCollection() {
   const { isMobile } = useDevice()
 
-  return isMobile ? <MobileBanner /> : <DesktopBanner />
+  return isMobile ? <RunesCollectionMobile /> : <RunesCollectionDesktop />
 }
