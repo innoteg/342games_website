@@ -25,6 +25,16 @@ const buttonVariants = cva(
           'text-white text-[20px] leading-4 px-3 py-1',
           'hover:before:opacity-75 hover:after:opacity-90 transition-all'
         ],
+        common2: [
+          'relative  border-0 before:p-[1px] before:bg-gradient-to-b from-[#FF00FE] to-[#0940B9]',
+          'before:absolute before:inset-0 before:p-[2px] before:rounded-md ',
+          'before:content-[\'\'] before:-z-[1]',
+          'after:bg-gradient-to-b after:from-[#242129] after:to-[#242129]',
+          'after:absolute after:inset-[2px] after:rounded-[5px]',
+          'after:content-[\'\'] after:-z-[1]',
+          'text-white text-[20px] leading-4 px-3 py-1',
+          'hover:before:opacity-75 hover:after:opacity-90 transition-all'
+        ],
       },
       size: {
         default: 'h-10 px-3 py-1',

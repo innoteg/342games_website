@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
+import { cn } from '@/lib/utils';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -13,7 +14,7 @@ import 'swiper/css/navigation'; // Ensure navigation css is imported
 
 import './index.css';
 import { bannerData } from './data'
-import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules';
+import { EffectCoverflow, Navigation } from 'swiper/modules';
 import { Button } from '@/components/ui/button';
 // import { bannerQuery } from '@/api';
 function NextButton({ onClick }: any) {
@@ -49,8 +50,8 @@ function PrevButton({ onClick }: any) {
   );
 }
 export default function Banner() {
-  const swiperRef: any = useRef(null);
-
+  const swiperRef:any = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
   const [bannerList, setBannerList] = useState(bannerData);
   const [isLoading, setIsLoading] = useState(true);
   // const getData = async () => {
@@ -68,9 +69,14 @@ export default function Banner() {
         </div>
       )}
       <div className='mb-[95px] text-white w-full flex items-center justify-center font-bold text-[50px] leading-[60px]'>Our Games</div>
-      <div className='w-full  relative overflow-hidden'>
+      <div className='w-full  relative overflow-hidden '>
+        
+        <div className='w-full px-10'>
         <Swiper
           onSwiper={(swiper) => { swiperRef.current = swiper }}
+          onSlideChange={(swiper) => {
+            setActiveIndex(swiper.realIndex);
+          }}
           effect={'coverflow'}
           grabCursor={true}
           centeredSlides={true}
@@ -105,13 +111,13 @@ export default function Banner() {
               slidesPerView: 3, // 当屏幕宽度大于1400px时，显示4个slides
             },
           }}
-          className="w-full  overflow-hidden px-[40px]"
+          className="w-full  overflow-hidden "
           onInit={() => setIsLoading(false)}
         >
           {
-            bannerList.map((item: any) => {
+            bannerList.map((item: any, index: number) => {
               return (
-                <SwiperSlide className='w-full h-[720px] rounded-[20px] overflow-hidden' key={item.id}>
+                <SwiperSlide className='w-full h-[720px] rounded-[20px] overflow-hidden bg-[#242129]' key={item.id}>
                   <div className='w-full h-full flex flex-col'>
                     <Image
                       width={520}
@@ -125,8 +131,8 @@ export default function Banner() {
                       }}
                       onLoadingComplete={() => setIsLoading(false)}
                     />
-                    <div className=' bg-[#242129] px-[36px] pt-[36px] pb-[49px]'>
-                      <h2 className='leading-[48px] text-[40px] text-[#fff] font-bold '>{item.title}</h2>
+                    <div className='  px-[36px] pt-[36px] pb-[49px]'>
+                      <h2 className='leading-[48px] text-[40px] text-[#fff] font-bold mb-10 break-all'>{item.title}</h2>
                       {
                         item.description.map((item: string) => {
                           return (
@@ -134,7 +140,14 @@ export default function Banner() {
                           )
                         })
                       }
-                      <Button variant="common" className='mt-2'>Learn More</Button>
+                      <div className='w-full flex w-full'>
+                        <Button 
+                          variant={`${activeIndex === index ? 'common' : 'common2'}`}
+                          className='mt-2 w-full'
+                        >
+                          Learn More
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </SwiperSlide>
@@ -143,7 +156,8 @@ export default function Banner() {
           }
 
         </Swiper>
-        <div className='absolute top-[50%] w-full flex justify-between z-50 px-10'>
+        </div>
+        <div className='absolute top-[50%] w-full flex justify-between z-50 px-5'>
           <PrevButton onClick={() => swiperRef?.current?.slidePrev()} />
           <NextButton onClick={() => swiperRef?.current?.slideNext()} />
         </div>
