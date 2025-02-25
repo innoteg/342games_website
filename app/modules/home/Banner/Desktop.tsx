@@ -71,7 +71,7 @@ export default function Banner() {
       <div className='mb-[95px] text-white w-full flex items-center justify-center font-bold text-[50px] leading-[60px]'>Our Games</div>
       <div className='w-full  relative overflow-hidden '>
         
-        <div className='w-full px-10'>
+        <div className='w-full px-[100px]'>
         <Swiper
           onSwiper={(swiper) => { swiperRef.current = swiper }}
           onSlideChange={(swiper) => {
@@ -80,10 +80,10 @@ export default function Banner() {
           effect={'coverflow'}
           grabCursor={true}
           centeredSlides={true}
-          slidesPerView={1}
+          slidesPerView={'auto'}
           loop={true}
           coverflowEffect={{
-            rotate: 15,          // 旋转50度
+            rotate: 17,          // 旋转50度
             stretch: 20,          // 无拉伸
             depth: 100,          // 深度效果为100
             modifier: 2,         // 不修改标准效果
@@ -97,27 +97,27 @@ export default function Banner() {
           speed={300}
           watchSlidesProgress={true}
           modules={[EffectCoverflow, Navigation]}
-          breakpoints={{
-            640: {
-              slidesPerView: 1,
-            },
-            768: {
-              slidesPerView: 2,
-            },
-            1024: {
-              slidesPerView: 3,
-            },
-            1400: {
-              slidesPerView: 3, // 当屏幕宽度大于1400px时，显示4个slides
-            },
-          }}
+          // breakpoints={{
+          //   640: {
+          //     slidesPerView: 1,
+          //   },
+          //   768: {
+          //     slidesPerView: 2,
+          //   },
+          //   1024: {
+          //     slidesPerView: 3,
+          //   },
+          //   1400: {
+          //     slidesPerView: 3, // 当屏幕宽度大于1400px时，显示4个slides
+          //   },
+          // }}
           className="w-full  overflow-hidden "
           onInit={() => setIsLoading(false)}
         >
           {
             bannerList.map((item: any, index: number) => {
               return (
-                <SwiperSlide className='w-full h-[720px] rounded-[20px] overflow-hidden bg-[#242129]' key={item.id}>
+                <SwiperSlide className='!w-[520px] !h-[730px] rounded-[20px] overflow-hidden bg-[#242129]' key={item.id}>
                   <div className='w-full h-full flex flex-col'>
                     <Image
                       width={520}
@@ -125,14 +125,11 @@ export default function Banner() {
                       src={item.image}
                       alt={`Banner ${item.id}`}
                       priority
-                      className="object-cover w-full h-[260px]"
-                      style={{
-                        objectFit: 'cover',
-                      }}
+                      className="object-fill w-full h-[260px]"
                       onLoadingComplete={() => setIsLoading(false)}
                     />
-                    <div className='  px-[36px] pt-[36px] pb-[49px]'>
-                      <h2 className='leading-[48px] text-[40px] text-[#fff] font-bold mb-10 break-all'>{item.title}</h2>
+                    <div className='flex flex-col justify-between items-stretch  px-[36px] pt-[36px] pb-[49px] h-full'>
+                      <h2 className='leading-[48px] text-[40px] text-[#fff] font-bold break-all'>{item.title}</h2>
                       {
                         item.description.map((item: string) => {
                           return (
@@ -143,7 +140,7 @@ export default function Banner() {
                       <div className='w-full flex'>
                         <Button 
                           variant={`${activeIndex === index ? 'common' : 'common2'}`}
-                          className='mt-2 w-full'
+                          className='mt-2 w-full h-[50px]'
                         >
                           Learn More
                         </Button>
@@ -157,7 +154,7 @@ export default function Banner() {
 
         </Swiper>
         </div>
-        <div className='absolute top-[50%] w-full flex justify-between z-50 px-5'>
+        <div className='absolute top-[50%] w-full flex justify-between z-50 px-10'>
           <PrevButton onClick={() => swiperRef?.current?.slidePrev()} />
           <NextButton onClick={() => swiperRef?.current?.slideNext()} />
         </div>
