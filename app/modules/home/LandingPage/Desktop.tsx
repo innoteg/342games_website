@@ -1,3 +1,4 @@
+'use client'
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -30,7 +31,7 @@ export default function LandingPage() {
       {/* 右侧背景和图标 */}
       <div className={`flex items-center shrink-0 w-[50%] relative h-full`}>
         <motion.div
-          className={`-ml-[${imgOffsetX}] absolute z-10`}
+          className={`-ml-[180px] absolute z-10`}
           animate={{
             y: [0, -8, -16, -8, 0, 8, 16, 8, 0], // Adjusted keyframes for smoother motion
           }}
