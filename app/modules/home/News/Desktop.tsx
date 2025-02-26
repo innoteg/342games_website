@@ -17,7 +17,7 @@ export default function RunesMarketDesktop() {
           <TokenStaking />
         </div>
         <div className='w-1/2 relative bg-cover bg-no-repeat rounded-[40px]' style={{
-          backgroundImage: 'url(/images/News.png)',
+          backgroundImage: 'url(/images/Tokenmics.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}>
