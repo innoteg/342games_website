@@ -60,13 +60,13 @@ export default function RunesMilepostDesktop() {
 
                   </div>
                 </div>
-                <div className='flex justify-end flex-col flex-1 xl:text-[20px] text-[12px] xl:leading-[24px] leading-[16px] h-full'>
-                  <div className=' flex items-center'>
-                    <div className='text-[#B17BFF] xl:w-[120px] w-[80px]'>Type</div>
+                <div className='flex justify-end flex-col flex-1 xl:text-[20px] text-[12px] xl:leading-[24px] leading-[16px] h-full gap-[10px] xl:gap-[0]'>
+                  <div className=' flex items-center justify-between'>
+                    <div className='text-[#B17BFF] shrink-0'>Type</div>
                     <div className='text-white'>PVP MODE</div>
                   </div>
-                  <div className='flex items-center xl:mt-[22px]'>
-                    <div className='text-[#B17BFF] xl:w-[120px] w-[80px]'>RARITY</div>
+                  <div className='flex items-center xl:mt-[22px] justify-between'>
+                    <div className='text-[#B17BFF] shrink-0'>RARITY</div>
                     <div className='flex items-center gap-[2px]'>
                       {
                         Array.from({ length: data.rarity }, (_, index) => (
@@ -80,8 +80,8 @@ export default function RunesMilepostDesktop() {
                       }
                     </div>
                   </div>
-                  <div className=' flex items-center xl:mt-[22px]'>
-                    <div className='text-[#B17BFF] xl:w-[120px] w-[80px]'>Type</div>
+                  <div className=' flex items-center xl:mt-[22px] justify-between'>
+                    <div className='text-[#B17BFF] shrink-0'>Type</div>
                     <div className='text-white'>FEB 13, 2025</div>
                   </div>
                 </div>
