@@ -9,24 +9,24 @@ import TokenStaking from './TokenStaking'
 export default function RunesMarketDesktop() {
   return (
     <>
-     <div className='w-full flex gap-[23px] sm:mt-[200px]'>
-       
+      <div className='w-full flex gap-[23px] sm:mt-[200px]'>
+
         <div className='w-1/2 flex flex-col gap-[23px]'>
-          <TokenUtility/>
-          <TokenDistribution/>
-          <TokenStaking/>
+          <TokenUtility />
+          <TokenDistribution />
+          <TokenStaking />
         </div>
-        <div className='w-1/2 relative bg-cover bg-no-repeat rounded-[40px]' style={{ 
-          backgroundImage: 'url(/images/market.png)', 
+        <div className='w-1/2 relative bg-cover bg-no-repeat rounded-[40px]' style={{
+          backgroundImage: 'url(/images/market.png)',
           backgroundSize: 'cover',
-          backgroundPosition: 'center' 
+          backgroundPosition: 'center'
         }}>
           <div className="w-full z-10 flex flex-col p-[32px] relative h-full justify-end">
-            <div className='text-white 2xl:text-[50px] text-[30px] font-bold text-center'>
-              Rune Trading Market
+            <div className='text-white 2xl:text-[45px] lg:text-[30px] text-[20px] font-bold text-center'>
+              The Heart of 342 Games’
             </div>
-            <div className='flex gap-[55px] items-center justify-center mt-[32px]'>
-              <Button onClick={()=>{openUrl('')}} variant='common' className='xl:h-[69px] font-normal md:px-5 sm:text-[12px] xl:text-[20px]'>StartTrading</Button>
+            <div className='text-white 2xl:text-[45px] lg:text-[30px] text-[20px] font-bold text-center'>
+              Ecosystem – Tokenomics
             </div>
           </div>
         </div>
