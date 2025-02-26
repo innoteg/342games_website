@@ -146,3 +146,11 @@ input[type='search']::-ms-clear {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+/* 可能的样式调整 */
+.div-class {
+    /* 确保这两个div的高度一致 */
+    height: auto; /* 或者设置为相同的固定高度 */
+    display: flex; /* 如果需要对齐 */
+    align-items: stretch; /* 确保子元素的高度一致 */
+}

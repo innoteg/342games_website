@@ -1,4 +1,3 @@
-
 import React, { useState, useRef } from 'react';
 import Image from 'next/image';
 
@@ -9,7 +8,7 @@ export default function RunesMilepostDesktop() {
   const data = {
     name: 'Name',
     type: 'Type',
-    rarity: 5,
+    rarity: 3,
     value: 85,  
     attack: 85,
     defense: 85,
@@ -51,9 +50,9 @@ export default function RunesMilepostDesktop() {
                 <Image src="/images/icons/runesicon.png" alt="Runes" width={200} height={200} />
               </div>
               <div className='flex flex-col flex-1 '>
-                <div className='w-full text-[48px] leading-[58px] text-white flex items-center justify-between'>
+                <div className='w-full xl:text-[48px] text-[28px] xl:leading-[58px] leading-[38px] text-white flex items-center justify-between'>
                   <span className='font-normal'>Name</span>
-                  <div className='w-10 h-10 rounded-full' style={
+                  <div className='xl:w-10 xl:h-10 w-5 h-5 rounded-full' style={
                     {
                       background: 'linear-gradient(0deg, #0940B9 13.54%, #3029D0 33.54%, #5A13E9 57.24%, #7305F8 76.49%, #7D00FE 87.6%)'
                     }
@@ -61,20 +60,28 @@ export default function RunesMilepostDesktop() {
 
                   </div>
                 </div>
-                <div className='flex-1'>
-                  <div className='text-[20px] leading-[24px] flex items-center'>
-                    <div className='text-[#B17BFF] w-[120px]'>Type</div>
+                <div className='flex justify-end flex-col flex-1 xl:text-[20px] text-[12px] xl:leading-[24px] leading-[16px] h-full'>
+                  <div className=' flex items-center'>
+                    <div className='text-[#B17BFF] xl:w-[120px] w-[80px]'>Type</div>
                     <div className='text-white'>PVP MODE</div>
                   </div>
-                  <div className='text-[20px] leading-[24px] flex items-center mt-[22px]'>
-                    <div className='text-[#B17BFF] w-[120px]'>RARITY</div>
+                  <div className='flex items-center xl:mt-[22px]'>
+                    <div className='text-[#B17BFF] xl:w-[120px] w-[80px]'>RARITY</div>
                     <div className='flex items-center gap-[2px]'>
-                      <Image src="/images/icons/light-start.png" alt="Runes" width={20} height={20} />
-                      <Image src="/images/icons/light-start.png" alt="Runes" width={20} height={20} />
+                      {
+                        Array.from({ length: data.rarity }, (_, index) => (
+                          <Image className='xl:h-[20px] xl:w-[20px] h-[10px] w-[10px]' key={index} src="/images/icons/light-star.png" alt="Runes" width={20} height={20} />
+                        ))
+                      }
+                      {
+                        Array.from({ length: 5 - data.rarity }, (_, index) => (
+                          <Image className='xl:h-[20px] xl:w-[20px] h-[10px] w-[10px]' key={index + data.rarity} src="/images/icons/dark-star.png" alt="Runes" width={20} height={20} />
+                        ))
+                      }
                     </div>
                   </div>
-                  <div className='text-[20px] leading-[24px] flex items-center mt-[22px]'>
-                    <div className='text-[#B17BFF] w-[120px]'>Type</div>
+                  <div className=' flex items-center xl:mt-[22px]'>
+                    <div className='text-[#B17BFF] xl:w-[120px] w-[80px]'>Type</div>
                     <div className='text-white'>FEB 13, 2025</div>
                   </div>
                 </div>
@@ -89,11 +96,11 @@ export default function RunesMilepostDesktop() {
               {
                 data2.map((item, index) => (  
                   <div key={index} className='flex items-center'>
-                    <div className='text-[#5B5B5B] text-[12px] leading-[16px]'>
+                    <div className='text-[#5B5B5B] xl:text-[12px] text-[8px] leading-[16px]'>
                       <div>{item.label}</div>
                       <div>{item.subTitle}</div>
                     </div>
-                    <div className='text-[20px] italic text-white'>+{item.value}</div>
+                    <div className='xl:text-[20px] text-[12px] italic text-white'>+{item.value}</div>
                   </div>
                 ))
               }
