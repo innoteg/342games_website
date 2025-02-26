@@ -18,14 +18,34 @@ export default function CustomComponent() {
   };
 
   const handlePrev = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: -100, behavior: 'smooth' }); // Scroll left
+    if (selected !== null) {
+      const selectedIndex = data.findIndex(item => item.id === selected);
+      const targetIndex = selectedIndex > 0 ? selectedIndex - 1 : data.length - 1; // Wrap to last if at the first
+      const targetElement = document.getElementById(`item-${data[targetIndex].id}`);
+      if (targetElement && scrollRef.current) {
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+        setSelected(data[targetIndex].id); // Update selected item
+      }
+    } else {
+      if (scrollRef.current) {
+        scrollRef.current.scrollBy({ left: -100, behavior: 'smooth' }); // Scroll left
+      }
     }
   };
 
   const handleNext = () => {
-    if (scrollRef.current) {
-      scrollRef.current.scrollBy({ left: 100, behavior: 'smooth' }); // Scroll right
+    if (selected !== null) {
+      const selectedIndex = data.findIndex(item => item.id === selected);
+      const targetIndex = selectedIndex < data.length - 1 ? selectedIndex + 1 : 0; // Wrap to first if at the last
+      const targetElement = document.getElementById(`item-${data[targetIndex].id}`);
+      if (targetElement && scrollRef.current) {
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+        setSelected(data[targetIndex].id); // Update selected item
+      }
+    } else {
+      if (scrollRef.current) {
+        scrollRef.current.scrollBy({ left: 100, behavior: 'smooth' }); // Scroll right
+      }
     }
   };
 
@@ -42,17 +62,10 @@ export default function CustomComponent() {
   };
 
   return (
-    // style={{
-    //   border: '4px solid transparent',
-    //   borderStyle: 'solid',
-    //   borderWidth: '4px',
-    //   borderImageSource: 'linear-gradient(90deg, #0940B9 -0%, #FF00FE 100%)',
-    //   borderImageSlice: 1,
-    // }}
-    <div className='relative overflow-hidden rounded-[20px] gradient-border' >
-      <div className='content-gb'>
-        <div className=" py-[34px] px-[30px]  ">
 
+    <div className=' gradient-border' >
+      <div className='content-gb'>
+        <div className="py-[20px] px-[30px]">
           <div className="flex justify-between items-center mb-4 ">
             <h2 className="text-white">CUMULATIVE AMOUNT</h2>
             <div className='flex items-center'>
@@ -62,13 +75,15 @@ export default function CustomComponent() {
           </div>
           <div className="flex items-end mb-4 overflow-x-auto cursor-pointer scrollbar-hidden" ref={scrollRef} style={{ maxWidth: 'calc(72px * 7 + 16px * 6)' }}>
             {data.map((item) => (
-              <div key={item.id} className="flex flex-col items-center pr-4">
-                <div
-                  className={`w-[72px] cursor-pointer rounded-[10px] ${selected === item.id ? 'bg-gradient-to-b from-blue-500 to-purple-500' : 'bg-gray-700'
-                    }`}
-                  style={{ height: `${item.value / 10}px` }}
-                  onClick={() => handleImageClick(item.id)}
-                >
+              <div key={item.id} id={`item-${item.id}`} className="flex flex-col items-center pr-4">
+                <div className='h-[130px] w-[72px] flex flex-col justify-end'>
+                  <div
+                    className={`w-[72px] cursor-pointer rounded-[10px] ${selected === item.id ? 'bg-gradient-to-b from-blue-500 to-purple-500' : 'bg-gray-700'
+                      }`}
+                    style={{ height: `${Math.min(item.value / 10, 130)}px` }}
+                    onClick={() => handleImageClick(item.id)}
+                  >
+                  </div>
                 </div>
                 <div className={`cursor-pointer ${selected === item.id ? '' : 'opacity-40'}`}>
                   <div className='h-[40px] text-xs text-center'>
