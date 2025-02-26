@@ -14,7 +14,7 @@ export default function RunesMarketDesktop() {
         </div>
         <div className='text-[20px] leading-[24px] mt-[25px]'>
           <div className='text-center'>Explore how Meme Coins fuel our ecosystem, </div>
-          <div className='w-full bg-[#18141a] h-[2px]'></div>
+          <div className='w-screen bg-[#18141a] h-[2px]'></div>
           <div className='text-center'>connecting games to vibrant communities and projects.</div>
         </div>
 

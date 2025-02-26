@@ -6,6 +6,7 @@ import RunesMarket from './RunesMarket'
 import Tokenmics from './Tokenmics'
 import News from './News'
 import MemeCoins from './MemeCoins'
+import Partners from './Partners'
 
 
 export default function HomePage() {
@@ -43,6 +44,11 @@ export default function HomePage() {
         <div className='w-full flex flex-col justify-center items-center'>
           <div className='w-full '>
             <MemeCoins></MemeCoins>
+          </div>
+        </div>
+        <div className='w-full flex flex-col justify-center items-center bg-[#111111]'>
+          <div className='w-full '>
+            <Partners></Partners>
           </div>
         </div>
       </div>
