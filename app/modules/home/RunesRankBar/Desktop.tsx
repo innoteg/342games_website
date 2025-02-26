@@ -15,7 +15,7 @@ const data = Array.from({ length: 12 }, (_, i) => ({
   image: '/images/icons/runesicon.png'
 }));
 
-export default function CustomComponent() {
+export default function RunesRankBarDesktop() {
   const [selected, setSelected] = useState<number | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null); // Reference for scrolling
 
@@ -55,13 +55,10 @@ export default function CustomComponent() {
     }
   };
 
-  const handleFilterClick = () => {
-    console.log('Filter clicked');
+  const handleFilterClick = (item:any) => {
+    console.log('Filter clicked', item);
   };
 
-  const handleArrowBottomClick = () => {
-    console.log('Arrow bottom clicked');
-  };
 
   const handleImageClick = (id: number) => {
     setSelected(id);
@@ -74,16 +71,16 @@ export default function CustomComponent() {
           <div className="flex justify-between items-center mb-4 ">
             <h2 className="text-white">CUMULATIVE AMOUNT</h2>
             <div className='flex items-center'>
-              <Select>
-                <SelectTrigger className="bg-[#18141a] border-none">
+              <Select onValueChange={handleFilterClick}>
+                <SelectTrigger className="bg-[#18141a] border-none focus-within:outline-none">
                   <SelectValue className='bg-[#18141a]'/>
                 </SelectTrigger>
                 <SelectContent className='bg-[#18141a]'>
-                  <SelectItem value="light">
-                    <Image className='cursor-pointer' src="/images/icons/filter.png" alt="Filter" width={13} height={15} />
+                  <SelectItem value="light" className=''>
+                    <Image className='cursor-pointer mr-2' src="/images/icons/filter.png" alt="Filter" width={13} height={15} />
                   </SelectItem>
                   <SelectItem value="dark">
-                    <Image className='cursor-pointer' src="/images/icons/filter.png" alt="Filter" width={13} height={15} />
+                    <Image className='cursor-pointer mr-2' src="/images/icons/filter.png" alt="Filter" width={13} height={15} />
                   </SelectItem>
                 </SelectContent>
               </Select>
