@@ -50,19 +50,19 @@ export default function CustomComponent() {
     //   borderImageSlice: 1,
     // }}
     <div className='relative overflow-hidden rounded-[20px] gradient-border' >
-      <div className='content-gb w-full '>
-        <div className="px-[50px] py-[34px] bg-transparent  rounded-lg  content-gb">
+      <div className='content-gb'>
+        <div className=" py-[34px] px-[30px]  ">
 
-          <div className="flex justify-between items-center mb-4">
+          <div className="flex justify-between items-center mb-4 ">
             <h2 className="text-white">CUMULATIVE AMOUNT</h2>
             <div className='flex items-center'>
               <Image className='cursor-pointer' onClick={handlePrev} src="/images/icons/filter.png" alt="Previous" width={13} height={15} />
               <Image className='cursor-pointer' onClick={handlePrev} src="/images/icons/arrow-bottom.png" alt="Previous" width={13} height={15} />
             </div>
           </div>
-          <div className="flex justify-center items-end mb-4 overflow-x-auto cursor-pointer scrollbar-hidden" ref={scrollRef} style={{ maxWidth: 'calc(72px * 7 + 16px * 6)' }}>
+          <div className="flex items-end mb-4 overflow-x-auto cursor-pointer scrollbar-hidden" ref={scrollRef} style={{ maxWidth: 'calc(72px * 7 + 16px * 6)' }}>
             {data.map((item) => (
-              <div key={item.id} className="flex flex-col items-center mr-4">
+              <div key={item.id} className="flex flex-col items-center pr-4">
                 <div
                   className={`w-[72px] cursor-pointer rounded-[10px] ${selected === item.id ? 'bg-gradient-to-b from-blue-500 to-purple-500' : 'bg-gray-700'
                     }`}

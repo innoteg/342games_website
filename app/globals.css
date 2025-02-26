@@ -134,6 +134,7 @@ input[type='search']::-ms-clear {
   padding: 20px; /* 内容内边距 */
   position: relative; /* 相对定位 */
   z-index: 2; /* 确保在渐变边框之上 */
+  box-sizing: content-box;
 }
 /* Hide scrollbar for Chrome, Safari and Opera */
 .scrollbar-hidden::-webkit-scrollbar {
