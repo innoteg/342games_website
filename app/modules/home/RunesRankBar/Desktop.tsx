@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 import {
   Select,
@@ -8,24 +8,29 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 
-const data = Array.from({ length: 12 }, (_, i) => ({
-  id: i + 1,
-  name: `Type ${i + 1}`,
-  value: Math.floor(Math.random() * 500) + 100, // 随机值
-  image: '/images/icons/runesicon.png'
-}));
+
 
 export default function RunesRankBarDesktop() {
+  
+  const [data, setData]:any = useState<any>([]);
+
   const [selected, setSelected] = useState<number | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null); // Reference for scrolling
-
+  useEffect(() => {
+    setData(Array.from({ length: 12 }, (_, i) => ({
+      id: i + 1 + new Date().getTime(),
+      name: `Type ${i + 1}`,
+      value: Math.floor(Math.random() * 500) + 100, // 随机值
+      image: '/images/icons/runesicon.png'
+    })))
+  }, []);
   const handleFilter = () => {
     console.log('Filter clicked');
   };
 
   const handlePrev = () => {
     if (selected !== null) {
-      const selectedIndex = data.findIndex(item => item.id === selected);
+      const selectedIndex = data.findIndex((item:any) => item.id === selected);
       const targetIndex = selectedIndex > 0 ? selectedIndex - 1 : data.length - 1; // Wrap to last if at the first
       const targetElement = document.getElementById(`item-${data[targetIndex].id}`);
       if (targetElement && scrollRef.current) {
@@ -41,7 +46,7 @@ export default function RunesRankBarDesktop() {
 
   const handleNext = () => {
     if (selected !== null) {
-      const selectedIndex = data.findIndex(item => item.id === selected);
+      const selectedIndex = data.findIndex((item:any) => item.id === selected);
       const targetIndex = selectedIndex < data.length - 1 ? selectedIndex + 1 : 0; // Wrap to first if at the last
       const targetElement = document.getElementById(`item-${data[targetIndex].id}`);
       if (targetElement && scrollRef.current) {
@@ -87,7 +92,7 @@ export default function RunesRankBarDesktop() {
             </div>
           </div>
           <div className="flex items-end mb-4 overflow-x-auto cursor-pointer scrollbar-hidden" ref={scrollRef} style={{ maxWidth: 'calc(72px * 7 + 16px * 6)' }}>
-            {data.map((item) => (
+            {data.map((item:any) => (
               <div key={item.id} id={`item-${item.id}`} className="flex flex-col items-center pr-4">
                 <div className='h-[130px] w-[40px] xl:h-[130px] xl:w-[72px] flex flex-col justify-end'>
                   <div

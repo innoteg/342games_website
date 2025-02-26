@@ -3,6 +3,7 @@ import Header from '@/components/layout/Header'
 import Banner from './Banner'
 import LandingPage from './LandingPage'
 import RunesCollection from './RunesCollection'
+import RunesMarket from './RunesMarket'
 
 export default function HomePage() {
   return (
@@ -13,6 +14,11 @@ export default function HomePage() {
       <div className='w-full flex flex-col justify-center items-center'>
         <div className='px-[20px] sm:px-[100px] 2xl:px-0 w-full 2xl:w-[1300px] '>
           <RunesCollection></RunesCollection>
+        </div>
+      </div>
+      <div className='w-full flex flex-col justify-center items-center'>
+        <div className='px-[20px] sm:px-[100px] 2xl:px-0 w-full 2xl:w-[1300px] '>
+          <RunesMarket></RunesMarket>
         </div>
       </div>
     </div>
