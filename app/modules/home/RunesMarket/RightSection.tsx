@@ -6,7 +6,7 @@ import Image from 'next/image';
 export default function RightSection({isActive}:any) {
 
   return (
-    <div className=' gradient-border' >
+    <div className={`gradient-border ${isActive ? 'g-none' : ''}`} >
       <div className='content-gb text-white'>
         <div className="py-[0] px-[0] sm:px-[30px]">
           <div className='flex items-center text-[20px] leading-6 gap-[10px]'>

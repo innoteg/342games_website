@@ -127,6 +127,9 @@ input[type='search']::-ms-clear {
   position: relative; /* 相对定位 */
   z-index: 1; /* 确保在其他元素之上 */
 }
+.g-none {
+  background-image: none !important;
+}
 
 .content-gb {
   background-color: #18141a;

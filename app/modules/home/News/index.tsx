@@ -6,14 +6,13 @@ interface NewsProps {
   isActive: boolean;
 }
 
-const News: React.FC<NewsProps> = ({ isActive }) => {
+const News: React.FC<NewsProps> = ({ isActive }:any) => {
 
   return (
     <>
-      <NewsMobile />
-      <NewsDesktop />
+      <NewsMobile isActive={isActive} />
+      <NewsDesktop isActive={isActive} />
     </>
   )
 }
-
 export default News

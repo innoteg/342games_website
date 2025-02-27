@@ -70,7 +70,7 @@ export default function RunesRankBar({isActive}:any) {
   };
 
   return (
-    <div className='gradient-border'>
+    <div className={`gradient-border ${isActive ? 'g-none' : ''}`} >
       <div className='content-gb !p-[0px] sm:!p-[20px]'>
         <div className="py-[15px] px-[25px] sm:py-[30px] sm:px-[50px]">
           <div className="flex justify-between items-center mb-4 ">

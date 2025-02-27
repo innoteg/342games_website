@@ -41,7 +41,7 @@ export default function RunesMilepostDesktop({isActive}:any) {
   ]
 
   return (
-    <div className=' gradient-border' >
+    <div className={`gradient-border ${isActive ? 'g-none' : ''}`} >
       <div className='content-gb'>
         <div className="sm:py-[20px] sm:px-[30px] ">
           <div className=''>

@@ -10,8 +10,8 @@ export default function RunesCollectionDesktop({ isActive }:any) {
     <>
      <div className='w-full gap-[23px] hidden sm:flex'>
         <div className='w-1/2 flex flex-col gap-[23px]'>
-          <RunesRankBar/>
-          <RunesMilepost></RunesMilepost>
+          <RunesRankBar isActive={isActive} />
+          <RunesMilepost isActive={isActive}></RunesMilepost>
         </div>
         {/* md:mt-[200px] lg:mt-[400px] xl:mt-[500px] */}
         <div className='w-1/2 relative bg-cover bg-no-repeat rounded-[40px]' style={{ 

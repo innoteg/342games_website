@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button'
 import { openUrl } from '@/lib/utils'
 import MadeEasy from './MadeEasy'
-export default function RunesMarketDesktop() {
+export default function RunesMarketDesktop({isActive}:any ) {
   return (
     <>
       <div className='w-full flex flex-col gap-[15px] sm:hidden'>
@@ -15,9 +15,11 @@ export default function RunesMarketDesktop() {
         </div>
 
         <div className='w-full flex flex-col gap-[23px] h-full'>
-          <MadeEasy></MadeEasy>
+          <MadeEasy isActive={isActive}></MadeEasy>
         </div>
       </div>
     </>
   )
 }
+
+

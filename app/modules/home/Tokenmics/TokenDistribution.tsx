@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactECharts from 'echarts-for-react';
 
-export default function TokenDistribution() {
+export default function TokenDistribution({isActive}:any) {
   const colors = ['#5F6A86', '#C305C3', '#A15DF9', '#94D3BC', '#451FDD'];
   const DataList = [
     { value: 1048, name: 'Game Rewards' },
@@ -58,7 +58,7 @@ export default function TokenDistribution() {
   };
 
   return (
-    <div className='gradient-border'>
+    <div className={`gradient-border ${isActive ? 'g-none' : ''}`} >
       <div className='content-gb text-white '>
         <div className="py-[0] sm:pl-[20px] flex">
           <div className='w-full text-[20px] leading-[24px] sm:text-[40px] sm:leading-[48px]'>Token Distribution</div>

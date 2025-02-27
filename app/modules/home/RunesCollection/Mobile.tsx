@@ -21,8 +21,8 @@ export default function RunesCollectionMobile({ isActive }:any) {
             {/* Content can be placed here */}
           </div>
         </div>
-        <RunesRankBar/>
-        <RunesMilepost></RunesMilepost>
+        <RunesRankBar isActive={isActive} />
+        <RunesMilepost isActive={isActive}></RunesMilepost>
       </div>
     </>
   )

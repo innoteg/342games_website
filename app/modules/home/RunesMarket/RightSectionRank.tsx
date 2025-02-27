@@ -54,7 +54,7 @@ export default function RightSectionRank({isActive}:any) {
   }, []);
 
   return (
-    <div className='gradient-border'>
+    <div className={`gradient-border ${isActive ? 'g-none' : ''}`} >
       <div className='content-gb text-white'>
         <div className="sm:py-[20px] sm:px-[30px]">
           <div className='max-h-[300px] sm:max-h-[500px] overflow-y-auto scroll-target scrollbar-hidden'>
