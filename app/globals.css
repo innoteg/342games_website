@@ -117,3 +117,47 @@ input[type='search']::-ms-clear {
     @apply bg-background text-foreground;
   }
 }
+
+.gradient-border {
+  padding: 4px; /* 内边距 */
+  border-radius: 30px; /* 圆角 */
+  border: 5px solid transparent; /* 透明边框 */
+  background-image: linear-gradient(90deg, #0940B9 -0%, #FF00FE 100%); /* 背景渐变 */
+  background-clip: padding-box, border-box; /* 背景裁剪 */
+  position: relative; /* 相对定位 */
+  z-index: 1; /* 确保在其他元素之上 */
+}
+.g-none {
+  background-image: none !important;
+}
+
+.content-gb {
+  background-color: #18141a;
+  border-radius: 20px; /* 内容圆角 */
+  padding: 20px; /* 内容内边距 */
+  position: relative; /* 相对定位 */
+  z-index: 2; /* 确保在渐变边框之上 */
+  box-sizing: content-box;
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hidden {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* 可能的样式调整 */
+.div-class {
+    /* 确保这两个div的高度一致 */
+    height: auto; /* 或者设置为相同的固定高度 */
+    display: flex; /* 如果需要对齐 */
+    align-items: stretch; /* 确保子元素的高度一致 */
+}
+
+.change-bg {
+  background: linear-gradient(0deg, #0940B9 0%, #FF00FE 100%) !important;
+}

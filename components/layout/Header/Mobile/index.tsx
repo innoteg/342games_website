@@ -1,40 +1,144 @@
-'use client'
+import Image from 'next/image';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button'
+import { IMAGE_URLS } from '@/lib/constants/urls'
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle
+} from "@/components/ui/navigation-menu"
 
-import { useState } from 'react'
-
-export default function MobileHeader() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-
+import React from 'react';
+import { cn } from '@/lib/utils';
+const commonItemClassName = 'bg-transparent text-white focus:!bg-transparent hover:!bg-transparent focs:!bg-transparent hover:!text-white hover:!opacity-50'
+const listRender = [
+  {
+    title: 'Home',
+    href: '/',
+  },
+  {
+    title: 'About Us',
+    href: '/aboutUs',
+  },
+  {
+    title: 'Games',
+    href: '/games',
+    children: [
+      {
+        title: '342 Games1',
+        href: '/games/342Games',
+      },
+      {
+        title: '342 Games2',
+        href: '/games/342Games',
+      },
+      {
+        title: '342 Games2',
+        href: '/games/342Games',
+      },
+      {
+        title: '342 Games3',
+        href: '/games/342Games',
+      },
+    ]
+  },
+  {
+    title: 'My Rune Collection',
+    href: '/myRuneCollection',
+  },
+]
+export default function DesktopHeader() {
   return (
-    <header className="md:hidden">
-      <div className="flex h-14 items-center justify-between px-4 border-b">
-        <div className="text-lg font-bold">Logo</div>
-        <button 
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="p-2"
-        >
-          <span className="sr-only">Menu</span>
-          {/* 汉堡菜单图标 */}
-          <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-
-      {/* 移动端菜单 */}
-      {isMenuOpen && (
-        <nav className="absolute top-14 left-0 w-full bg-background border-b shadow-lg">
-          <div className="flex flex-col space-y-4 p-4">
-            <a href="#" className="hover:text-primary">首页</a>
-            <a href="#" className="hover:text-primary">产品</a>
-            <a href="#" className="hover:text-primary">关于</a>
-            <div className="pt-4 border-t">
-              <button className="w-full py-2 text-center hover:text-primary">登录</button>
-              <button className="w-full py-2 text-center hover:text-primary">注册</button>
-            </div>
+    <>
+      {/* 占位div，防止内容被fixed header遮挡 */}
+      <header className="fixed top-0 left-0 right-0 z-50 w-screen flex h-[45px] items-center justify-between px-5 bg-[#110f23]">
+        <div className="flex items-center space-x-4">
+          <div className="text-xl font-bold text-white">
+            <Link href="/">
+              <Image 
+                width={64} 
+                height={14} 
+                src={IMAGE_URLS.HeadIcon} 
+                alt='headerIcon'
+                className="cursor-pointer hover:opacity-80 transition-opacity"
+              />
+            </Link>
           </div>
-        </nav>
-      )}
-    </header>
+          {/* <div>
+            <NavigationMenu>
+              <NavigationMenuList className="gap-2">
+                {listRender.map((item) => (
+                  <NavigationMenuItem key={item.href}>
+                    {item.children ? (
+                      // 有子菜单的情况
+                      <>
+                        <NavigationMenuTrigger className={commonItemClassName}>
+                          {item.title}
+                        </NavigationMenuTrigger>
+                        <NavigationMenuContent>
+                          <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2">
+                            {item.children.map((child) => (
+                              <ListItem
+                                key={child.href}
+                                href={child.href}
+                                title={child.title}
+                              >
+                                {child.title}
+                              </ListItem>
+                            ))}
+                          </ul>
+                        </NavigationMenuContent>
+                      </>
+                    ) : (
+                      // 没有子菜单的情况
+                      <Link href={item.href} legacyBehavior passHref>
+                        <NavigationMenuLink className={`${navigationMenuTriggerStyle()} ${commonItemClassName}`}>
+                          {item.title}
+                        </NavigationMenuLink>
+                      </Link>
+                    )}
+                  </NavigationMenuItem>
+                ))}
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div> */}
+        </div>
+        <div className="flex items-center space-x-4">
+          <Button variant="common" className='!h-5'>Play Now</Button>
+        </div>
+      </header>
+    </>
   )
-} 
+}
+
+const ListItem = React.forwardRef<
+  React.ElementRef<"a">,
+  React.ComponentPropsWithoutRef<"a"> & {
+    title: string
+  }
+>(({ className, title, children, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </li>
+  )
+})
+ListItem.displayName = "ListItem" 

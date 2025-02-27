@@ -1,11 +1,14 @@
 'use client'
 
-import { useDevice } from '@/lib/hooks/useDevice'
-import DesktopBanner from './Desktop'
-import MobileBanner from './Mobile'
+import DesktopLandingPage from './Desktop'
+import MobileLandingPage from './Mobile'
 
-export default function Banner() {
-  const { isMobile } = useDevice()
+export default function LandingPage() {
 
-  return isMobile ? <MobileBanner /> : <DesktopBanner />
+  return (
+    <>
+      <MobileLandingPage />
+      <DesktopLandingPage />
+    </>
+  )
 }

@@ -1,11 +1,21 @@
 'use client'
 
-import { useDevice } from '@/lib/hooks/useDevice'
-import DesktopBanner from './Desktop'
-import MobileBanner from './Mobile'
+import React from 'react'
+import RunesCollectionDesktop from './Desktop'
+import RunesCollectionMobile from './Mobile'
 
-export default function Banner() {
-  const { isMobile } = useDevice()
-
-  return isMobile ? <MobileBanner /> : <DesktopBanner />
+interface RunesCollectionProps {
+  isActive: boolean;
 }
+
+const RunesCollection: React.FC<RunesCollectionProps> = ({ isActive }) => {
+  console.log(isActive)
+  return (
+    <>
+      <RunesCollectionMobile isActive={isActive} />
+      <RunesCollectionDesktop isActive={isActive} />
+    </>
+  )
+}
+
+export default RunesCollection

@@ -1,68 +1,34 @@
-import React, { useState } from 'react';
-import Image from 'next/image';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/components/ui/button'
+import { openUrl } from '@/lib/utils'
+import RightSection from './RightSection'
+import RightSectionRank from './RightSectionRank'
 
-const data = Array.from({ length: 24 }, (_, i) => ({
-  id: i + 1,
-  name: `Type ${i + 1}`,
-  value: Math.floor(Math.random() * 500) + 100, // 随机值
-  image: '/images/icons/runesicon.png'
-}));
 
-export default function CustomComponent() {
-  const [selected, setSelected] = useState<number | null>(null);
-
-  const handleFilter = () => {
-    console.log('Filter clicked');
-  };
-
-  const handlePrev = () => {
-    console.log('Prev clicked');
-  };
-
-  const handleNext = () => {
-    console.log('Next clicked');
-  };
-
+export default function RunesMarketDesktop({ isActive }:any) {
   return (
-    <div className="p-4 bg-[#1a1a1a] rounded-lg relative">
-      <div className="flex justify-between items-center mb-4">
-        <h2 className="text-white">CUMULATIVE AMOUNT</h2>
-        <Button onClick={handleFilter} className="text-white">
-          Filter
-        </Button>
-      </div>
-      <div className="flex justify-center items-end mb-4 overflow-x-auto">
-        {data.map((item) => (
-          <div
-            key={item.id}
-            className={`w-10 mx-2 cursor-pointer ${
-              selected === item.id ? 'bg-gradient-to-b from-blue-500 to-purple-500' : 'bg-gray-700'
-            }`}
-            style={{ height: `${item.value / 10}px` }}
-            onClick={() => setSelected(item.id)}
-          >
-            {selected === item.id && (
-              <div className="text-center text-white mt-2">+ {item.value}</div>
-            )}
-          </div>
-        ))}
-      </div>
-      <div className="flex justify-between items-center">
-        <Button onClick={handlePrev} className="text-white">
-          Prev
-        </Button>
-        <div className="flex space-x-2 overflow-x-auto">
-          {data.map((item) => (
-            <div key={item.id} className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center">
-              <Image src={item.image} alt={item.name} width={30} height={30} />
+    <>
+     <div className='w-full gap-[23px] hidden sm:flex'>
+        
+        <div className='w-1/2 relative bg-cover bg-no-repeat rounded-[40px]' style={{ 
+          backgroundImage: 'url(/images/market.png)', 
+          backgroundSize: 'cover',
+          backgroundPosition: 'center' 
+        }}>
+          <div className="w-full z-10 flex flex-col p-[32px] relative h-full justify-end">
+            <div className='text-white 2xl:text-[50px] text-[30px] font-bold text-center'>
+              Rune Trading Market
             </div>
-          ))}
+            <div className='flex gap-[55px] items-center justify-center mt-[32px]'>
+              <Button onClick={()=>{openUrl('')}} variant='common' className='xl:h-[69px] font-normal md:px-5 sm:text-[12px] xl:text-[20px]'>StartTrading</Button>
+            </div>
+            {/* Content can be placed here */}
+          </div>
         </div>
-        <Button onClick={handleNext} className="text-white">
-          Next
-        </Button>
+        <div className='w-1/2 flex flex-col gap-[23px]'>
+          <RightSection/>
+          <RightSectionRank/>
+        </div>
       </div>
-    </div>
-  );
+    </>
+  )
 }

@@ -11,7 +11,9 @@ export const openUrl = (url:any) => {
   if (!url) {
     return toast.error('Coming soon');
   }
-  window.open(url, '_blank');
+  if (window) {
+    window.open(url, '_blank');
+  }
 };
 
 export const openLocationUrl = (url:any, query?:any) => {

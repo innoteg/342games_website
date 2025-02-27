@@ -62,7 +62,7 @@ export default function Banner() {
   //   getData();
   // });
   return (
-    <div className='w-full py-8'>
+    <div className='hidden sm:block w-full py-8'>
       {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
           Loading...
@@ -83,11 +83,14 @@ export default function Banner() {
           slidesPerView={'auto'}
           loop={true}
           coverflowEffect={{
-            rotate: 17,          // 旋转50度
-            stretch: 20,          // 无拉伸
-            depth: 100,          // 深度效果为100
-            modifier: 2,         // 不修改标准效果
-            slideShadows: true   // 开启slide阴影
+            rotate: 25,
+                    scale: .8,
+                    depth: 250
+            // rotate: 20,          // 旋转50度
+            // stretch: 80,          // 无拉伸
+            // depth: 80,          // 深度效果为100
+            // modifier: 1,         // 不修改标准效果
+            // slideShadows: true   // 开启slide阴影
           }}
           navigation={{
             nextEl: '.custom-next',
