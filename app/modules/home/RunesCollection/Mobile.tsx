@@ -6,7 +6,7 @@ import { openUrl } from '@/lib/utils'
 export default function RunesCollectionMobile({ isActive }:any) {
   return (
     <>
-     <div className='w-full flex flex-col gap-[17px] mt-[100px]'>
+     <div className='w-full flex flex-col gap-[17px] mt-[100px] sm:hidden'>
         <div className='relative bg-cover bg-no-repeat rounded-[20px] w-full h-auto'>
           <img src='/images/collection.png' alt='collection' className='w-full h-full object-cover' />
           <div className="absolute bottom-0 left-0 w-full z-10 flex flex-col p-[32px] h-full justify-end">

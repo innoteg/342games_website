@@ -8,7 +8,7 @@ import { openUrl } from '@/lib/utils'
 export default function RunesCollectionDesktop({ isActive }:any) {
   return (
     <>
-     <div className='w-full flex gap-[23px] sm:mt-[200px]'>
+     <div className='w-full gap-[23px] sm:mt-[200px] hidden sm:flex'>
         <div className='w-1/2 flex flex-col gap-[23px]'>
           <RunesRankBar/>
           <RunesMilepost></RunesMilepost>
