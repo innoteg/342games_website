@@ -13,7 +13,7 @@ export default function RunesCollectionDesktop() {
       <div className=' w-full mt-[25px] sm:mt-[130px]'>
         <div className='mt-[35px] sm:mt-[60px] mb-[40px] text-white text-[50px] leading-[60px] font-bold text-center'>Partners</div>
         <div className='w-full sm:px-[160px]'>
-          <div className='hidden sm:flex justify-center items-center'>
+          <div className='flex justify-center items-center'>
             <PartnersScroll />
           </div>
           <div className='bg-[#303234] w-full h-[1px] my-[50px]'></div>
