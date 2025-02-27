@@ -51,7 +51,7 @@ export default function Banner() {
                   }
                   <div className='w-full flex z-10 mt-[24px]'>
                     <Button
-                      variant={`${activeIndex === index ? 'common' : 'common2'}`}
+                      variant={`${activeIndex === index ? 'common2' : 'common3'}`}
                       className='w-full h-[30px] text-[10px] leading-[12px]'
                     >
                       Learn More
