@@ -11,8 +11,8 @@ export default function TokenUtility() {
     <div className=' gradient-border' >
       <div className='content-gb text-white'>
         <div className="py-[0] pl-[20px] flex">
-          <div className='w-1/2 text-[40px] leading-[48px]'>Token Staking</div>
-          <div className='w-1/2 flex flex-col gap-[14px] text-[15px] leading-[18px]'>
+          <div className='w-1/2 text-[20px] leading-[24px] sm:text-[40px] sm:leading-[48px]'>Token Staking</div>
+          <div className='w-1/2 flex flex-col gap-[7px] sm:gap-[14px] text-[7px] leading-[9px] sm:text-[15px] sm:leading-[18px]'>
             <div>• Earn passive rewards and exclusive bonuses.</div>
             <div>
             <Button onClick={()=>{openUrl('')}} variant='common'
