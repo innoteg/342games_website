@@ -64,11 +64,11 @@ export default function RunesRankBar({isActive}:any) {
     console.log('Filter clicked', item);
   };
 
-
+  const bg1 = isActive ? 'bg-[#FC03EA] ' : 'bg-gradient-to-b from-blue-500 to-purple-500'
+  const bg2 = isActive ? 'bg-[#8B1EDD]' : 'bg-gray-700 '
   const handleImageClick = (id: number) => {
     setSelected(id);
   };
-
   return (
     <div className={`gradient-border ${isActive ? 'g-none' : ''}`} >
       <div className='content-gb !p-[0px] sm:!p-[20px]'>
@@ -98,7 +98,9 @@ export default function RunesRankBar({isActive}:any) {
               >
                 <div className='h-[100px] w-[35px] xl:h-[130px] xl:w-[72px] flex flex-col justify-end'>
                   <div
-                    className={`w-[35px] xl:h-[130px] xl:w-[72px] cursor-pointer rounded-[10px] ${selected === item.id ? 'bg-gradient-to-b from-blue-500 to-purple-500' : 'bg-gray-700'
+                    className={`w-[35px] xl:h-[130px] xl:w-[72px] cursor-pointer rounded-[10px]
+                       ${selected === item.id ? (isActive ? 'bg-[#FC03EA] ' : 'bg-gradient-to-b from-blue-500 to-purple-500') : 
+                        (isActive ? 'bg-[#8B1EDD]' : 'bg-gray-700 ')
                       }`}
                     style={{ height: `${Math.min(item.value / 10, 100)}px` }}
                   >

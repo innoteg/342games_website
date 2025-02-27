@@ -64,27 +64,27 @@ export default function HomePage() {
 
       <div className='bg-gradient-to-b from-[#18141a] to-[#000]'>
         <Banner />
-        <div className='w-full flex flex-col justify-center items-center mt-[80px] sm:mt-[180px]'>
+        <div className='w-full flex flex-col justify-center items-center mt-[80px] sm:mt-[100px]'>
           <div className={`px-[20px] sm:px-[100px] 2xl:px-0 w-full 2xl:w-[1300px] py-[20px] ${isActive === 'RunesCollection' && 'change-bg'}`} ref={(el:any) => sectionsRef.current['RunesCollection'] = el}>
             <RunesCollection isActive={isActive === 'RunesCollection'} />
           </div>
         </div>
-        <div className='w-full flex flex-col justify-center items-center mt-[80px] sm:mt-[180px]'>
+        <div className='w-full flex flex-col justify-center items-center mt-[80px] sm:mt-[100px]'>
           <div className={`px-[20px] sm:px-[100px] 2xl:px-0 w-full 2xl:w-[1300px] py-[20px] ${isActive === 'RunesMarket' && 'change-bg'}`} ref={(el:any) => sectionsRef.current['RunesMarket'] = el}>
             <RunesMarket isActive={isActive === 'RunesMarket'} />
           </div>
         </div>
-        <div className='w-full flex flex-col justify-center items-center mt-[80px] sm:mt-[180px]'>
+        <div className='w-full flex flex-col justify-center items-center mt-[80px] sm:mt-[100px]'>
           <div className={`px-[20px] sm:px-[100px] 2xl:px-0 w-full 2xl:w-[1300px] py-[20px]  ${isActive === 'Tokenmics' && 'change-bg'}`} ref={(el:any) => sectionsRef.current['Tokenmics'] = el}>
             <Tokenmics isActive={isActive === 'Tokenmics'} />
           </div>
         </div>
-        <div className='w-full flex flex-col justify-center items-center mt-[80px] sm:mt-[180px]'>
+        <div className='w-full flex flex-col justify-center items-center mt-[80px] sm:mt-[100px]'>
           <div className={`px-[20px] sm:px-[100px] 2xl:px-0 w-full 2xl:w-[1300px] py-[20px]  ${isActive === 'News' && 'change-bg'}`} ref={(el:any) => sectionsRef.current['News'] = el}>
             <News isActive={isActive === 'News'} />
           </div>
         </div>
-        <div className='w-full flex flex-col justify-center items-center mt-[80px] sm:mt-[180px]'>
+        <div className='w-full flex flex-col justify-center items-center mt-[80px] sm:mt-[100px]'>
           <div className={`w-full pt-[20px]`} ref={(el:any) => sectionsRef.current['MemeCoins'] = el}>
             <MemeCoins isActive={isActive === 'MemeCoins'} />
           </div>
