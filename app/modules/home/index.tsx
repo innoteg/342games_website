@@ -12,7 +12,7 @@ import Image from 'next/image';
 
 export default function HomePage() {
   return (
-    <div className="bg-gradient-to-b from-[#18141a] to-[#000]">
+    <div className="bg-gradient-to-b from-[#18141a] to-[#000] w-full">
       <Header></Header>
       <LandingPage></LandingPage>
 
