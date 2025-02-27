@@ -7,6 +7,7 @@ import Tokenmics from './Tokenmics'
 import News from './News'
 import MemeCoins from './MemeCoins'
 import Partners from './Partners'
+import Image from 'next/image';
 
 
 export default function HomePage() {
@@ -14,8 +15,8 @@ export default function HomePage() {
     <div className="bg-gradient-to-b from-[#18141a] to-[#000]">
       <Header></Header>
       <LandingPage></LandingPage>
-      
-      
+
+
       <div className='bg-gradient-to-b from-[#18141a] to-[#000]'>
         <Banner></Banner>
         <div className='w-full flex flex-col justify-center items-center'>
@@ -46,10 +47,13 @@ export default function HomePage() {
             <MemeCoins></MemeCoins>
           </div>
         </div>
-        <div className='w-full flex flex-col justify-center items-center bg-[#111111]'>
-          <div className='w-full '>
-            <Partners></Partners>
-          </div>
+      </div>
+      <div className='w-full flex flex-col justify-center items-center'>
+        <img src='/images/earth.png' alt='partners' />
+      </div>
+      <div className='w-full flex flex-col justify-center items-center bg-[#111111]'>
+        <div className='w-full '>
+          <Partners></Partners>
         </div>
       </div>
     </div>

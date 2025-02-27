@@ -18,7 +18,7 @@ export default function RunesMarketDesktop() {
           <div className='text-center'>connecting games to vibrant communities and projects.</div>
         </div>
 
-        <div className='mt-[50px]'>
+        <div className='mt-[50px] z-10'>
           {/* onClick={()=>{openUrl('')}}  */}
           <Button variant='common' className='xl:h-[81px] font-normal px-[40px] sm:text-[12px] xl:text-[20px]'>Learn More</Button>
         </div>
