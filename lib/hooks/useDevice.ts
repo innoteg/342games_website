@@ -5,12 +5,13 @@ export function useDevice() {
 
   useEffect(() => {
     const checkDevice = () => {
-      const userAgent = navigator.userAgent || navigator.vendor
-      const mobileRegex = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i
-      setIsMobile(mobileRegex.test(userAgent))
+      const width = window.innerWidth
+      setIsMobile(width < 640)
     }
 
     checkDevice()
+    window.addEventListener('resize', checkDevice)
+    return () => window.removeEventListener('resize', checkDevice)
   }, [])
 
   return { isMobile }
