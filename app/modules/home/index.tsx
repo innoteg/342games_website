@@ -44,14 +44,14 @@ export default function HomePage() {
       <div className='bg-gradient-to-b from-[#18141a] to-[#000]'>
         <Banner></Banner>
         <div className='w-full flex flex-col justify-center items-center'>
-          <div className='px-[20px] sm:px-[100px] 2xl:px-0 w-full 2xl:w-[1300px] ' ref={(el:any) => sectionsRef.current['RunesCollection'] = el}>
+          <div className='px-[20px] sm:px-[100px] 2xl:px-0 w-full 2xl:w-[1300px] ' ref={(el: any) => sectionsRef.current['RunesCollection'] = el}>
             <RunesCollection
               isActive={isActive === 'RunesCollection'}
             ></RunesCollection>
           </div>
         </div>
         <div className='w-full flex flex-col justify-center items-center'>
-          <div className='px-[20px] sm:px-[100px] 2xl:px-0 w-full 2xl:w-[1300px] ' ref={(el:any) => sectionsRef.current['RunesMarket'] = el}>
+          <div className='px-[20px] sm:px-[100px] 2xl:px-0 w-full 2xl:w-[1300px] ' ref={(el: any) => sectionsRef.current['RunesMarket'] = el}>
             <RunesMarket
               isActive={isActive === 'RunesMarket'}
             ></RunesMarket>
@@ -59,7 +59,7 @@ export default function HomePage() {
         </div>
 
         <div className='w-full flex flex-col justify-center items-center'>
-          <div className='px-[20px] sm:px-[100px] 2xl:px-0 w-full 2xl:w-[1300px] ' ref={(el:any) => sectionsRef.current['Tokenmics'] = el}>
+          <div className='px-[20px] sm:px-[100px] 2xl:px-0 w-full 2xl:w-[1300px] ' ref={(el: any) => sectionsRef.current['Tokenmics'] = el}>
             <Tokenmics
               isActive={isActive === 'Tokenmics'}
             ></Tokenmics>
@@ -67,7 +67,7 @@ export default function HomePage() {
         </div>
 
         <div className='w-full flex flex-col justify-center items-center'>
-          <div className='px-[20px] sm:px-[100px] 2xl:px-0 w-full 2xl:w-[1300px] ' ref={(el:any) => sectionsRef.current['News'] = el}>
+          <div className='px-[20px] sm:px-[100px] 2xl:px-0 w-full 2xl:w-[1300px] ' ref={(el: any) => sectionsRef.current['News'] = el}>
             <News
               isActive={isActive === 'News'}
             ></News>
@@ -75,7 +75,7 @@ export default function HomePage() {
         </div>
 
         <div className='w-full flex flex-col justify-center items-center'>
-          <div className='w-full ' ref={(el:any) => sectionsRef.current['MemeCoins'] = el}>
+          <div className='w-full ' ref={(el: any) => sectionsRef.current['MemeCoins'] = el}>
             <MemeCoins
               isActive={isActive === 'MemeCoins'}
             ></MemeCoins>
@@ -83,6 +83,20 @@ export default function HomePage() {
         </div>
       </div>
       <div className='w-full flex flex-col justify-center items-center'>
+        <div className='flex sm:hidden flex-col items-center text-white mt-[125px]'>
+          <div className='text-[25px] leading-[30px] sm:text-[20px] sm:leading-[24px] '>
+            Who WeAre
+          </div>
+          <div className='text-[10px] leading-[12px] sm:text-[20px] sm:leading-[24px] mt-[18px] px-[60px] text-center'>
+            342 Games is redefining casual gaming through the power of Web3 technology. Our mission is to seamlessly  blend blockchain innovation with accessible, engaging
+            gameplay for players worldwide.
+          </div>
+          <div className='mt-[25px]'>
+            <div className='text-[10px] leading-[12px] sm:text-[20px] sm:leading-[24px] border border-white rounded-[5px] px-5 py-2'>
+            Discover Our Story
+            </div>
+          </div>
+        </div>
         <img src='/images/earth.png' alt='partners' />
       </div>
       <div className='w-full flex flex-col justify-center items-center bg-[#111111]'>

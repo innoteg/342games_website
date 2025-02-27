@@ -26,7 +26,6 @@ const MemeCoins: React.FC<MemeCoinsProps> = ({ isActive }) => {
         <div className='mt-[50px] z-10'>
           <Button onClick={()=>{openUrl('')}} variant='common3' className='text-[10px] px-5 block sm:hidden'>Learn More</Button>
           <Button onClick={()=>{openUrl('')}} variant='common' className='hidden sm:block xl:h-[81px] font-normal px-[40px] sm:text-[12px] xl:text-[20px]'>Learn More</Button>
-
         </div>
       </div>
     </>
