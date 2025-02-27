@@ -5,7 +5,7 @@ import RunesMarket from '../RunesMarket'
 import { Button } from '@/components/ui/button'
 import { openUrl } from '@/lib/utils'
 
-export default function RunesCollectionDesktop() {
+export default function RunesCollectionDesktop({ isActive }:any) {
   return (
     <>
      <div className='w-full flex gap-[23px] sm:mt-[200px]'>

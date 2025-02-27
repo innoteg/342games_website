@@ -12,7 +12,7 @@ interface RunesCollectionProps {
 const RunesCollection: React.FC<RunesCollectionProps> = ({ isActive }) => {
   const { isMobile } = useDevice()
 
-  return isMobile ? <RunesCollectionMobile /> : <RunesCollectionDesktop />
+  return isMobile ? <RunesCollectionMobile isActive={isActive} /> : <RunesCollectionDesktop isActive={isActive}/>
 }
 
 export default RunesCollection

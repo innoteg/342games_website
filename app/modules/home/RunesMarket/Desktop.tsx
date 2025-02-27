@@ -4,7 +4,7 @@ import RightSection from './RightSection'
 import RightSectionRank from './RightSectionRank'
 
 
-export default function RunesMarketDesktop() {
+export default function RunesMarketDesktop({ isActive }:any) {
   return (
     <>
      <div className='w-full flex gap-[23px] sm:mt-[200px]'>
