@@ -11,7 +11,7 @@ export default function LandingPage() {
     setimgOffsetX('180px')
   }, [])
   return (
-    <div className="flex h-screen items-center justify-center relative px-10">
+    <div className="hidden sm:flex h-screen items-center justify-center relative px-10">
       {/* 左侧视频部分 */}
       {/* h-[513px] w-[934px] */}
       <div className="flex-1 flex justify-center items-center rounded-[40px] w-[50%] ">

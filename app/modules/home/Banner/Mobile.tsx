@@ -51,7 +51,7 @@ export default function Banner() {
   }, [bannerList]);
 
   return (
-    <div className='w-full'>
+    <div className='block sm:hidden w-full'>
       
       <div className='mb-[32px] mt-[70px] text-white w-full flex items-center justify-center font-bold text-[50px] leading-[60px]'>Our Games</div>
       <div className='w-full px-[35px] flex flex-col gap-[20px]'>
