@@ -1,8 +1,13 @@
+import React from 'react';
 import { Button } from '@/components/ui/button'
 import { openUrl } from '@/lib/utils'
 import Image from 'next/image';
 
-export default function RunesMarketDesktop() {
+interface MemeCoinsProps {
+  isActive: boolean;
+}
+
+const MemeCoins: React.FC<MemeCoinsProps> = ({ isActive }) => {
   return (
     <>
       <div className='w-full flex flex-col justify-center items-center text-white'>
@@ -26,3 +31,5 @@ export default function RunesMarketDesktop() {
     </>
   )
 }
+
+export default MemeCoins;

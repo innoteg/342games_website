@@ -3,9 +3,16 @@
 import { useDevice } from '@/lib/hooks/useDevice'
 import RunesCollectionDesktop from './Desktop'
 import RunesCollectionMobile from './Mobile'
+import React from 'react'
 
-export default function RunesCollection() {
+interface RunesCollectionProps {
+  isActive: boolean;
+}
+
+const RunesCollection: React.FC<RunesCollectionProps> = ({ isActive }) => {
   const { isMobile } = useDevice()
 
   return isMobile ? <RunesCollectionMobile /> : <RunesCollectionDesktop />
 }
+
+export default RunesCollection
