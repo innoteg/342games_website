@@ -154,3 +154,7 @@ input[type='search']::-ms-clear {
     display: flex; /* 如果需要对齐 */
     align-items: stretch; /* 确保子元素的高度一致 */
 }
+
+.change-bg {
+  background: linear-gradient(0deg, #0940B9 0%, #FF00FE 100%) !important;
+}

@@ -9,7 +9,7 @@ import TokenStaking from './TokenStaking'
 export default function RunesMarketDesktop() {
   return (
     <>
-      <div className='w-full gap-[23px] sm:mt-[200px] hidden sm:flex'>
+      <div className='w-full gap-[23px] hidden sm:flex'>
 
         <div className='w-1/2 flex flex-col gap-[23px]'>
           <TokenUtility />

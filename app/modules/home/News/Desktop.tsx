@@ -4,7 +4,7 @@ import MadeEasy from './MadeEasy'
 export default function RunesMarketDesktop() {
   return (
     <>
-      <div className='w-full gap-[23px] sm:mt-[200px] hidden sm:flex'>
+      <div className='w-full gap-[23px] hidden sm:flex'>
         <div className='w-1/2 relative bg-cover bg-no-repeat rounded-[40px]' style={{
           backgroundImage: 'url(/images/Tokenmics.png)',
           backgroundSize: 'cover',

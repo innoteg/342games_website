@@ -9,6 +9,7 @@ interface RunesCollectionProps {
 }
 
 const RunesCollection: React.FC<RunesCollectionProps> = ({ isActive }) => {
+  console.log(isActive)
   return (
     <>
       <RunesCollectionMobile isActive={isActive} />

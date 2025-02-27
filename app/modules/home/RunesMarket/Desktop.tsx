@@ -7,7 +7,7 @@ import RightSectionRank from './RightSectionRank'
 export default function RunesMarketDesktop({ isActive }:any) {
   return (
     <>
-     <div className='w-full gap-[23px] sm:mt-[200px] hidden sm:flex'>
+     <div className='w-full gap-[23px] hidden sm:flex'>
         
         <div className='w-1/2 relative bg-cover bg-no-repeat rounded-[40px]' style={{ 
           backgroundImage: 'url(/images/market.png)', 
