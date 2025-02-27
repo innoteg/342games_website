@@ -8,7 +8,7 @@ export default function TokenUtility() {
   return (
     <div className=' gradient-border' >
       <div className='content-gb text-white'>
-        <div className="py-[0] pl-[10px] flex">
+        <div className="py-[0] sm:pl-[10px] flex">
           <div className='w-1/2 text-[20px] leading-[24px] sm:text-[40px] sm:leading-[48px]'>Token Utility</div>
           <div className='w-1/2 flex flex-col gap-[7px] sm:gap-[14px] text-[7px] leading-[9px] sm:text-[15px] sm:leading-[18px]'>
             <div>• Purchase Rune NFTs.</div>

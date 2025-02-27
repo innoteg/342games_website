@@ -26,9 +26,10 @@ export default function TokenDistribution() {
       {
         // name: 'Token Distribution',
         type: 'pie',
-        radius: ['20%', '80%'],
+        radius: ['15%', '80%'],
         avoidLabelOverlap: false,
         padAngle: 5,
+        animation: true,
         itemStyle: {
           borderRadius: 10,
           color: (params:any) => {
