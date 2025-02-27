@@ -11,10 +11,10 @@ export default function LandingPageMobile() {
     setimgOffsetX('180px')
   }, [])
   return (
-    <div className="px-[30px]">
+    <div className="bg-[#110f23] mt-[45px] px-[50px]">
 
-      <div className={`flex items-center shrink-0 w-full h-full`}>
-        <div className={`relative shrink-0 h-full`}>
+      <div className={`flex items-center shrink-0 w-full h-full `}>
+        <div className={`relative shrink-0 h-full w-[114px]`}>
           <div className={`font-bold select-none opacity-30 w-full`}>
             <div className='text-[23px] leading-[30px]'>
               <div className='bg-gradient-to-r from-[#3E3A39] to-[#231815] bg-clip-text text-transparent'>Play</div>
@@ -24,7 +24,7 @@ export default function LandingPageMobile() {
             </div>
           </div>
           <motion.div
-            className={`absolute z-10 right-[0px]`}
+            className={`absolute top-0 z-10 right-[0px]`}
             animate={{
               y: [0, -8, -16, -8, 0, 8, 16, 8, 0], // Adjusted keyframes for smoother motion
             }}
@@ -49,19 +49,19 @@ export default function LandingPageMobile() {
             <div className='italic leading-[15px]'>Web3 Gaming</div>
             <div className='italic leading-[15px]'>Services for Web2.</div>
           </div>
-          <div className='mt-[75px]'>
+          <div className='mt-[25px]'>
             <div >
               <Button onClick={() => { openUrl('') }}
-                variant='common' className='h-[24px] text-[10px] leading-[12px] px-[28px] py-[13px]'>Play Now</Button>
+                variant='common' className='h-[22px] text-[10px] leading-[12px] px-[9px] py-[5px]'>Play Now</Button>
               <Button onClick={() => { openUrl('') }}
-                variant='common' className='h-[24px] text-[10px] leading-[12px] font-normal ml-[10px] px-[28px] py-[13px]'>Learn More</Button>
+                variant='common' className='h-[22px] text-[10px] leading-[12px] font-normal ml-[10px] px-[9px] py-[5px]'>Learn More</Button>
             </div>
           </div>
         </div>
       </div>
 
 
-      <div className="w-full h-[300px]">
+      <div className="w-full h-[300px] mt-[10px]">
         <video
           className="w-full h-auto rounded-[40px] "
           autoPlay

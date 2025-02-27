@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.className}`}>
       <body className='bg-[#18141a]'>
         <ThemeProvider className="flex min-h-screen w-full flex-col">
-          <main className="mt-[90px]">
+          <main className="mt-[45px] md:mt-[90px]">
             {children}
           </main>
           <Analytics />

@@ -10,10 +10,10 @@ import { MEDIA_URLS } from '@/lib/constants/urls';
 export default function RunesCollectionDesktop() {
   return (
     <>
-      <div className='w-full sm:mt-[130px]'>
+      <div className=' hidden sm:block w-full sm:mt-[130px]'>
         <div className='mt-[60px] mb-[40px] text-white text-[50px] leading-[60px] font-bold text-center'>Partners</div>
         <div className='w-full sm:px-[160px]'>
-          <div className='flex justify-center items-center'>
+          <div className=' hidden sm:flex justify-center items-center'>
             <PartnersScroll />
           </div>
           <div className='bg-[#303234] w-full h-[1px] my-[50px]'></div>
@@ -21,11 +21,6 @@ export default function RunesCollectionDesktop() {
             <span>Home </span>
             <span>About Us </span>
             <span>Games </span>
-            {/* <span>My Rune Collection </span> */}
-            {/* <span>Trading Market </span> */}
-            {/* <span>Web3 </span> */}
-            {/* <span>Features </span> */}
-            {/* <span>Tokenomics </span> */}
             <span>Meme Coin </span>
             <span>Partners </span>
           </div>

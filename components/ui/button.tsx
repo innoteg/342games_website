@@ -22,7 +22,7 @@ const buttonVariants = cva(
           'after:absolute after:inset-[2px] after:rounded-[5px]',
           'after:bg-gradient-to-b after:from-[#C305C3] after:to-[#192F89]',
           'after:content-[\'\'] after:-z-[1]',
-          'text-white text-[20px] leading-4 px-3 py-1',
+          'text-white text-[10px] leading-[12px]  sm:text-[20px] sm:leading-4 px-3 py-1',
           'hover:before:opacity-75 hover:after:opacity-90 transition-all'
         ],
         common2: [
