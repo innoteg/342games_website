@@ -8,7 +8,7 @@ export default function RunesCollectionMobile({ isActive }:any) {
     <>
      <div className='w-full flex flex-col gap-[17px] mt-[100px]'>
         <div className='relative bg-cover bg-no-repeat rounded-[20px] w-full h-auto'>
-          <img src='/images/collection.png' alt='collection' width={615} height={345} className='w-full h-full object-cover' />
+          <img src='/images/collection.png' alt='collection' className='w-full h-full object-cover' />
           <div className="absolute bottom-0 left-0 w-full z-10 flex flex-col p-[32px] h-full justify-end">
             <div className='text-white 2xl:text-[50px] text-[30px] font-bold text-center'>
               Your Rune Collection

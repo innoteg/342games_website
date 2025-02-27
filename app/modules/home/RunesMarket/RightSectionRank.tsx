@@ -19,7 +19,7 @@ const generateMockData = (startId: number, count: number) => {
   }));
 };
 
-export default function RightSectionRank() {
+export default function RightSectionRank({isActive}:any) {
   const [items, setItems] = useState(initialMockData);
   const [loading, setLoading] = useState(false);
   const observer = useRef<IntersectionObserver | null>(null);
@@ -56,35 +56,35 @@ export default function RightSectionRank() {
   return (
     <div className='gradient-border'>
       <div className='content-gb text-white'>
-        <div className="py-[20px] px-[30px]">
-          <div className='max-h-[500px] overflow-y-auto scroll-target scrollbar-hidden'>
+        <div className="sm:py-[20px] sm:px-[30px]">
+          <div className='max-h-[300px] sm:max-h-[500px] overflow-y-auto scroll-target scrollbar-hidden'>
             {items.map((item) => (
               <div key={item.id} className="flex items-stretch justify-between mb-4 w-full">
-                <Image src="/images/icons/test1.png" alt="Item Icon" width={100} height={100} />
+                <Image src="/images/icons/test1.png" alt="Item Icon" className='w-[45px] h-[45px] sm:w-[100px] sm:h-[100px]' width={100} height={100} />
                 <div className="flex-1 ml-4 flex flex-col justify-between">
-                  <div className='text-[14px] leading-4 text-[#5B5B5B] flex gap-4'>
-                    <div className='w-[100px] shrink-0'> Transaction ID</div>
+                  <div className='text-[7px] leading-[8px] sm:text-[14px] sm:leading-4 text-[#5B5B5B] flex gap-4'>
+                    <div className='w-[50px] sm:w-[100px] shrink-0'> Transaction ID</div>
                     <div className='text-white'> {item.id}</div>
                   </div>
-                  <div className='text-[14px] leading-4 text-[#5B5B5B] flex gap-4'>
-                    <div className='w-[100px] shrink-0'> Seller Name</div>
+                  <div className='text-[7px] leading-[8px] sm:text-[14px] sm:leading-4 text-[#5B5B5B] flex gap-4'>
+                    <div className='w-[50px] sm:w-[100px] shrink-0'> Seller Name</div>
                     <div className='text-white'> {item.sellerName}</div>
                   </div>
-                  <div className='text-[14px] leading-4 text-[#5B5B5B] flex gap-4'>
-                    <div className='w-[100px]'> Seller ID</div>
+                  <div className='text-[7px] leading-[8px] sm:text-[14px] sm:leading-4 text-[#5B5B5B] flex gap-4'>
+                    <div className='w-[50px] sm:w-[100px]'> Seller ID</div>
                     <div className='text-white'> {item.sellerId}</div>
                   </div>
                   {/* <div>Price: ${item.price}</div> */}
-                  <div className='text-[14px] leading-4 text-[#5B5B5B] flex gap-4'>
-                    <div className='w-[100px] shrink-0'> Rarity: </div>
+                  <div className='text-[7px] leading-[8px] sm:text-[14px] sm:leading-4 text-[#5B5B5B] flex gap-4'>
+                    <div className='w-[50px] sm:w-[100px] shrink-0'> Rarity: </div>
                     <div className='text-white'> {'★'.repeat(item.rarity)}{'☆'.repeat(5 - item.rarity)}</div>
                   </div>
                 </div>
                 <div className=" ml-4 flex flex-col justify-between">
-                  <div className='text-[14px] leading-4 text-[#5B5B5B] flex flex-col justify-between h-full'>
+                  <div className='text-[7px] leading-[8px] sm:text-[14px] sm:leading-4 text-[#5B5B5B] flex flex-col justify-between h-full'>
                     <div className=''>Fbe 13 2:50:13</div>
                     <div className='flex flex-col'>
-                      <div className='text-white text-[33px] leading-[40px]'>$9686</div>
+                      <div className='text-white text-[17px] leading-[20px] sm:text-[33px] sm:leading-[40px]'>$9686</div>
                       <div className=''>($342Tokens)</div>
                     </div>
                   </div>
