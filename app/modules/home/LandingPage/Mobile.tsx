@@ -24,7 +24,7 @@ export default function LandingPageMobile() {
             </div>
           </div>
           <motion.div
-            className={`absolute top-0 z-10 right-[0px]`}
+            className={`absolute top-0 z-10 right-[10px]`}
             animate={{
               y: [0, -8, -16, -8, 0, 8, 16, 8, 0], // Adjusted keyframes for smoother motion
             }}
@@ -61,7 +61,7 @@ export default function LandingPageMobile() {
       </div>
 
 
-      <div className="w-full h-[300px] mt-[10px]">
+      <div className="w-full  mt-[20px]">
         <video
           className="w-full h-auto rounded-[40px] "
           autoPlay
