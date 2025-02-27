@@ -4,7 +4,6 @@ import React, { useEffect, useRef, useState } from 'react';
 // Import Swiper React components
 import Image from 'next/image';
 
-
 import './index.css';
 import { bannerData } from './data'
 import { EffectCoverflow, Navigation } from 'swiper/modules';
@@ -22,6 +21,35 @@ export default function Banner() {
   // useEffect(() => {
   //   getData();
   // });
+
+  useEffect(() => {
+    const options = {
+      root: null, // Use the viewport as the container
+      rootMargin: '0px',
+      threshold: 0.5 // Trigger when 50% of the element is visible
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const index = Number(entry.target.getAttribute('data-index'));
+          setActiveIndex(index);
+        }
+      });
+    }, options);
+
+    const elements = document.querySelectorAll('.banner-item');
+    elements.forEach((element) => {
+      observer.observe(element);
+    });
+
+    return () => {
+      elements.forEach((element) => {
+        observer.unobserve(element);
+      });
+    };
+  }, [bannerList]);
+
   return (
     <div className='w-full'>
       
@@ -30,7 +58,7 @@ export default function Banner() {
         {
           bannerList.map((item, index) => {
             return (
-              <div className='w-full h-full flex flex-col rounded-[20px] overflow-hidden' key={index}>
+              <div className='banner-item w-full h-full flex flex-col rounded-[20px] overflow-hidden' key={index} data-index={index}>
                 <Image
                   width={615}
                   height={345}
