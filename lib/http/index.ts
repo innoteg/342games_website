@@ -1,8 +1,8 @@
 
 import http from './httpIndex';
-import { BACKEND_URL } from '@/base/env';
+// import { BACKEND_URL } from '@/base/env';
 
-
+const BACKEND_URL = ''
 export function fetchPokemon(data?: any) {
   return http({
     method: 'post',
@@ -31,7 +31,7 @@ export function userEdit(data?: any) {
 }
 export function visitorList(data?: any) {
   return http({
-    baseURL: BACKEND_URL,
+    // baseURL: BACKEND_URL,
     method: 'get',
     url: '/visitor/list',
     // data,
