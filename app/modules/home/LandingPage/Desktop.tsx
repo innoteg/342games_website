@@ -50,8 +50,8 @@ export default function LandingPage() {
           />
         </motion.div>
         <div className={`relative w-full h-full flex items-center`}>
-          <div className={`absolute top-[50%] transform -translate-y-1/2 h-full  font-bold select-none opacity-30 w-full`}>
-            <div className='text-[93px] leading-[120px] pl-[140px]'>
+          <div className={` h-full  font-bold select-none opacity-30 w-full`}>
+            <div className='absolute top-[50%] transform -translate-y-1/2 text-[93px] leading-[120px] pl-[140px]'>
               <div className='mb-[25px] bg-gradient-to-r from-[#3E3A39] to-[#231815] bg-clip-text text-transparent'>Play</div>
               <div className='mb-[25pxpx] bg-gradient-to-r from-[#3E3A39] to-[#231815] bg-clip-text text-transparent'>Earn</div>
               <div className='mb-[25px] bg-gradient-to-r from-[#3E3A39] to-[#231815] bg-clip-text text-transparent'>Grow</div>
@@ -59,9 +59,9 @@ export default function LandingPage() {
             </div>
           </div>
 
-          <div className={` text-white pl-[140px] z-50`}>
+          <div className={`text-white pl-[140px] z-50`}>
             <div className='text-[110px]'>
-              <div className='text-[90px] font-bold'>Innovative</div>
+              <div className='text-[90px] ver font-bold'>Innovative</div>
               <div className='italic text-[40px] leading-[48px]'>Web3 Gaming</div>
               <div className='italic text-[40px] leading-[48px]'>Services for Web2.</div>
             </div>
