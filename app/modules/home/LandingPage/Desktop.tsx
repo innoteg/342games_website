@@ -11,7 +11,7 @@ export default function LandingPage() {
     setimgOffsetX('180px')
   }, [])
   return (
-    <div className="hidden sm:flex h-screen items-center justify-center relative px-10">
+    <div className="hidden sm:flex h-screen items-center justify-center relative">
       {/* 左侧视频部分 */}
       {/* h-[513px] w-[934px] */}
       <div className="flex-1 flex justify-center items-center rounded-[40px] w-[50%] ">
@@ -49,9 +49,9 @@ export default function LandingPage() {
             height={795}
           />
         </motion.div>
-        <div className={`relative w-full h-full`}>
+        <div className={`relative w-full h-full flex items-center`}>
           <div className={`absolute top-[60px] h-full  font-bold select-none opacity-30 w-full`}>
-            <div className='text-[110px]  leading-[120px] pl-[180px]'>
+            <div className='text-[110px] leading-[120px] pl-[180px]'>
               <div className='mb-[60px] bg-gradient-to-r from-[#3E3A39] to-[#231815] bg-clip-text text-transparent'>Play</div>
               <div className='mb-[60px] bg-gradient-to-r from-[#3E3A39] to-[#231815] bg-clip-text text-transparent'>Earn</div>
               <div className='mb-[60px] bg-gradient-to-r from-[#3E3A39] to-[#231815] bg-clip-text text-transparent'>Grow</div>
@@ -59,9 +59,9 @@ export default function LandingPage() {
             </div>
           </div>
 
-          <div className={`absolute top-[100px] text-white pl-[180px] z-50`}>
+          <div className={` text-white pl-[180px] z-50`}>
             <div className='text-[110px]'>
-              <div className='text-[100px] leading-[120px] font-bold'>Innovative</div>
+              <div className='text-[90px] font-bold'>Innovative</div>
               <div className='italic text-[40px] leading-[48px]'>Web3 Gaming</div>
               <div className='italic text-[40px] leading-[48px]'>Services for Web2.</div>
             </div>
