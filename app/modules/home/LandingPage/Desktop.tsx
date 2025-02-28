@@ -6,9 +6,9 @@ import { useEffect, useState } from 'react';
 import { openUrl } from '@/lib/utils';
 
 export default function LandingPage() {
-  const [imgOffsetX, setimgOffsetX] = useState('180px')
+  const [imgOffsetX, setimgOffsetX] = useState('140px')
   useEffect(() => {
-    setimgOffsetX('180px')
+    setimgOffsetX('140px')
   }, [])
   return (
     <div className="hidden sm:flex h-screen items-center justify-center relative">
@@ -31,7 +31,7 @@ export default function LandingPage() {
       {/* 右侧背景和图标 */}
       <div className={`flex items-center shrink-0 w-[50%] relative h-full`}>
         <motion.div
-          className={`-ml-[180px] absolute z-10`}
+          className={`-ml-[140px] absolute z-10`}
           animate={{
             y: [0, -8, -16, -8, 0, 8, 16, 8, 0], // Adjusted keyframes for smoother motion
           }}
@@ -45,21 +45,21 @@ export default function LandingPage() {
           <Image
             src="/images/deerIcon.png"
             alt="Deer Icon"
-            width={364}
-            height={795}
+            width={278}
+            height={600}
           />
         </motion.div>
         <div className={`relative w-full h-full flex items-center`}>
-          <div className={`absolute top-[60px] h-full  font-bold select-none opacity-30 w-full`}>
-            <div className='text-[110px] leading-[120px] pl-[180px]'>
-              <div className='mb-[60px] bg-gradient-to-r from-[#3E3A39] to-[#231815] bg-clip-text text-transparent'>Play</div>
-              <div className='mb-[60px] bg-gradient-to-r from-[#3E3A39] to-[#231815] bg-clip-text text-transparent'>Earn</div>
-              <div className='mb-[60px] bg-gradient-to-r from-[#3E3A39] to-[#231815] bg-clip-text text-transparent'>Grow</div>
+          <div className={`absolute top-[50%] transform -translate-y-1/2 h-full  font-bold select-none opacity-30 w-full`}>
+            <div className='text-[93px] leading-[120px] pl-[140px]'>
+              <div className='mb-[25px] bg-gradient-to-r from-[#3E3A39] to-[#231815] bg-clip-text text-transparent'>Play</div>
+              <div className='mb-[25pxpx] bg-gradient-to-r from-[#3E3A39] to-[#231815] bg-clip-text text-transparent'>Earn</div>
+              <div className='mb-[25px] bg-gradient-to-r from-[#3E3A39] to-[#231815] bg-clip-text text-transparent'>Grow</div>
               <div className='bg-gradient-to-r from-[#3E3A39] to-[#231815] bg-clip-text text-transparent'>Engage</div>
             </div>
           </div>
 
-          <div className={` text-white pl-[180px] z-50`}>
+          <div className={` text-white pl-[140px] z-50`}>
             <div className='text-[110px]'>
               <div className='text-[90px] font-bold'>Innovative</div>
               <div className='italic text-[40px] leading-[48px]'>Web3 Gaming</div>
@@ -68,9 +68,9 @@ export default function LandingPage() {
             <div className='mt-[75px]'>
               <div >
                 <Button onClick={() => {openUrl('')}}
-                 variant='common' className='h-[70px] text-[30px] leading-9 px-[28px] py-[13px]'>Play Now</Button>
+                 variant='common' className='h-[50px] text-[30px] leading-9 px-[28px] py-[13px]'>Play Now</Button>
                 <Button onClick={() => {openUrl('')}} 
-                variant='common' className='h-[70px] text-[30px] leading-9 font-normal ml-[63px] px-[28px] py-[13px]'>Learn More</Button>
+                variant='common' className='h-[50px] text-[30px] leading-9 font-normal ml-[63px] px-[28px] py-[13px]'>Learn More</Button>
               </div>
             </div>
           </div>
