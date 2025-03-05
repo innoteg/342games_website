@@ -29,7 +29,7 @@ const SelectTrigger = React.forwardRef<
     {children}
     <SelectPrimitive.Icon asChild>
       {/* <ChevronDown className="h-4 w-4 opacity-50" /> */}
-      <Image className='cursor-pointer' src="/images/icons/arrow-bottom.png" alt="Previous" width={10} height={6} />
+      <Image className='cursor-pointer' loading='lazy' src="/images/icons/arrow-bottom.png" alt="Previous" width={10} height={6} />
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
 ))

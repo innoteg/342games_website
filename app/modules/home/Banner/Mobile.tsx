@@ -64,7 +64,7 @@ export default function Banner() {
                   height={345}
                   src={item.image}
                   alt={`Banner ${item.id}`}
-                  priority
+                  loading='lazy'
                   className="object-fill w-full "
                   onLoadingComplete={() => setIsLoading(false)}
                 />

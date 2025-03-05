@@ -82,10 +82,10 @@ export default function RunesRankBar({isActive}:any) {
                 </SelectTrigger>
                 <SelectContent className='bg-[#18141a]'>
                   <SelectItem value="light" className=''>
-                    <Image className='cursor-pointer mr-2' src="/images/icons/filter.png" alt="Filter" width={13} height={15} />
+                    <Image loading='lazy' className='cursor-pointer mr-2' src="/images/icons/filter.png" alt="Filter" width={13} height={15} />
                   </SelectItem>
                   <SelectItem value="dark">
-                    <Image className='cursor-pointer mr-2' src="/images/icons/filter.png" alt="Filter" width={13} height={15} />
+                    <Image loading='lazy' className='cursor-pointer mr-2' src="/images/icons/filter.png" alt="Filter" width={13} height={15} />
                   </SelectItem>
                 </SelectContent>
               </Select>
@@ -114,7 +114,7 @@ export default function RunesRankBar({isActive}:any) {
                     }
                   </div>
                   <div className='xl:h-[70px] xl:w-[70px] h-[35px] w-[35px]'>
-                    <Image onClick={() => handleImageClick(item.id)} src={item.image} alt={item.name} width={70} height={70} />
+                    <Image loading='lazy' onClick={() => handleImageClick(item.id)} src={item.image} alt={item.name} width={70} height={70} />
                   </div>
                 </div>
               </div>
@@ -123,8 +123,8 @@ export default function RunesRankBar({isActive}:any) {
         </div>
       </div>
       <div className='w-full flex justify-between px-[20px] bottom-[70px] xl:bottom-[85px] absolute z-20'>
-        <Image className='cursor-pointer' onClick={handlePrev} src="/images/icons/prev.png" alt="Previous" width={13} height={15} />
-        <Image className='cursor-pointer' onClick={handleNext} src="/images/icons/next.png" alt="Next" width={13} height={15} />
+        <Image className='cursor-pointer' loading='lazy' onClick={handlePrev} src="/images/icons/prev.png" alt="Previous" width={13} height={15} />
+        <Image className='cursor-pointer' loading='lazy' onClick={handleNext} src="/images/icons/next.png" alt="Next" width={13} height={15} />
       </div>
     </div>
   );

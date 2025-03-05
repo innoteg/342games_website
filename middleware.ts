@@ -3,7 +3,7 @@ import type { NextRequest } from 'next/server'
 import { auth } from '@/lib/auth';
 
 // 不需要验证的路由
-const publicRoutes = ['/login', '/error', '/api/auth', '']
+const publicRoutes = ['/login', '/error', '/api/auth', '', '404']
 
 // 路由权限配置
 const routePermissions = {

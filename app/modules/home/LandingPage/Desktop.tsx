@@ -47,6 +47,7 @@ export default function LandingPage() {
             alt="Deer Icon"
             width={278}
             height={600}
+            loading='lazy'
           />
         </motion.div>
         <div className={`relative w-full h-full flex items-center`}>

@@ -93,6 +93,7 @@ export default function DesktopHeader() {
                 height={27} 
                 src={IMAGE_URLS.HeadIcon} 
                 alt='headerIcon'
+                loading='lazy'
                 className="cursor-pointer hover:opacity-80 transition-opacity"
               />
             </Link>
