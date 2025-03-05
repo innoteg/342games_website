@@ -62,16 +62,16 @@ export default function LandingPage() {
 
           <div className={`text-white pl-[140px] z-50`}>
             <div className='text-[110px]'>
-              <div className='text-[90px] ver font-bold'>Innovative</div>
-              <div className='italic text-[40px] leading-[48px]'>Web3 Gaming</div>
-              <div className='italic text-[40px] leading-[48px]'>Services for Web2.</div>
+              <div className='text-[60px] xl:text-[90px] font-bold'>Innovative</div>
+              <div className='italic text-[20px] xl:text-[40px] leading-[48px]'>Web3 Gaming</div>
+              <div className='italic text-[20px] xl:text-[40px] leading-[48px]'>Services for Web2.</div>
             </div>
             <div className='mt-[75px]'>
               <div >
                 <Button onClick={() => {openUrl('')}}
-                 variant='common' className='h-[50px] text-[30px] leading-9 px-[28px] py-[13px]'>Play Now</Button>
+                 variant='common' className='h-[50px]  text-[20px] xl:text-[30px] leading-9 xl:ml-[63px] px-[10px] py-[13px]'>Play Now</Button>
                 <Button onClick={() => {openUrl('')}} 
-                variant='common' className='h-[50px] text-[30px] leading-9 font-normal ml-[63px] px-[28px] py-[13px]'>Learn More</Button>
+                variant='common' className='h-[50px]  text-[20px] xl:text-[30px] leading-9 font-normal ml-5 xl:ml-[63px] px-[10px] xl:px-[28px] py-[13px]'>Learn More</Button>
               </div>
             </div>
           </div>
