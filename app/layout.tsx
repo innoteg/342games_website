@@ -6,9 +6,11 @@ import { inter } from '@/lib/font'
 import { Toaster } from '@/components/ui/toaster';
 // import { Toaster as HotToaster } from 'react-hot-toast'
 export const metadata = {
-  title: 'Next.js App Router + NextAuth + Tailwind CSS',
-  description:
-    'A user admin dashboard configured with Next.js, Postgres, NextAuth, Tailwind CSS, TypeScript, and Prettier.'
+  title: '342GAMES',
+  description: '342GAMES',
+  icons: {
+    icon: '/facicon.ico',
+  },
 };
 
 export default function RootLayout({
