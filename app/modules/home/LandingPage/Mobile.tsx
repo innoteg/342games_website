@@ -12,7 +12,7 @@ export default function LandingPageMobile() {
     setimgOffsetX('180px')
   }, [])
   return (
-    <div className="bg-[#110f23] mt-[45px] px-[50px] block sm:hidden">
+    <div className=" mt-[45px] px-[50px] block sm:hidden">
 
       <div className={`flex items-center shrink-0 w-full h-full `}>
         <div className={`relative shrink-0 h-full w-[114px]`}>
