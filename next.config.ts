@@ -15,7 +15,7 @@ export default {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'avatars.githubusercontent.com',
+        hostname: 'hlw-xxl.oss-accelerate.aliyuncs.com',
         search: ''
       },
       {

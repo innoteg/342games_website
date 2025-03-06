@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { openUrl } from '@/lib/utils';
+import { IMAGE_URLS } from '@/lib/constants/urls';
 
 export default function LandingPageMobile() {
   const [imgOffsetX, setimgOffsetX] = useState('180px')
@@ -67,7 +68,8 @@ export default function LandingPageMobile() {
           autoPlay
           loop
           muted
-          poster="/images/homeVideo.png"
+          poster={IMAGE_URLS.v1.homeVideo}
+
         >
           <source src="/videos/bg_video.mp4" type="video/mp4" className='' />
           Your browser does not support the video tag.

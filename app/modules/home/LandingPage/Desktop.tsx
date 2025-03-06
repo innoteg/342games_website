@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { openUrl } from '@/lib/utils';
+import { IMAGE_URLS } from '@/lib/constants/urls';
 
 export default function LandingPage() {
   const [imgOffsetX, setimgOffsetX] = useState('140px')
@@ -21,7 +22,7 @@ export default function LandingPage() {
           autoPlay
           loop
           muted
-          poster="/images/homeVideo.png"
+          poster={IMAGE_URLS.v1.homeVideo}
         >
           <source src="/videos/bg_video.mp4" type="video/mp4" className='' />
           Your browser does not support the video tag.
@@ -51,7 +52,7 @@ export default function LandingPage() {
           />
         </motion.div>
         <div className={`relative w-full h-full flex items-center`}>
-          <div className={` h-full  font-bold select-none opacity-30 w-full`}>
+          <div className={`absolute h-full  font-bold select-none opacity-30 w-full`}>
             <div className='absolute top-[50%] transform -translate-y-1/2 text-[93px] leading-[120px] pl-[140px]'>
               <div className='mb-[25px] bg-gradient-to-r from-[#3E3A39] to-[#231815] bg-clip-text text-transparent'>Play</div>
               <div className='mb-[25pxpx] bg-gradient-to-r from-[#3E3A39] to-[#231815] bg-clip-text text-transparent'>Earn</div>
@@ -60,18 +61,18 @@ export default function LandingPage() {
             </div>
           </div>
 
-          <div className={`text-white pl-[140px] z-50`}>
+          <div className={`text-white pl-[140px] lg:pl-[140px] xl:pl-[140px] z-50`}>
             <div className='text-[110px]'>
               <div className='text-[60px] xl:text-[90px] font-bold'>Innovative</div>
               <div className='italic text-[20px] xl:text-[40px] leading-[48px]'>Web3 Gaming</div>
               <div className='italic text-[20px] xl:text-[40px] leading-[48px]'>Services for Web2.</div>
             </div>
             <div className='mt-[75px]'>
-              <div >
+              <div className='flex justify-start items-center'>
                 <Button onClick={() => {openUrl('')}}
-                 variant='common' className='h-[50px]  text-[20px] xl:text-[30px] leading-9 xl:ml-[63px] px-[10px] py-[13px]'>Play Now</Button>
+                 variant='common' className='h-[50px]  text-[20px] xl:text-[28px] leading-9  px-[28px] py-[13px]'>Play Now</Button>
                 <Button onClick={() => {openUrl('')}} 
-                variant='common' className='h-[50px]  text-[20px] xl:text-[30px] leading-9 font-normal ml-5 xl:ml-[63px] px-[10px] xl:px-[28px] py-[13px]'>Learn More</Button>
+                variant='common' className='h-[50px]  text-[20px] xl:text-[28px] leading-9 font-normal ml-5  px-[28px] py-[13px]'>Learn More</Button>
               </div>
             </div>
           </div>
