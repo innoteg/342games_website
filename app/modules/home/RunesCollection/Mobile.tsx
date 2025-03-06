@@ -15,8 +15,8 @@ export default function RunesCollectionMobile({ isActive }:any) {
               Your Rune Collection
             </div>
             <div className='flex gap-[55px] items-center justify-center mt-[32px]'>
-              <Button onClick={()=>{openUrl('')}} variant='common' className='xl:h-[69px] font-normal md:px-5 sm:text-[12px] xl:text-[20px]'>Trade This Rune</Button>
-              <Button onClick={()=>{openUrl('')}} variant='common' className='xl:h-[69px] font-normal md:px-5 sm:text-[12px] xl:text-[20px]'>Mint Rune NFT</Button>
+              <Button onClick={()=>{openUrl('')}} variant='common' className='font-normal md:px-5 sm:text-[12px] xl:text-[20px]'>Trade This Rune</Button>
+              <Button onClick={()=>{openUrl('')}} variant='common' className='font-normal md:px-5 sm:text-[12px] xl:text-[20px]'>Mint Rune NFT</Button>
             </div>
             {/* Content can be placed here */}
           </div>

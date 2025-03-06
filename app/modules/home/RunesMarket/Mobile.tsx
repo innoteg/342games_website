@@ -15,7 +15,7 @@ export default function RunesMarketDesktop({ isActive }:any) {
               Rune Trading Market
             </div>
             <div className='flex gap-[55px] items-center justify-center mt-[32px]'>
-              <Button onClick={()=>{openUrl('')}} variant='common' className='hidden sm:block xl:h-[69px] font-normal md:px-5 sm:text-[12px] xl:text-[20px]'>StartTrading</Button>
+              <Button onClick={()=>{openUrl('')}} variant='common' className='hidden sm:block font-normal md:px-5 sm:text-[12px] xl:text-[20px]'>StartTrading</Button>
               <Button onClick={()=>{openUrl('')}} variant='common3' className='block sm:hidden text-[10px] leading-[12px] px-4'>StartTrading</Button>
 
             </div>

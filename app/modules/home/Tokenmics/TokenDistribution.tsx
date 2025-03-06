@@ -60,10 +60,10 @@ export default function TokenDistribution({isActive}:any) {
   return (
     <div className={`gradient-border ${isActive ? 'g-none' : ''}`} >
       <div className='content-gb text-white '>
-        <div className="py-[0] sm:pl-[20px] flex">
+        <div className="flex">
           <div className='w-full text-[20px] leading-[24px] sm:text-[40px] sm:leading-[48px]'>Token Distribution</div>
         </div>
-        <div className='flex justify-between items-center sm:pl-[20px]'>
+        <div className='flex justify-between items-center'>
           <div className='w-1/2'>
             {/* 渲染颜色条和名称 */}
             {DataList.map((item, index) => (

@@ -9,7 +9,7 @@ export default function RunesMarketDesktop({isActive}:any ) {
           <img src='/images/Tokenmics.png' alt='collection' className='w-full h-full object-cover' />
           <div className="w-full z-10 flex flex-col p-[32px] absolute bottom-0 h-full justify-end">
             <div className='flex items-center justify-center'>
-              <Button onClick={() => { openUrl('') }} variant='common' className='xl:h-[69px] font-normal md:px-5 sm:text-[12px] xl:text-[20px]'>Learn How It Works</Button>
+              <Button onClick={() => { openUrl('') }} variant='common' className='font-normal md:px-5 sm:text-[12px] xl:text-[20px]'>Learn How It Works</Button>
             </div>
           </div>
         </div>
