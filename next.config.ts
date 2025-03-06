@@ -12,17 +12,23 @@ const _getPublicEnv = (prefix:any) => {
 };
 export default {
   images: {
+    domains: ['hlw-xxl.oss-accelerate.aliyuncs.com'],
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'hlw-xxl.oss-accelerate.aliyuncs.com',
+        hostname: 'avatars.githubusercontent.com',
         search: ''
       },
       {
         protocol: 'https',
         hostname: '*.public.blob.vercel-storage.com',
         search: ''
-      }
+      },
+      {
+        loader: 'imgix',
+        protocol: 'https',
+        hostname: 'hlw-xxl.oss-accelerate.aliyuncs.com',
+      },
     ]
   },
   publicRuntimeConfig: {
