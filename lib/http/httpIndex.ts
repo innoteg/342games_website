@@ -10,6 +10,7 @@ import { InternalAxiosRequestConfig, AxiosRequestConfig, AxiosResponse, AxiosErr
 const whiteRetry = new Set(['ECONNABORTED', undefined, 0]);
 import { defaultConfig } from '@/lib/env';
 import toast from 'react-hot-toast'
+import { useUserStore } from '@/lib/stores/user'; // 导入 Zustand store
 
 const BACKEND_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
@@ -45,10 +46,10 @@ axiosRetry(serviceAxios, {
 // 请求拦截器
 serviceAxios.interceptors.request.use(
   (config: any) => {
-    // const {url} = config;
-    // config.headers.token = getToken.getToken();
-
-    // console.log('gbStore', persistedReducer)
+    const token = useUserStore.getState().token; // 获取 token
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`; // 将 token 添加到请求头
+    }
     return config;
   },
   (err: AxiosError) => {

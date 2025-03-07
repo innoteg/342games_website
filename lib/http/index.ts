@@ -13,8 +13,7 @@ export function fetchPokemon(data?: any) {
 
 export function getUserInfo(data?: any) {
   return http({
-    method: 'post',
+    method: 'get',
     url: 'app/user/getUserInfo',
-    data
   });
 }

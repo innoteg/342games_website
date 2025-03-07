@@ -7,10 +7,10 @@ import Image from 'next/image';
 import toast from "react-hot-toast";
 import { useUserStore } from '@/lib/stores/user'; // Import the Zustand store
 import { useRouter } from 'next/navigation'; // Import useRouter
-
 import { Input } from "@/components/ui/input"
 import Label from "@/components/ui/label"
-
+import { getUserInfo } from '@/lib/http';
+// import { useRequest } from 'ahooks'
 export default function LoginPage() {
   const [countdown, setCountdown] = React.useState<number | null>(null);
   const [email, setEmail] = useState<string>('');
@@ -43,6 +43,8 @@ export default function LoginPage() {
       setToken(data); // Use Zustand to set the token
       toast.success('Login successful!');
       router.replace('/'); // Redirect to the homepage
+      const res = await getUserInfo();
+      console.log('res', res);
     } else {
       toast.error('Failed to login.');
     }
