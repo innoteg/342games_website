@@ -17,3 +17,18 @@ export function getUserInfo(data?: any) {
     url: 'app/user/getUserInfo',
   });
 }
+// 获取符石列表
+export function getRunestoneList(data?: any) {
+  return http({
+    method: 'get',
+    url: 'app/user/runestone/getList',
+  });
+}
+// 获取符石配置信息
+
+export function getRunestoneDetail(data?: any) {
+  return http({
+    method: 'get',
+    url: 'app/user/runestone/getDetail',
+  });
+}
