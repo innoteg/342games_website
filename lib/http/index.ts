@@ -29,6 +29,6 @@ export function getRunestoneList(data?: any) {
 export function getRunestoneDetail(data?: any) {
   return http({
     method: 'get',
-    url: 'app/user/runestone/getDetail',
+    url: 'app/user/runestone/getConfig',
   });
 }

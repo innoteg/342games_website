@@ -9,7 +9,7 @@ import { useUserStore } from '@/lib/stores/user'; // Import the Zustand store
 import { useRouter } from 'next/navigation'; // Import useRouter
 import { Input } from "@/components/ui/input"
 import Label from "@/components/ui/label"
-import { getUserInfo } from '@/lib/http';
+import { getRunestoneDetail, getRunestoneList, getUserInfo } from '@/lib/http';
 // import { useRequest } from 'ahooks'
 export default function LoginPage() {
   const [countdown, setCountdown] = React.useState<number | null>(null);
@@ -17,7 +17,22 @@ export default function LoginPage() {
   const [emailCode, setEmailCode] = useState<string>('');
   const setToken = useUserStore((state) => state.setToken); // Get the setToken function from the store
   const router = useRouter(); // Initialize the router
+  const setUserInfo = useUserStore((state) => state.setUserInfo);
+  const setRunestoneList = useUserStore((state) => state.setRunestoneList);
+  const setRunestoneDetail = useUserStore((state) => state.setRunestoneDetail);
 
+  const startCountdown = () => {
+    setCountdown(60);
+    const interval = setInterval(() => {
+      setCountdown((prev) => {
+        if (prev === 1) {
+          clearInterval(interval);
+          return null;
+        }
+        return prev! - 1;
+      });
+    }, 1000);
+  }
   const sendEmailCode = async () => {
     // Simple email validation regex
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -43,25 +58,20 @@ export default function LoginPage() {
       setToken(data); // Use Zustand to set the token
       toast.success('Login successful!');
       router.replace('/'); // Redirect to the homepage
-      const res = await getUserInfo();
-      console.log('res', res);
+      const res = await Promise.all([getUserInfo(), getRunestoneList(), getRunestoneDetail()]);
+      if (res[0].code === 200) {    
+        setUserInfo(res[0].data); 
+      }
+      if (res[1].code === 200) {
+        setRunestoneList(res[1].data);
+      }
+      if (res[2].code === 200) {
+        setRunestoneDetail(res[2].data);
     } else {
       toast.error('Failed to login.');
     }
   }
 
-  const startCountdown = () => {
-    setCountdown(60);
-    const interval = setInterval(() => {
-      setCountdown((prev) => {
-        if (prev === 1) {
-          clearInterval(interval);
-          return null;
-        }
-        return prev! - 1;
-      });
-    }, 1000);
-  }
 
   return (
     <>
