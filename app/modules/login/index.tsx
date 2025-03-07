@@ -50,9 +50,9 @@ export default function LoginPage() {
                 className='pl-5 rounded-full border-white bg-transparent'
               />
               <div className='absolute right-2 top-0 h-full flex items-center justify-center'>
-                <AsyncButton variant={'gg'} className='h-[30px] flex items-center justify-center gap-4 hover:opacity-80 hover:bg-transparent bg-transparent border-white border rounded-full'>
+                <AsyncButton variant={'gg'} className='px-3 h-[30px] flex items-center justify-center gap-1 hover:opacity-80 hover:bg-transparent bg-transparent border-white border rounded-full'>
                   <span className='font-bold text-xs'>Send Code</span>
-                  <Image className='w-[22px]' src={IMAGE_URLS.login.loginArrow} width={21} height={21} alt=''></Image>
+                  <Image className='w-[14px]' src={IMAGE_URLS.login.loginArrow} width={14} height={8} alt=''></Image>
                 </AsyncButton>
               </div>
             </div>
