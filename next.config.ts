@@ -12,7 +12,7 @@ const _getPublicEnv = (prefix:any) => {
 };
 export default {
   images: {
-    domains: ['hlw-xxl.oss-accelerate.aliyuncs.com'],
+    domains: ['ssqmwdnwb.sabkt.gdipper.com'],
     remotePatterns: [
       {
         protocol: 'https',
