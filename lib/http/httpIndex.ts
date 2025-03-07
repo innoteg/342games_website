@@ -11,12 +11,12 @@ const whiteRetry = new Set(['ECONNABORTED', undefined, 0]);
 import { defaultConfig } from '@/lib/env';
 import toast from 'react-hot-toast'
 
+const BACKEND_URL = process.env.NEXT_PUBLIC_BASE_URL;
 
 
 // 创建 axios 请求实例
-console.log('NEXT_PUBLIC_BASE', defaultConfig.NEXT_PUBLIC_BASE)
 const serviceAxios = axios.create({
-  baseURL: defaultConfig.NEXT_PUBLIC_BASE,
+  baseURL: BACKEND_URL,
   timeout: 90 * 1000, // 请求超时设置
   withCredentials: false, // 跨域请求是否需要携带 cookie
   headers: {

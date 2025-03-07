@@ -6,6 +6,7 @@ import { AsyncButton } from '@/components/AsyncButton'
 import Image from 'next/image';
 import toast from "react-hot-toast";
 import { useUserStore } from '@/lib/stores/user'; // Import the Zustand store
+import { useRouter } from 'next/navigation'; // Import useRouter
 
 import { Input } from "@/components/ui/input"
 import Label from "@/components/ui/label"
@@ -15,6 +16,7 @@ export default function LoginPage() {
   const [email, setEmail] = useState<string>('');
   const [emailCode, setEmailCode] = useState<string>('');
   const setToken = useUserStore((state) => state.setToken); // Get the setToken function from the store
+  const router = useRouter(); // Initialize the router
 
   const sendEmailCode = async () => {
     // Simple email validation regex
@@ -38,8 +40,9 @@ export default function LoginPage() {
   const emailLogin = async () => {
     const { code, data } = await fetchData('app/user/emailLogin' + '?email=' + email + '&code=' + emailCode, {},  { method: 'GET' })
     if (code === 200) {
-      setToken(data.token); // Use Zustand to set the token
+      setToken(data); // Use Zustand to set the token
       toast.success('Login successful!');
+      router.push('/'); // Redirect to the homepage
     } else {
       toast.error('Failed to login.');
     }
