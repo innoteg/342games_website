@@ -42,7 +42,7 @@ export default function LoginPage() {
     if (code === 200) {
       setToken(data); // Use Zustand to set the token
       toast.success('Login successful!');
-      router.push('/'); // Redirect to the homepage
+      router.replace('/'); // Redirect to the homepage
     } else {
       toast.error('Failed to login.');
     }
@@ -104,11 +104,11 @@ export default function LoginPage() {
                 <div className='absolute right-2 top-0 h-full flex items-center justify-center'>
                   <AsyncButton
                     variant={'gg'}
-                    className='px-3 h-[30px] flex items-center justify-center gap-1 hover:opacity-80 hover:bg-transparent bg-transparent border-white border rounded-full'
+                    className='px-3 h-[20px] flex items-center justify-center gap-1 hover:opacity-80 hover:bg-transparent bg-transparent border-white border rounded-full'
                     onClick={sendEmailCode}
                     disabled={countdown !== null}
                   >
-                    <span className='font-bold text-xs'>{countdown !== null ? `Resend Code (${countdown})` : 'Send Code'}</span>
+                    <span className='font-bold text-[8px]'>{countdown !== null ? `Resend Code (${countdown})` : 'Send Code'}</span>
                     <Image className='w-[14px]' src={IMAGE_URLS.login.loginArrow} width={14} height={8} alt=''></Image>
                   </AsyncButton>
                 </div>
