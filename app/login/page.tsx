@@ -9,8 +9,8 @@ export default function LoginPage() {
       <div className="w-screen h-full" style={{
         background: 'linear-gradient(0deg, #0940B6 0%, #FF00FB 100%)'
       }}>
-        <div className='flex justify-center items-center'>
-          <div className='w-full xl:w-[1250px] sm:px-[100px] xl:px-0'>
+        <div className='flex justify-center items-center h-full z-10'>
+          <div className='w-full sm:w-[394px] h-full flex items-center justify-center'>
             <LoginModule />
           </div>
         </div>
