@@ -25,9 +25,9 @@ export default {
         search: ''
       },
       {
-        loader: 'imgix',
-        protocol: 'https',
-        hostname: 'hlw-xxl.oss-accelerate.aliyuncs.com',
+        // loader: 'imgix',
+        protocol: 'http',
+        hostname: 'ssqmwdnwb.sabkt.gdipper.com',
       },
     ]
   },

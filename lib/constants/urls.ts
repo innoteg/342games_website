@@ -40,6 +40,13 @@ export const IMAGE_URLS = {
     "x": "https://hlw-xxl.oss-accelerate.aliyuncs.com/img/upload/67c947580cf20fba4a1fa942.png",
     "market": "https://hlw-xxl.oss-accelerate.aliyuncs.com/img/upload/67c947590cf20fba4a1fa943.png",
     "memecoin": "https://hlw-xxl.oss-accelerate.aliyuncs.com/img/upload/67c9475c0cf20fba4a1fa944.png"
+  },
+  login: {
+    loginApple: 'http://ssqmwdnwb.sabkt.gdipper.com/342website/loginApple.png',
+    loginArrow: 'http://ssqmwdnwb.sabkt.gdipper.com/342website/loginArrow.png',
+    loginGoogle: 'http://ssqmwdnwb.sabkt.gdipper.com/342website/loginGoogle.png',
+    loginOr: 'http://ssqmwdnwb.sabkt.gdipper.com/342website/loginOr.png',
+
   }
 };
 

@@ -70,9 +70,9 @@ export default function LandingPage() {
             <div className='mt-[75px]'>
               <div className='flex justify-start items-center'>
                 <Button onClick={() => {openUrl('')}}
-                 variant='common' className='h-[50px]  text-[20px] xl:text-[28px] leading-9  px-[28px] py-[13px]'>Play Now</Button>
+                 variant='common' className='  text-[20px] xl:text-[28px] leading-9  xl:px-[28px] py-[13px] xl:py-[25px]'>Play Now</Button>
                 <Button onClick={() => {openUrl('')}} 
-                variant='common' className='h-[50px]  text-[20px] xl:text-[28px] leading-9 font-normal ml-5  px-[28px] py-[13px]'>Learn More</Button>
+                variant='common' className='  text-[20px] xl:text-[28px] leading-9 font-normal ml-5  xl:px-[28px] py-[13px] xl:py-[25px]'>Learn More</Button>
               </div>
             </div>
           </div>
