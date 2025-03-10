@@ -10,7 +10,7 @@ import { useRouter } from 'next/navigation'; // Import useRouter
 import { Input } from "@/components/ui/input"
 import Label from "@/components/ui/label"
 import { getRunestoneDetail, getRunestoneList, getUserInfo } from '@/lib/http';
-// import { useRequest } from 'ahooks'
+
 export default function LoginPage() {
   const [countdown, setCountdown] = React.useState<number | null>(null);
   const [email, setEmail] = useState<string>('');
@@ -36,7 +36,7 @@ export default function LoginPage() {
   const sendEmailCode = async () => {
     // Simple email validation regex
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    
+
     // Check if the email is valid
     if (!emailRegex.test(email)) {
       toast.error('Please enter a valid email address.');
@@ -44,7 +44,7 @@ export default function LoginPage() {
     }
 
     const { code } = await fetchData('app/user/sendEmailCode' + '?email=' + email, {}, { method: 'GET' });
-    
+
     if (code === 200) {
       startCountdown();
       toast.success('Verification code sent!');
@@ -53,26 +53,28 @@ export default function LoginPage() {
     }
   }
   const emailLogin = async () => {
-    const { code, data } = await fetchData('app/user/emailLogin' + '?email=' + email + '&code=' + emailCode, {},  { method: 'GET' })
+    const { code, data } = await fetchData('app/user/emailLogin' + '?email=' + email + '&code=' + emailCode, {}, { method: 'GET' })
     if (code === 200) {
       setToken(data); // Use Zustand to set the token
       toast.success('Login successful!');
       router.replace('/'); // Redirect to the homepage
       const res = await Promise.all([getUserInfo(), getRunestoneList(), getRunestoneDetail()]);
-      if (res[0].code === 200) {    
-        setUserInfo(res[0].data); 
+      if (res[0].code === 200) {
+        setUserInfo(res[0].data);
       }
       if (res[1].code === 200) {
         setRunestoneList(res[1].data);
       }
       if (res[2].code === 200) {
         setRunestoneDetail(res[2].data);
-    } else {
-      toast.error('Failed to login.');
+      } else {
+        toast.error('Failed to login.');
+      }
     }
+
+
+    
   }
-
-
   return (
     <>
       <div className="w-full flex items-center justify-center h-full z-10 text-white">
@@ -128,7 +130,7 @@ export default function LoginPage() {
             </div>
             <div className="grid gap-2 w-full">
               <div className="flex items-center text-white">
-                <Label  htmlFor="password"><span className='text-white'>Code *</span></Label>
+                <Label htmlFor="password"><span className='text-white'>Code *</span></Label>
               </div>
               <Input
                 placeholder='Enter your email code'

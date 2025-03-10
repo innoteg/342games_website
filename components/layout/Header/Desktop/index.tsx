@@ -14,6 +14,7 @@ import {
 
 import React from 'react';
 import { cn } from '@/lib/utils';
+import { useRouter } from 'next/navigation';
 const commonItemClassName = 'bg-transparent text-white focus:!bg-transparent hover:!bg-transparent focs:!bg-transparent hover:!text-white hover:!opacity-50'
 const listRender = [
   {
@@ -79,7 +80,18 @@ const listRender = [
   //   href: '/contactUs',
   // },
 ]
+import PlayNowDialog from './PlayNowDialog'
 export default function DesktopHeader() {
+  const router = useRouter();
+
+  const handleLoginClick = () => {
+    if (router) {
+      router.push('/login');
+    } else {
+      console.error("Router is not available");
+    }
+  };
+
   return (
     <>
       {/* 占位div，防止内容被fixed header遮挡 */}
@@ -137,8 +149,10 @@ export default function DesktopHeader() {
             </NavigationMenu>
           </div>
         </div>
+
         <div className="flex items-center space-x-4">
-          <Button variant="common">Play Now</Button>
+          <Button onClick={handleLoginClick} variant="common2">Login</Button>
+          <PlayNowDialog></PlayNowDialog>
         </div>
       </header>
     </>
