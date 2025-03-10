@@ -12,8 +12,10 @@ import {
   navigationMenuTriggerStyle
 } from "@/components/ui/navigation-menu"
 
-import React from 'react';
+import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
+import PlayNowDialog from '../PlayNowDialog'
+
 const commonItemClassName = 'bg-transparent text-white focus:!bg-transparent hover:!bg-transparent focs:!bg-transparent hover:!text-white hover:!opacity-50'
 const listRender = [
   {
@@ -52,6 +54,8 @@ const listRender = [
   },
 ]
 export default function DesktopHeader() {
+  const [open, setOpen] = useState(false)
+
   return (
     <>
       {/* 占位div，防止内容被fixed header遮挡 */}
@@ -109,9 +113,12 @@ export default function DesktopHeader() {
           </div> */}
         </div>
         <div className="flex items-center space-x-4">
-          <Button variant="common" className='!h-5'>Play Now</Button>
+          <Button variant="common" className='!h-5' onClick={() => {
+            setOpen(true);
+          }}>Play Now</Button>
         </div>
       </header>
+      <PlayNowDialog open={open} setOpen={setOpen}/>
     </>
   )
 }

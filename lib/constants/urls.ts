@@ -1,4 +1,9 @@
 export const IMAGE_URLS = {
+  header: {
+    x: 'http://ssqmwdnwb.sabkt.gdipper.com/342website/head/x.png',
+    telegram: 'http://ssqmwdnwb.sabkt.gdipper.com/342website/head/telegram.png',
+    close: 'http://ssqmwdnwb.sabkt.gdipper.com/342website/head/close.png'
+  },
   HeadIcon: '/images/home/headIcon.png',
   BANNER: '/images/banner.jpg',
   AVATARS: {

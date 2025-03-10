@@ -67,41 +67,41 @@ export default function HomePage() {
       </div>
       <div className='bg-gradient-to-b from-[#18141a] to-[#000]'>
         <Banner />
-        <div className='w-full flex flex-col justify-center items-center'>
+        <div className='w-screen flex flex-col justify-center items-center'>
           <div className={`w-full flex flex-col justify-center items-center py-[20px] ${isActive === 'RunesCollection' && 'change-bg'}`} ref={(el:any) => sectionsRef.current['RunesCollection'] = el}>
             <div className='w-full px-[20px] sm:px-[100px] xl:px-0 xl:w-[1250px] flex flex-col justify-center items-center'>
               <RunesCollection isActive={isActive === 'RunesCollection'} />
             </div>
           </div>
         </div>
-        <div className='w-full flex flex-col justify-center items-center'>
+        <div className='w-screen flex flex-col justify-center items-center'>
           <div className={`w-full flex flex-col justify-center items-center py-[20px] ${isActive === 'RunesMarket' && 'change-bg'}`} ref={(el:any) => sectionsRef.current['RunesMarket'] = el}>
             <div className='w-full px-[20px] sm:px-[100px] xl:px-0 2xl:px-0 xl:w-[1250px] flex flex-col justify-center items-center'>
               <RunesMarket isActive={isActive === 'RunesMarket'} />
             </div>
           </div>
         </div>
-        <div className='w-full flex flex-col justify-center items-center'>
+        <div className='w-screen flex flex-col justify-center items-center'>
           <div className={`w-full flex flex-col justify-center items-center py-[20px] ${isActive === 'Tokenmics' && 'change-bg'}`} ref={(el:any) => sectionsRef.current['Tokenmics'] = el}>
             <div className='w-full px-[20px] sm:px-[100px] xl:px-0 2xl:px-0 xl:w-[1250px] flex flex-col justify-center items-center'>
               <Tokenmics isActive={isActive === 'Tokenmics'} />
             </div>
           </div>
         </div>
-        <div className='w-full flex flex-col justify-center items-center mt-[80px] sm:mt-[100px]'>
+        <div className='w-screen flex flex-col justify-center items-center mt-[80px] sm:mt-[100px]'>
           <div className={`w-full flex flex-col justify-center items-center py-[20px] ${isActive === 'News' && 'change-bg'}`} ref={(el:any) => sectionsRef.current['News'] = el}>
             <div className='w-full px-[20px] sm:px-[100px] xl:px-0 2xl:px-0 xl:w-[1250px] flex flex-col justify-center items-center'>
               <News isActive={isActive === 'News'} />
             </div>
           </div>
         </div>
-        <div className='w-full flex flex-col justify-center items-center mt-[80px] sm:mt-[100px]'>
+        <div className='w-screen flex flex-col justify-center items-center mt-[80px] sm:mt-[100px]'>
           <div className={`w-full pt-[20px]`} ref={(el:any) => sectionsRef.current['MemeCoins'] = el}>
             <MemeCoins isActive={isActive === 'MemeCoins'} />
           </div>
         </div>
       </div>
-      <div className='w-full flex flex-col justify-center items-center'>
+      <div className='w-screen flex flex-col justify-center items-center'>
         <div className='flex sm:hidden flex-col items-center text-white mt-[125px]'>
           <div className='text-[25px] leading-[30px] sm:text-[20px] sm:leading-[24px]'>
             Who WeAre

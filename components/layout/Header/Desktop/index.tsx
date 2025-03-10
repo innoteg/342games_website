@@ -12,9 +12,11 @@ import {
   navigationMenuTriggerStyle
 } from "@/components/ui/navigation-menu"
 
-import React from 'react';
+import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import { useRouter } from 'next/navigation';
+import PlayNowDialog from '../PlayNowDialog'
+import { useUserStore } from '@/lib/stores';
 const commonItemClassName = 'bg-transparent text-white focus:!bg-transparent hover:!bg-transparent focs:!bg-transparent hover:!text-white hover:!opacity-50'
 const listRender = [
   {
@@ -80,10 +82,12 @@ const listRender = [
   //   href: '/contactUs',
   // },
 ]
-import PlayNowDialog from './PlayNowDialog'
+
 export default function DesktopHeader() {
   const router = useRouter();
-
+  const [open, setOpen] = useState(false)
+  const userInfo = useUserStore((state) => state.userInfo); // Get the setToken function from the store
+  console.log('userInfo', userInfo)
   const handleLoginClick = () => {
     if (router) {
       router.push('/login');
@@ -96,14 +100,14 @@ export default function DesktopHeader() {
     <>
       {/* 占位div，防止内容被fixed header遮挡 */}
       {/* <div className="hidden md:block h-[90px]" /> */}
-      <header className="fixed top-0 left-0 right-0 z-50 hidden md:flex h-[90px] items-center justify-between px-10 bg-[#110f23]">
+      <header className="fixed top-0 left-0 right-0 z-[999] hidden md:flex h-[90px] items-center justify-between px-10 bg-[#110f23]">
         <div className="flex items-center space-x-4">
           <div className="text-xl font-bold text-white">
             <Link href="/">
-              <Image 
-                width={128} 
-                height={27} 
-                src={IMAGE_URLS.HeadIcon} 
+              <Image
+                width={128}
+                height={27}
+                src={IMAGE_URLS.HeadIcon}
                 alt='headerIcon'
                 loading='lazy'
                 className="cursor-pointer hover:opacity-80 transition-opacity"
@@ -150,11 +154,14 @@ export default function DesktopHeader() {
           </div>
         </div>
 
-        <div className="flex items-center space-x-4">
-          <Button onClick={handleLoginClick} variant="common2">Login</Button>
-          <PlayNowDialog></PlayNowDialog>
+        <div className="flex items-center ">
+          {userInfo?.id ? null : <Button onClick={handleLoginClick} variant="common2">Login</Button>}
+          <Button variant="common" onClick={() => {
+            setOpen(true);
+          }}>Play Now</Button>
         </div>
       </header>
+      <PlayNowDialog open={open} setOpen={setOpen}></PlayNowDialog>
     </>
   )
 }
