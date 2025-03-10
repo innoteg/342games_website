@@ -1,6 +1,5 @@
 // 'use client'
 import Header from '@/components/layout/Header'
-import GamesModules from '../../modules/games/index'
 
 export default function LoginPage() {
   return (
@@ -11,7 +10,8 @@ export default function LoginPage() {
       }}>
         <div className='flex justify-center items-center h-full z-10'>
           <div className='w-full sm:w-[394px] h-full flex items-center justify-center'>
-            <GamesModules />
+            {/* <LoginModule /> */}
+            11
           </div>
         </div>
       </div>
