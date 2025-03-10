@@ -5,6 +5,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
+import { useRouter } from 'next/navigation'; // Import useRouter
 
 // Import Swiper styles
 import 'swiper/css';
@@ -50,6 +51,7 @@ function PrevButton({ onClick }: any) {
   );
 }
 export default function Banner() {
+  const router = useRouter()
   const swiperRef:any = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [bannerList, setBannerList] = useState(bannerData);
@@ -144,6 +146,7 @@ export default function Banner() {
                         <Button 
                           variant={`${activeIndex === index ? 'common' : 'common2'}`}
                           className='mt-2 w-full h-[50px]'
+                          onClick={() => {router.push('/games/' + 'sadsa', )}}
                         >
                           Learn More
                         </Button>

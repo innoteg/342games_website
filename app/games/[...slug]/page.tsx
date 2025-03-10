@@ -2,13 +2,15 @@
 import Header from '@/components/layout/Header'
 import GamesModules from '../../modules/games/index'
 
-export default function LoginPage() {
+export default function LoginPage(props:any) {
+  console.log(props)
+  // const router = useRouter()
+  // const searchParams = useSearchParams()
+
   return (
     <div className="w-screen h-screen relative">
       <Header />
-      <div className="w-screen h-full" style={{
-        background: 'linear-gradient(0deg, #0940B6 0%, #FF00FB 100%)'
-      }}>
+      <div className="w-screen h-full">
         <div className='flex justify-center items-center h-full z-10'>
           <div className='w-full sm:w-[394px] h-full flex items-center justify-center'>
             <GamesModules />

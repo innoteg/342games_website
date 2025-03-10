@@ -8,12 +8,16 @@ import './index.css';
 import { bannerData } from './data'
 import { EffectCoverflow, Navigation } from 'swiper/modules';
 import { Button } from '@/components/ui/button';
+import { useRouter } from 'next/navigation'; // Import useRouter
+
 
 export default function Banner() {
   const swiperRef: any = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [bannerList, setBannerList] = useState(bannerData);
   const [isLoading, setIsLoading] = useState(true);
+  const router = useRouter()
+
   // const getData = async () => {
   //   const {data: list} = await bannerQuery();
   //   setBannerList(list);
@@ -81,6 +85,8 @@ export default function Banner() {
                     <Button
                       variant={`${activeIndex === index ? 'common2' : 'common3'}`}
                       className='w-full h-[30px] text-[10px] leading-[12px]'
+                      onClick={() => {router.push('/games/' + 'sadsa', )}}
+
                     >
                       Learn More
                     </Button>
