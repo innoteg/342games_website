@@ -41,12 +41,12 @@ export default (function DialogCloseButton(props: any) {
         <div className="flex flex-col gap-[40px]">
           <AsyncButton className='w-full flex items-center justify-center gap-4 hover:opacity-60'>
             <span className='font-bold text-xs'>Play on</span>
-            <Image className='w-[22px]' src={IMAGE_URLS.header.telegram} width={21} height={21} alt=''></Image>
+            <Image className='w-[18px]' src={IMAGE_URLS.header.telegram} width={18} height={18} alt=''></Image>
           </AsyncButton>
 
           <AsyncButton className='w-full flex items-center justify-center gap-4 hover:opacity-60'>
             <span className='font-bold text-xs'>Play on</span>
-            <Image className='w-[22px]' src={IMAGE_URLS.header.x} width={21} height={21} alt=''></Image>
+            <Image className='w-[18px]' src={IMAGE_URLS.header.x} width={18} height={18} alt=''></Image>
           </AsyncButton>
 
           <AsyncButton className='w-full flex items-center justify-center gap-4 hover:opacity-60'>
