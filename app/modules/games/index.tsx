@@ -8,7 +8,7 @@ export default function GamesPage() {
     <div className="w-full h-full">
       <FullscreenScroll/>
       <StreetRivals></StreetRivals>
-      <ScroolContent></ScroolContent>
+      {/* <ScroolContent></ScroolContent> */}
     </div>
   )
 }

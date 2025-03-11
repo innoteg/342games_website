@@ -8,7 +8,8 @@ import Tokenmics from './Tokenmics'
 import News from './News'
 import MemeCoins from './MemeCoins'
 import Partners from './Partners'
-import Image from 'next/image';
+import Earch from './Earch/index'
+
 import { useState, useEffect, useRef } from 'react'
 import { IMAGE_URLS } from '@/lib/constants/urls'
 
@@ -117,7 +118,12 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <img src={IMAGE_URLS.v1.earth} alt='partners' />
+      </div>
+
+      <div className='w-full flex flex-col justify-center items-center bg-[#111111]'>
+        <div className='w-full'>
+          <Earch />
+        </div>
       </div>
       <div className='w-full flex flex-col justify-center items-center bg-[#111111]'>
         <div className='w-full'>
