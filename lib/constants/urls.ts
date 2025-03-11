@@ -5,7 +5,7 @@ export const IMAGE_URLS = {
   header: {
     x: 'http://ssqmwdnwb.sabkt.gdipper.com/342website/head/x.png',
     telegram: 'http://ssqmwdnwb.sabkt.gdipper.com/342website/head/telegram.png',
-    close: 'http://ssqmwdnwb.sabkt.gdipper.com/342website/head/close.png'
+    close: 'http://ssqmwdnwb.sabkt.gdipper.com/342website/images/icon/close.png'
   },
   games: {
     header :"http://ssqmwdnwb.sabkt.gdipper.com/342website/games/test11.png",
@@ -18,6 +18,11 @@ export const IMAGE_URLS = {
   AVATARS: {
     USER1: '/images/avatars/user1.png',
     USER2: '/images/avatars/user2.png',
+  },
+  icons: {
+    next : "http://ssqmwdnwb.sabkt.gdipper.com/342website/images/icon/next.png",
+    prev : "http://ssqmwdnwb.sabkt.gdipper.com/342website/images/icon/prev.png",
+
   },
   v1: {
     "0": "http://ssqmwdnwb.sabkt.gdipper.com/342website/images/partners/0.png",
