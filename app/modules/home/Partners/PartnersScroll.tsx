@@ -2,14 +2,15 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { IMAGE_URLS } from '@/lib/constants/urls';
 
 const images = [
-  { src: '/images/partners/0.png',  },
-  { src: '/images/partners/1.png',  },
-  { src: '/images/partners/2.png',  },
-  { src: '/images/partners/3.png' },
-  { src: '/images/partners/4.png' },
-  { src: '/images/partners/5.png' },
+  { src: IMAGE_URLS.v1['0'],  },
+  { src: IMAGE_URLS.v1['1'],  },
+  { src: IMAGE_URLS.v1['2'],  },
+  { src: IMAGE_URLS.v1['3'] },
+  { src: IMAGE_URLS.v1['4'] },
+  { src: IMAGE_URLS.v1['5'] },
   { src: '/images/partners/6.png' },
   { src: '/images/partners/7.png', },
   { src: '/images/partners/8.png',  },
@@ -19,22 +20,22 @@ const images = [
   { src: '/images/partners/12.png' },
 ];
 const images2 = [
-  { src: '/images/partners/0.png', width: '58px', height: '58px' },
-  { src: '/images/partners/1.png', width: '65px', height: '65px'  },
-  { src: '/images/partners/2.png', width: '58px', height: '58px' },
-  { src: '/images/partners/3.png', width: '41px', height: '41px' },
-  { src: '/images/partners/5.png', width: '75px', height: '75px' },
+  { src: IMAGE_URLS.v1['0'], width: '58px', height: '58px' },
+  { src: IMAGE_URLS.v1['1'], width: '65px', height: '65px'  },
+  { src: IMAGE_URLS.v1['2'], width: '58px', height: '58px' },
+  { src: IMAGE_URLS.v1['3'], width: '41px', height: '41px' },
+  { src: IMAGE_URLS.v1['5'], width: '75px', height: '75px' },
 
 ];
 const images3 = [
-  { src: '/images/partners/6.png', width: '41px', height: '41px'   },
-  { src: '/images/partners/7.png', width: '33px', height: '33px' },
-  { src: '/images/partners/8.png', width: '41px', height: '41px' },
-  { src: '/images/partners/9.png', width: '25px', height: '25px' },
-  { src: '/images/partners/10.png', width: '33px', height: '33px' },
-  { src: '/images/partners/12.png', width: '25px', height: '25px' },
-  { src: '/images/partners/4.png', width: '16px', height: '16px' },
-  { src: '/images/partners/11.png', width: '25px', height: '25px' },
+  { src: IMAGE_URLS.v1['6'], width: '41px', height: '41px'   },
+  { src: IMAGE_URLS.v1['7'], width: '33px', height: '33px' },
+  { src: IMAGE_URLS.v1['8'], width: '41px', height: '41px' },
+  { src: IMAGE_URLS.v1['9'], width: '25px', height: '25px' },
+  { src: IMAGE_URLS.v1['10'], width: '33px', height: '33px' },
+  { src: IMAGE_URLS.v1['12'], width: '25px', height: '25px' },
+  { src: IMAGE_URLS.v1['4'], width: '16px', height: '16px' },
+  { src: IMAGE_URLS.v1['11'], width: '25px', height: '25px' },
 
 
 ];
