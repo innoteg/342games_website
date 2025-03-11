@@ -1,11 +1,12 @@
 "use client"
 import Image from 'next/image';
-import { useRef } from "react"
+import { useRef, useEffect, useState } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 import { IMAGE_URLS } from "@/lib/constants/urls"
 
 export default function FullscreenScroll() {
   const containerRef = useRef<HTMLDivElement>(null)
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   // Track the scroll progress of the entire container
   const { scrollYProgress } = useScroll({
@@ -32,6 +33,14 @@ export default function FullscreenScroll() {
     { id: 6, color: "from-pink-500 to-pink-700", title: "Section 6" },
   ]
 
+  // 监听 scrollYProgress 的变化
+  useEffect(() => {
+    return scrollYProgress.onChange((latest) => {
+      const index = Math.floor(latest * items.length); // 计算当前索引
+      setCurrentIndex(index); // 更新当前索引
+    });
+  }, [scrollYProgress]);
+
   return (
     <div ref={containerRef} className="relative">
       {/* 背景部分 */}
@@ -55,12 +64,26 @@ export default function FullscreenScroll() {
         className="fixed bottom-8 left-1/2 z-50 h-[2px] w-[80%] -translate-x-1/2 rounded-full bg-white/20"
         aria-hidden="true"
       >
+        <div className='flex w-[100%] absolute -translate-y-1/2 '>
+          {items.map((item, index) => (
+            <div key={item.id} className=' w-1/5 flex justify-center items-center flex-col'>
+              <div className={`absolute bottom-10 border border-white rounded-sm p-1 px-2 ${currentIndex === index ? 'bg-white text-[#3f3e41]' : 'bg-white/20 text-white'}`}>
+                {item.title}
+              </div>
+              <motion.div
+                className={`h-[10px] w-[10px] rounded-[16px] ${currentIndex === index ? 'bg-white' : 'bg-white/20'}`}
+              />
+            </div>
+          ))}
+        </div>
         <motion.div
           className="h-full rounded-full bg-white"
           style={{ scaleX: scrollYProgress, transformOrigin: "left" }}
         >
-          <div></div>
+
+
         </motion.div>
+
 
       </motion.div>
 
