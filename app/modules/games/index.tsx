@@ -17,6 +17,7 @@ export default function LoginPage() {
           Your browser does not support the video tag.
         </video>
       </div>
+      {/* 第一部分 */}
       <div className="w-full h-full flex flex-col justify-center items-center py-[20px] z-40">
         <div className='w-full px-[20px] sm:px-[100px] xl:px-0 xl:w-[1250px] flex flex-col justify-center items-center'>
           <div className='flex text-white'>
@@ -29,14 +30,31 @@ export default function LoginPage() {
             <div>
               <Image className='w-[688px] h-[384px]' src={IMAGE_URLS.games.gamesContent} width={688} height={384} alt="1"></Image>
             </div>
-
             <div>
 
             </div>
           </div>
         </div>
       </div>
+      {/* 第二部分 */}
+      <div className="w-full h-full flex flex-col justify-center items-center py-[20px] z-40">
+        <div className='w-full px-[20px] sm:px-[100px] xl:px-0 xl:w-[1250px] flex flex-col justify-center items-center'>
+          <div className='flex text-white'>
+            <div className='flex flex-col text-[7px] leading-[9px] sm:text-[15px] sm:leading-[18px] mt-[30px] s gap-[14px]'>
+              <div className='text-[20px] leading-[24px] sm:text-[40px] sm:leading-[48px] sm:mb-[38px]'>Team Formation</div>
+              <div>• Blockchain Integration: Safe and transparent transactions.</div>
+              <div>• Rune NFTs & In-GameAssets: Own your progress.</div>
+              <div>• $342Token Rewards: Play and earn seamlessly. </div>
+            </div>
+            <div>
+              <Image className='w-[688px] h-[384px]' src={IMAGE_URLS.games.gamesContent} width={688} height={384} alt="1"></Image>
+            </div>
+            <div>
 
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
