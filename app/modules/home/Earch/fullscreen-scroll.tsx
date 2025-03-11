@@ -58,21 +58,22 @@ export default function FullscreenScroll() {
                 viewport={{ once: false, amount: 0.8 }}
               >
                 <div className="max-w-4xl text-center text-white">
-                  <div className="flex h-full overflow-x-hidden">
+                  <div className="flex h-full overflow-x-hidden w-full">
                     <div
                       className="flex w-full h-full flex-shrink-0 justify-center items-center py-[20px] z-40"
                     >
-                      <div className='w-full px-[20px] sm:px-[100px] xl:px-0 xl:w-[1250px] flex flex-col justify-center items-center'>
-                        <div className='flex text-white'>
-                          <div className='flex flex-col text-[7px] leading-[9px] sm:text-[15px] sm:leading-[18px] mt-[30px] gap-[14px]'>
+                      <div className='w-full px-[20px]  xl:w-[1250px]'>
+                        <div className='w-full text-white'>
+                        <div className='w-full'>
+                            <Image loading='lazy' className='w-[400px] h-[300px] items-end' src={'http://ssqmwdnwb.sabkt.gdipper.com/342website/images/Tokenmics.png'} width={400} height={300} alt=""></Image>
+                          </div>
+                          <div className='w-full flex flex-col text-[7px] leading-[9px] sm:text-[15px] sm:leading-[18px] mt-[30px] gap-[14px] items-start'>
                             <div className='text-[20px] leading-[24px] sm:text-[40px] sm:leading-[48px] sm:mb-[38px]'>Team Formation</div>
                             <div>• Blockchain Integration: Safe and transparent transactions.</div>
                             <div>• Rune NFTs & In-GameAssets: Own your progress.</div>
                             <div>• $342Token Rewards: Play and earn seamlessly. </div>
                           </div>
-                          <div>
-                            <Image className='' src={item.img} width={100} height={100} alt="1"></Image>
-                          </div>
+                          
                         </div>
                       </div>
                     </div>
