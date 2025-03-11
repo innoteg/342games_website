@@ -44,7 +44,7 @@ export default function LandingPage() {
           }}
         >
           <Image
-            src="/images/deerIcon.png"
+            src={IMAGE_URLS.v1.deerIcon}
             alt="Deer Icon"
             width={278}
             height={600}

@@ -14,7 +14,7 @@ const MemeCoins: React.FC<MemeCoinsProps> = ({ isActive }) => {
     <>
       <div className='w-full flex flex-col justify-center items-center text-white'>
         <div className=''>
-          <Image src='/images/memecoin.png' className='w-full sm:w-[327px] sm:h-[584px]' alt='meme' width={327} height={584} />
+          <Image src={IMAGE_URLS.v1.memecoin} className='w-full sm:w-[327px] sm:h-[584px]' alt='meme' width={327} height={584} />
         </div>
         <div className='text-[25px] leading-[30px] sm:text-[50px] sm:leading-[60px]'>
           Meme Coins, Real Rewards

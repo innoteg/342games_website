@@ -1,12 +1,14 @@
 import { Button } from '@/components/ui/button'
 import { openUrl } from '@/lib/utils'
 import MadeEasy from './MadeEasy'
+import { IMAGE_URLS } from '@/lib/constants/urls'
+
 export default function RunesMarketDesktop({isActive}:any) {
   return (
     <>
       <div className='w-full gap-[23px] hidden sm:flex'>
         <div className='w-1/2 relative bg-cover bg-no-repeat rounded-[40px]' style={{
-          backgroundImage: 'url(/images/Tokenmics.png)',
+          backgroundImage: `url(${IMAGE_URLS.v1.Tokenmics})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}>

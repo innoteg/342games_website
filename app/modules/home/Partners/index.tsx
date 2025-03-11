@@ -26,9 +26,9 @@ export default function RunesCollectionDesktop() {
           </div>
 
           <div className='flex gap-[20px] justify-center items-center mt-[50px]'>
-            <Image onClick={() => openUrl(MEDIA_URLS.x)} className='w-[15px] sm:w-[26px] cursor-pointer hover:opacity-80' src={'/images/icons/x.png'} alt='logo' width={30} height={30} />
-            <Image onClick={() => openUrl(MEDIA_URLS.Telegram)} className='w-[15px] sm:w-[30px] cursor-pointer hover:opacity-80' src={'/images/icons/telegram.png'} alt='logo' width={30} height={30} />
-            <Image onClick={() => openUrl(MEDIA_URLS.discord)} className='w-[15px] sm:w-[30px] cursor-pointer hover:opacity-80' src={'/images/icons/discord.png'} alt='logo' width={30} height={30} />
+            <Image onClick={() => openUrl(MEDIA_URLS.x)} className='w-[15px] sm:w-[26px] cursor-pointer hover:opacity-80' src={IMAGE_URLS.v1.x} alt='logo' width={30} height={30} />
+            <Image onClick={() => openUrl(MEDIA_URLS.Telegram)} className='w-[15px] sm:w-[30px] cursor-pointer hover:opacity-80' src={IMAGE_URLS.v1.telegram} alt='logo' width={30} height={30} />
+            <Image onClick={() => openUrl(MEDIA_URLS.discord)} className='w-[15px] sm:w-[30px] cursor-pointer hover:opacity-80' src={IMAGE_URLS.v1.discord} alt='logo' width={30} height={30} />
           </div>
           <div className='w-full flex justify-center items-center text-[9px] leading-[12px] sm:text-[17px] sm:leading-[20px] text-[#fff] my-[25px] sm:my-[50px] gap-5'>
             

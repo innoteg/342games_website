@@ -37,7 +37,7 @@ export default function LandingPageMobile() {
             }}
           >
             <Image
-              src="/images/deerIcon.png"
+              src={IMAGE_URLS.v1.deerIcon}
               alt="Deer Icon"
               width={60}
               height={120}

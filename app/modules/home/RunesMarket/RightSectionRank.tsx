@@ -61,7 +61,7 @@ export default function RightSectionRank({isActive}:any) {
           <div className='max-h-[300px] sm:max-h-[500px] overflow-y-auto scroll-target scrollbar-hidden'>
             {items.map((item) => (
               <div key={item.id} className="flex items-stretch justify-between mb-4 w-full">
-                <Image src="/images/icons/test1.png" alt="Item Icon" className='w-[45px] h-[45px] sm:w-[100px] sm:h-[100px]' width={100} height={100} />
+                <Image src={IMAGE_URLS.v1.test1} alt="Item Icon" className='w-[45px] h-[45px] sm:w-[100px] sm:h-[100px]' width={100} height={100} />
                 <div className="flex-1 ml-4 flex flex-col justify-between">
                   <div className='text-[7px] leading-[8px] sm:text-[14px] sm:leading-4 text-[#5B5B5B] flex gap-4'>
                     <div className='w-[50px] sm:w-[100px] shrink-0'> Transaction ID</div>

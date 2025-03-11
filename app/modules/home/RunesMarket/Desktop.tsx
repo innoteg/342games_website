@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button'
 import { openUrl } from '@/lib/utils'
 import RightSection from './RightSection'
 import RightSectionRank from './RightSectionRank'
+import { IMAGE_URLS } from '@/lib/constants/urls'
 
 
 export default function RunesMarketDesktop({ isActive }:any) {
@@ -10,7 +11,7 @@ export default function RunesMarketDesktop({ isActive }:any) {
      <div className='w-full gap-[23px] hidden sm:flex'>
         
         <div className='w-1/2 relative bg-cover bg-no-repeat rounded-[40px]' style={{ 
-          backgroundImage: 'url(/images/market.png)', 
+          backgroundImage: `url(${IMAGE_URLS.v1.market})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center' 
         }}>

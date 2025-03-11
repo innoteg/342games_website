@@ -22,7 +22,7 @@ export default function RunesRankBar({isActive}:any) {
       id: i + 1 + new Date().getTime(),
       name: `Type ${i + 1}`,
       value: Math.floor(Math.random() * 500) + 100, // 随机值
-      image: '/images/icons/runesicon.png'
+      image: IMAGE_URLS.v1.runesicon
     })))
   }, []);
   const handleFilter = () => {
@@ -83,10 +83,10 @@ export default function RunesRankBar({isActive}:any) {
                 </SelectTrigger>
                 <SelectContent className='bg-[#18141a]'>
                   <SelectItem value="light" className=''>
-                    <Image loading='lazy' className='cursor-pointer mr-2' src="/images/icons/filter.png" alt="Filter" width={13} height={15} />
+                    <Image loading='lazy' className='cursor-pointer mr-2' src={IMAGE_URLS.v1.filter} alt="Filter" width={13} height={15} />
                   </SelectItem>
                   <SelectItem value="dark">
-                    <Image loading='lazy' className='cursor-pointer mr-2' src="/images/icons/filter.png" alt="Filter" width={13} height={15} />
+                    <Image loading='lazy' className='cursor-pointer mr-2' src={IMAGE_URLS.v1.filter} alt="Filter" width={13} height={15} />
                   </SelectItem>
                 </SelectContent>
               </Select>

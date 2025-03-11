@@ -48,7 +48,7 @@ export default function RunesMilepostDesktop({isActive}:any) {
           <div className=''>
             <div className='flex gap-[20px] sm:gap-[36px] items-stretch px-1 sm:px-5'>
               <div className='flex-1 w-[100px] sm:w-[auto] sm:max-w-[200px]'>
-                <Image src="/images/icons/runesicon.png" alt="Runes" className='w-[100px] sm:w-[200px]' width={200} height={200} />
+                <Image src={IMAGE_URLS.v1.runesicon} alt="Runes" className='w-[100px] sm:w-[200px]' width={200} height={200} />
               </div>
               <div className='flex flex-col flex-1 '>
                 <div className='w-full xl:text-[48px] text-[24px] xl:leading-[58px] leading-[38px] text-white flex items-center justify-between'>
@@ -71,12 +71,12 @@ export default function RunesMilepostDesktop({isActive}:any) {
                     <div className='flex items-center gap-[2px]'>
                       {
                         Array.from({ length: data.rarity }, (_, index) => (
-                          <Image className='xl:h-[20px] xl:w-[20px] h-[10px] w-[10px]' key={index} src="/images/icons/light-star.png" alt="Runes" width={20} height={20} />
+                          <Image className='xl:h-[20px] xl:w-[20px] h-[10px] w-[10px]' key={index} src={IMAGE_URLS.v1['light-star']} alt="Runes" width={20} height={20} />
                         ))
                       }
                       {
                         Array.from({ length: 5 - data.rarity }, (_, index) => (
-                          <Image className='xl:h-[20px] xl:w-[20px] h-[10px] w-[10px]' key={index + data.rarity} src="/images/icons/dark-star.png" alt="Runes" width={20} height={20} />
+                          <Image className='xl:h-[20px] xl:w-[20px] h-[10px] w-[10px]' key={index + data.rarity} src={IMAGE_URLS.v1['dark-star']} alt="Runes" width={20} height={20} />
                         ))
                       }
                     </div>

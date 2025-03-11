@@ -25,7 +25,7 @@ function NextButton({ onClick }: any) {
       <Image
         width={50}
         height={50}
-        src='/images/home/next.png'
+        src={IMAGE_URLS.v1.next}
         alt={`next`}
         priority
         onClick={onClick}
@@ -41,7 +41,7 @@ function PrevButton({ onClick }: any) {
       <Image
         width={50}
         height={50}
-        src='/images/home/prev.png'
+        src={IMAGE_URLS.v1.prev}
         alt={`next`}
         priority
         onClick={onClick}
