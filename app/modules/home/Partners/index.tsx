@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button'
 import { openUrl } from '@/lib/utils'
 import PartnersScroll from './PartnersScroll'
 import Image from 'next/image';
-import { MEDIA_URLS } from '@/lib/constants/urls';
+import { MEDIA_URLS, IMAGE_URLS } from '@/lib/constants/urls';
 
 export default function RunesCollectionDesktop() {
   return (

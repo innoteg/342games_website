@@ -3,6 +3,7 @@ import RunesRankBar from '../RunesRankBar'
 import RunesMilepost from '../RunesMilepost'
 import { Button } from '@/components/ui/button'
 import { openUrl } from '@/lib/utils'
+import { IMAGE_URLS } from '@/lib/constants/urls'
 
 export default function RunesCollectionMobile({ isActive }:any) {
   return (

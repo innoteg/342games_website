@@ -18,6 +18,7 @@ import { bannerData } from './data'
 import { EffectCoverflow, Navigation } from 'swiper/modules';
 import { Button } from '@/components/ui/button';
 // import { bannerQuery } from '@/api';
+import { IMAGE_URLS } from '@/lib/constants/urls'
 function NextButton({ onClick }: any) {
   return (
     <button onClick={onClick} className=" bg-white w-[50px] h-[50px] rounded-full">

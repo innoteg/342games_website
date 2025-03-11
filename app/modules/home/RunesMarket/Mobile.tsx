@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button'
 import { openUrl } from '@/lib/utils'
 import RightSection from './RightSection'
 import RightSectionRank from './RightSectionRank'
+import { IMAGE_URLS } from '@/lib/constants/urls'
 
 
 export default function RunesMarketDesktop({ isActive }:any) {

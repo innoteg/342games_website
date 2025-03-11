@@ -10,6 +10,7 @@ import MemeCoins from './MemeCoins'
 import Partners from './Partners'
 import Image from 'next/image';
 import { useState, useEffect, useRef } from 'react'
+import { IMAGE_URLS } from '@/lib/constants/urls'
 
 // 节流函数
 const throttle = (func: (...args: any[]) => void, limit: number) => {
@@ -116,7 +117,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <img src='/images/earth.png' alt='partners' />
+        <img src={IMAGE_URLS.v1.earth} alt='partners' />
       </div>
       <div className='w-full flex flex-col justify-center items-center bg-[#111111]'>
         <div className='w-full'>

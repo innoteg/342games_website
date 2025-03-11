@@ -3,6 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button'
 import { openUrl } from '@/lib/utils'
 import Image from 'next/image';
+import { IMAGE_URLS } from '@/lib/constants/urls'
 
 interface MemeCoinsProps {
   isActive: boolean;

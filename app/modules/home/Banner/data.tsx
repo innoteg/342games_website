@@ -1,3 +1,5 @@
+import { IMAGE_URLS } from '../../../../lib/constants/urls'
+
 export const bannerData = [
   {
     id: 1,
@@ -6,7 +8,7 @@ export const bannerData = [
       'Runestone Empire is a Telegram Mini App game designed to appeal to both Web3 enthusiasts and traditional gamers. It builds upon the successful roguelike dungeon crawler indie game IP, Runestone Keeper—which has sold over a million copies—from Cimu Games as a foundation for its evolution.',
       'The game uses play-to-earn mechanics, NFTs, and lucky games to incentivize players. It also collaborates with Web2 game IPs and offer an in-game marketplace to enhance the user experience and value of NFTs.'
     ],
-    image: "/images/home/banner1.png",
+    image: IMAGE_URLS.v1.banner1,
   },
   {
     id: 2,
@@ -15,7 +17,7 @@ export const bannerData = [
       'Runestone Empire is a Telegram Mini App game designed to appeal to both Web3 enthusiasts and traditional gamers. It builds upon the successful roguelike dungeon crawler indie game IP, Runestone Keeper—which has sold over a million copies—from Cimu Games as a foundation for its evolution.',
       'The game uses play-to-earn mechanics, NFTs, and lucky games to incentivize players. It also collaborates with Web2 game IPs and offer an in-game marketplace to enhance the user experience and value of NFTs.'
     ],
-    image: "/images/home/banner1.png",
+    image: IMAGE_URLS.v1.banner1,
   },
   {
     id: 3,
@@ -24,7 +26,7 @@ export const bannerData = [
       'Runestone Empire is a Telegram Mini App game designed to appeal to both Web3 enthusiasts and traditional gamers. It builds upon the successful roguelike dungeon crawler indie game IP, Runestone Keeper—which has sold over a million copies—from Cimu Games as a foundation for its evolution.',
       'The game uses play-to-earn mechanics, NFTs, and lucky games to incentivize players. It also collaborates with Web2 game IPs and offer an in-game marketplace to enhance the user experience and value of NFTs.'
     ],
-    image: "/images/home/banner1.png",
+    image: IMAGE_URLS.v1.banner1,
   },
   {
     id: 4,
@@ -33,7 +35,7 @@ export const bannerData = [
       'Runestone Empire is a Telegram Mini App game designed to appeal to both Web3 enthusiasts and traditional gamers. It builds upon the successful roguelike dungeon crawler indie game IP, Runestone Keeper—which has sold over a million copies—from Cimu Games as a foundation for its evolution.',
       'The game uses play-to-earn mechanics, NFTs, and lucky games to incentivize players. It also collaborates with Web2 game IPs and offer an in-game marketplace to enhance the user experience and value of NFTs.'
     ],
-    image: "/images/home/banner1.png",
+    image: IMAGE_URLS.v1.banner1,
   },
   {
     id: 5,
@@ -42,6 +44,6 @@ export const bannerData = [
       'Runestone Empire is a Telegram Mini App game designed to appeal to both Web3 enthusiasts and traditional gamers. It builds upon the successful roguelike dungeon crawler indie game IP, Runestone Keeper—which has sold over a million copies—from Cimu Games as a foundation for its evolution.',
       'The game uses play-to-earn mechanics, NFTs, and lucky games to incentivize players. It also collaborates with Web2 game IPs and offer an in-game marketplace to enhance the user experience and value of NFTs.'
     ],
-    image: "/images/home/banner1.png",
+    image: IMAGE_URLS.v1.banner1,
   },
 ];

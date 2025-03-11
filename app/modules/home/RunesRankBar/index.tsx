@@ -8,6 +8,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { IMAGE_URLS } from '@/lib/constants/urls'
 
 
 export default function RunesRankBar({isActive}:any) {

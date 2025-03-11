@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import { IMAGE_URLS } from '@/lib/constants/urls'
 
 const initialMockData = [
   { id: 1, sellerName: 'Jasper', sellerId: 46381, price: 9686, rarity: 4 },

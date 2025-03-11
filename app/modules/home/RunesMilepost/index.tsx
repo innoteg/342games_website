@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import Image from 'next/image';
+import { IMAGE_URLS } from '@/lib/constants/urls'
 
 
 

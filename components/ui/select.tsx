@@ -4,6 +4,7 @@ import Image from 'next/image';
 import * as React from "react"
 import * as SelectPrimitive from "@radix-ui/react-select"
 import { Check, ChevronDown, ChevronUp } from "lucide-react"
+import { IMAGE_URLS } from '@/lib/constants/urls'
 
 import { cn } from "@/lib/utils"
 
@@ -29,7 +30,7 @@ const SelectTrigger = React.forwardRef<
     {children}
     <SelectPrimitive.Icon asChild>
       {/* <ChevronDown className="h-4 w-4 opacity-50" /> */}
-      <Image className='cursor-pointer' loading='lazy' src="/images/icons/arrow-bottom.png" alt="Previous" width={10} height={6} />
+      <Image className='cursor-pointer' loading='lazy' src={IMAGE_URLS.v1['arrow-bottom']} alt="Previous" width={10} height={6} />
     </SelectPrimitive.Icon>
   </SelectPrimitive.Trigger>
 ))

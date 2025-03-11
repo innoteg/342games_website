@@ -3,6 +3,7 @@ import { openUrl } from '@/lib/utils'
 import TokenUtility from './TokenUtility'
 import TokenDistribution from './TokenDistribution'
 import TokenStaking from './TokenStaking'
+import { IMAGE_URLS } from '@/lib/constants/urls'
 
 
 
@@ -17,7 +18,7 @@ export default function RunesMarketDesktop() {
           <TokenStaking />
         </div>
         <div className='w-1/2 relative bg-cover bg-no-repeat rounded-[40px]' style={{
-          backgroundImage: 'url(/images/News.png)',
+          backgroundImage: IMAGE_URLS.v1.News,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }}>

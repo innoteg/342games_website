@@ -3,6 +3,7 @@ import { openUrl } from '@/lib/utils'
 import TokenUtility from './TokenUtility'
 import TokenDistribution from './TokenDistribution'
 import TokenStaking from './TokenStaking'
+import { IMAGE_URLS } from '@/lib/constants/urls'
 
 
 
@@ -13,7 +14,7 @@ export default function RunesMarketMobile() {
 
         
         <div className='w-full relative bg-cover bg-no-repeat rounded-[40px]'>
-          <img src='/images/News.png' alt='collection' className='w-full h-full object-cover' />
+          <img src={IMAGE_URLS.v1.News} alt='collection' className='w-full h-full object-cover' />
           <div className="absolute bottom-0 w-full z-10 flex flex-col p-[32px] h-full justify-end">
             <div className='text-white 2xl:text-[45px] lg:text-[30px] text-[20px] font-bold text-center'>
               The Heart of 342 Games’

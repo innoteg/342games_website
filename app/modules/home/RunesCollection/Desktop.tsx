@@ -4,6 +4,7 @@ import RunesMilepost from '../RunesMilepost'
 import RunesMarket from '../RunesMarket'
 import { Button } from '@/components/ui/button'
 import { openUrl } from '@/lib/utils'
+import { IMAGE_URLS } from '@/lib/constants/urls'
 
 export default function RunesCollectionDesktop({ isActive }:any) {
   return (
