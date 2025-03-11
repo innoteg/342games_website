@@ -7,12 +7,12 @@ import { IMAGE_URLS } from "@/lib/constants/urls"
 export default function FullscreenScroll() {
   const containerRef = useRef<HTMLDivElement>(null)
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  // Track the scroll progress of the entire container
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
   })
+  console.log('scrollYProgress', scrollYProgress)
+  const [isVisible, setIsVisible] = useState(true);
 
   // Transform the vertical scroll progress into horizontal movement
   // As we scroll down (0 to 1), move content from right (0%) to left (-500%)
@@ -38,13 +38,16 @@ export default function FullscreenScroll() {
     return scrollYProgress.onChange((latest) => {
       const index = Math.floor(latest * items.length); // 计算当前索引
       setCurrentIndex(index); // 更新当前索引
+
+      // 根据 scrollYProgress 的值判断是否隐藏固定元素
+      setIsVisible(latest < 1); // 当 scrollYProgress 小于 1 时显示元素
     });
   }, [scrollYProgress]);
 
   return (
     <div ref={containerRef} className="relative">
       {/* 背景部分 */}
-      <div className="w-full h-full fixed top-0 left-0 opacity-40 z-10">
+      <div className={`${isVisible ? 'fixed' : 'hidden'} w-full h-full fixed top-0 left-0 opacity-40 z-10`}>
         <video
           className="w-screen h-screen"
           autoPlay
@@ -57,41 +60,11 @@ export default function FullscreenScroll() {
         </video>
       </div>
       {/* Fixed background */}
-      <div className="fixed inset-0 -z-10 text-white" aria-hidden="true" />
+      <div className={`${isVisible ? 'fixed' : 'hidden'} inset-0 -z-10 text-white`} aria-hidden="true" />
 
       {/* Progress bar - fixed at the bottom of the screen */}
-      <motion.div
-        className="fixed bottom-8 left-1/2 z-50 h-[2px] w-[80%] -translate-x-1/2 rounded-full bg-white/20"
-        aria-hidden="true"
-      >
-        <div className='flex w-[100%] absolute -translate-y-1/2 '>
-          {items.map((item, index) => (
-            <div key={item.id} className=' w-1/5 flex justify-center items-center flex-col'>
-              <div className={`absolute bottom-10 border border-white rounded-sm p-1 px-2 ${currentIndex === index ? 'bg-white text-[#3f3e41]' : 'bg-white/20 text-white'}`}>
-                {item.title}
-              </div>
-              <motion.div
-                className={`h-[10px] w-[10px] rounded-[16px] ${currentIndex === index ? 'bg-white' : 'bg-white/20'}`}
-              />
-            </div>
-          ))}
-        </div>
-        <motion.div
-          className="h-full rounded-full bg-white"
-          style={{ scaleX: scrollYProgress, transformOrigin: "left" }}
-        >
 
-
-        </motion.div>
-
-
-      </motion.div>
-
-      {/* Vertical spacer to enable scrolling - height depends on number of items */}
       <div className="h-[600vh]">
-        {" "}
-        {/* Adjust based on number of items */}
-        {/* Sticky container that holds horizontally moving content */}
         <div className="sticky top-0 h-screen w-screen overflow-hidden">
           {/* Horizontally moving content */}
           <motion.div className="flex h-screen" style={{ x: horizontalMovement }}>
@@ -129,6 +102,56 @@ export default function FullscreenScroll() {
           </motion.div>
         </div>
       </div>
+
+      <motion.div
+        className={`fixed left-1/2 -translate-x-1/2 bottom-8  z-50 h-[2px] w-[80%]  rounded-full bg-white/20 ${isVisible ? '' : 'hidden '}`}
+        aria-hidden="true"
+      >
+        <div className='flex w-[100%] absolute -translate-y-1/2 '>
+          {items.map((item, index) => (
+            <div key={item.id} className=' w-1/5 flex justify-center items-center flex-col'>
+              <div className={`absolute bottom-10 border border-white rounded-sm p-1 px-2 ${currentIndex === index ? 'bg-white text-[#3f3e41]' : 'bg-white/20 text-white'}`}>
+                {item.title}
+              </div>
+              <motion.div
+                className={`h-[10px] w-[10px] rounded-[16px] ${currentIndex === index ? 'bg-white' : 'bg-white/20'}`}
+              />
+            </div>
+          ))}
+        </div>
+        <motion.div
+          className="h-full rounded-full bg-white"
+          style={{ scaleX: scrollYProgress, transformOrigin: "left" }}
+        >
+        </motion.div>
+      </motion.div>
+
+
+      <div className='w-full flex flex-col items-center justify-center px-[10%] relative'>
+      <div
+        className={` h-[2px] w-[100%]  rounded-full bg-white/20 ${!isVisible ? '' : 'hidden '}`}
+        aria-hidden="true"
+      >
+        <div className='flex w-[80%] absolute -translate-y-1/2 '>
+          {items.map((item, index) => (
+            <div key={item.id} className=' w-1/5 flex justify-center items-center flex-col'>
+              <div className={`absolute bottom-10 border border-white rounded-sm p-1 px-2 ${index === items.length -1 ? 'bg-white text-[#3f3e41]' : 'bg-white/20 text-white'}`}>
+                {item.title}
+              </div>
+              <motion.div
+                className={`h-[10px] w-[10px] rounded-[16px] ${index === items.length -1 ? 'bg-white' : 'bg-white/20'}`}
+              />
+            </div>
+          ))}
+        </div>
+        <motion.div
+          className="h-full rounded-full bg-white"
+          style={{ scaleX: scrollYProgress, transformOrigin: "left" }}
+        >
+        </motion.div>
+      </div>
+      </div>
+
     </div>
   )
 }

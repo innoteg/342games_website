@@ -17,7 +17,7 @@ export default function LoginPage() {
       
       <FullscreenScroll/>
 
-
+      <div className='text-white h-[300px]'>11231</div>
     </div>
   )
 }
