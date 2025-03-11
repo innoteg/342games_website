@@ -13,14 +13,10 @@ export default function LoginPage() {
 
 
   return (
-    <div className="w-full ">
+    <div className="w-full h-full">
       
       <FullscreenScroll/>
-      <div>1</div>
-      <div>1</div>
-      <div>1</div>
-      <div>1</div>
-      <div>1</div>
+
 
     </div>
   )

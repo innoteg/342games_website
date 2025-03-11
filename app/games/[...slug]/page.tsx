@@ -10,7 +10,7 @@ export default function LoginPage(props: any) {
   return (
     <div className="w-screen relative">
       <Header />
-      <div className='w-screen flex flex-col justify-center items-center'>
+      <div className='w-screen h-full'>
         <GamesModules></GamesModules>
       </div>
     </div>
