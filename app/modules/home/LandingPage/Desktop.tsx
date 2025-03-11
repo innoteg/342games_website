@@ -24,7 +24,7 @@ export default function LandingPage() {
           muted
           poster={IMAGE_URLS.v1.homeVideo}
         >
-          <source src="/videos/bg_video.mp4" type="video/mp4" className='' />
+          <source src={IMAGE_URLS.video.vd} type="video/mp4" className='' />
           Your browser does not support the video tag.
         </video>
       </div>

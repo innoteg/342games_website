@@ -1,8 +1,17 @@
 export const IMAGE_URLS = {
+  video: {
+    vd: "http://ssqmwdnwb.sabkt.gdipper.com/342website/video/bg_video.mp4",
+  },
   header: {
     x: 'http://ssqmwdnwb.sabkt.gdipper.com/342website/head/x.png',
     telegram: 'http://ssqmwdnwb.sabkt.gdipper.com/342website/head/telegram.png',
     close: 'http://ssqmwdnwb.sabkt.gdipper.com/342website/head/close.png'
+  },
+  games: {
+    header :"http://ssqmwdnwb.sabkt.gdipper.com/342website/games/test11.png",
+    gamesBg :"http://ssqmwdnwb.sabkt.gdipper.com/342website/games/gamesBg.png",
+    gamesContent :"http://ssqmwdnwb.sabkt.gdipper.com/342website/games/gamesContent.png",
+
   },
   HeadIcon: '/images/home/headIcon.png',
   BANNER: '/images/banner.jpg',
