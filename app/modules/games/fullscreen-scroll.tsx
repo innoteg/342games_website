@@ -52,13 +52,16 @@ export default function FullscreenScroll() {
 
       {/* Progress bar - fixed at the bottom of the screen */}
       <motion.div
-        className="fixed bottom-8 left-1/2 z-50 h-2 w-[80%] -translate-x-1/2 rounded-full bg-white/20"
+        className="fixed bottom-8 left-1/2 z-50 h-[2px] w-[80%] -translate-x-1/2 rounded-full bg-white/20"
         aria-hidden="true"
       >
         <motion.div
           className="h-full rounded-full bg-white"
           style={{ scaleX: scrollYProgress, transformOrigin: "left" }}
-        />
+        >
+          <div></div>
+        </motion.div>
+
       </motion.div>
 
       {/* Vertical spacer to enable scrolling - height depends on number of items */}
@@ -73,8 +76,7 @@ export default function FullscreenScroll() {
               <motion.div
                 key={item.id}
                 className={`flex h-screen w-screen flex-shrink-0 items-center justify-center  p-8`}
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 0.5 }}
+                whileInView={{ opacity: 1 }}
                 transition={{ duration: 0.4 }}
                 viewport={{ once: false, amount: 0.8 }}
               >
