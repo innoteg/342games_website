@@ -155,7 +155,7 @@ export default function DesktopHeader() {
         </div>
 
         <div className="flex items-center ">
-          {userInfo?.id ? null : <Button onClick={handleLoginClick} variant="common2">Login</Button>}
+          {userInfo?.id ? null : <Button className='mr-2' onClick={handleLoginClick} variant="common2">Login</Button>}
           <Button variant="common" onClick={() => {
             setOpen(true);
           }}>Play Now</Button>

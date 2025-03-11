@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { openUrl } from '@/lib/utils';
 
 export default function TokenUtility({ isActive }: { isActive: boolean }) {
-  return (
+return (
     <div className={`gradient-border ${isActive ? 'g-none' : ''}`} >
       <div className='content-gb text-white'>
         <div className="sm:py-[140px] sm:pt-[100px] sm:pl-[20px] flex flex-col justify-around">
