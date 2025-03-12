@@ -1,4 +1,7 @@
 export const IMAGE_URLS = {
+  test: {
+    'x': 'http://ssqmwdnwb.sabkt.gdipper.com/342website/images/Rectangle%20%282%29.png',
+  },
   video: {
     vd: "http://ssqmwdnwb.sabkt.gdipper.com/342website/video/bg_video.mp4",
   },
