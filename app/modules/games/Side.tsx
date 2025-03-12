@@ -1,162 +1,223 @@
-'use client'
-import React, { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
-import { motion, useScroll } from "framer-motion"
+"use client"
 
-const dataList = [
-  {
-    title: 'Decentralized Identity',
-    content: 'Establish secure, verifiable identities, ensuring individual ownership and control without centralization.',
-  },
-  {
-    title: 'Blind Auctions',
-    content: 'Enable users to place confidential bids, maintaining privacy and fairness without compromising sensitive data.',
-  },
-  {
-    title: 'Privacy Preserving AI',
-    content: 'Safeguard AI training and data analysis, ensuring privacy without sacrificing performance.',
-  },
-  {
-    title: 'Confidential DeFi',
-    content: 'Secure on-chain data to enable innovative, privacy-focused DeFi applications.',
-  },
-  {
-    title: 'Confidential Voting',
-    content: 'Build a more secure and private ecosystem for DAOs, with confidential voting and discreet proposals.',
-  },
-  {
-    title: 'Confidential Transaction',
-    content: 'Enable private, yet auditable, on-chain transactions with enhanced confidentiality.',
-  },
-]
+import { useEffect, useRef, useState } from "react"
+import { motion } from "framer-motion"
+import { cn } from "@/lib/utils"
+import { ChevronLeft, ChevronRight } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { useIsMobile } from "../../../hooks/use-mobile"
 
-export const Side = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const containerRef = useRef<HTMLDivElement>(null)
 
-  const [isVisible, setIsVisible] = useState(false);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end end"],
-  })
-  // 监听 scrollYProgress 的变化
-  useEffect(() => {
-    return scrollYProgress.onChange((latest) => {
-      const index = Math.floor(latest * dataList.length); // 计算当前索引
-      setCurrentIndex(index); // 更新当前索引
+export default function Home() {
+  const sections = [
+    { id: "section1", title: "Section 1", content: "This is the content for section 1." },
+    { id: "section2", title: "Section 2", content: "This is the content for section 2." },
+    { id: "section3", title: "Section 3", content: "This is the content for section 3." },
+    { id: "section4", title: "Section 4", content: "This is the content for section 4." },
+    { id: "section5", title: "Section 5", content: "This is the content for section 5." },
+  ]
 
-      // 根据 scrollYProgress 的值判断是否隐藏固定元素
-      setIsVisible(latest < 1); // 当 scrollYProgress 小于 1 时显示元素
-    });
-  }, [scrollYProgress]);
-  useEffect(() => {
-    const handleScroll = () => {
-      const element = document.getElementById('side-content');
-      if (element) {
-        const rect = element.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom >= 0) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  const isMobile = useIsMobile()
 
   return (
-    <>
-      <div  className='w-full flex justify-center sm:pt-[100px] sm:pb-[100px]'>
-        <div ref={containerRef} className='flex h-full max-w-[1250px] w-full gap-[70px] relative overflow-hidden'>
-          <motion.div
-            className={`fixed left-[100px] top-0 -translate-x-1/2 bottom-8  z-50 h-full w-[2px]  rounded-full bg-white/20 ${isVisible ? '' : 'hidden '}`}
-            aria-hidden="true"
-          >
-            <div className='flex w-[100%] absolute -translate-y-1/2 '>
-              {dataList.map((item, index) => (
-                <div key={index} className='w-full  h-1/5 flex justify-center items-center flex-col'>
-                  <motion.div
-                    className={`h-[10px] w-[10px] rounded-[16px] ${currentIndex === index ? 'bg-white' : 'bg-white/20'}`}
-                  />
-                </div>
-              ))}
-            </div>
-            <motion.div
-              className="h-full rounded-full bg-white"
-              style={{ scaleY: scrollYProgress, transformOrigin: "top" }}
-            >
-            </motion.div>
-          </motion.div>
-          <motion.div
-            id="side-content"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: isVisible ? 1 : 0 }}
-            transition={{ duration: 0.5 }}
-            className='w-full h-full flex-1'
-          >
-            {dataList.map((item, index) => (
-              <div key={index} className=''>
-                {/* xxx部分 */}
-                <div className='w-full h-full flex gap-[48px]'>
-                  {/* <Image width={136} height={136} className='w-[136px] h-[136px]' src={item.img} alt={item.title} /> */}
-                  <div className='w-[100px] h-[136px]'></div>
-                  <div className='flex flex-col gap-[10px] justify-center'>
-                    <div className='text-[40px] leading-[47px] text-white'>{item.title}</div>
-                    <div className='text-[16px] leading-[19px] text-[#999] break-all'>{item.content}</div>
+    <main className="min-h-screen">
+      <SidebarProgress sections={sections} />
+
+      {isMobile ? (
+        // Mobile layout - stacked
+        <div className="flex flex-col">
+          <div className="w-full overflow-y-auto p-4">
+            {sections.map((section) => (
+              <section key={section.id} id={section.id} className="min-h-[80vh] mb-8">
+                <h2 className="text-2xl font-bold mb-4">{section.title}</h2>
+                <div className="bg-muted/30 p-6 rounded-lg">
+                  <p>{section.content}</p>
+                  <div className="mt-4 grid grid-cols-1 gap-4">
+                    <div className="aspect-video bg-muted rounded-lg"></div>
+                    <div className="aspect-video bg-muted rounded-lg"></div>
                   </div>
                 </div>
-                {index !== 5 && <div className='h-[136px] w-[2px]  ml-[68px]'></div>}
-              </div>
+              </section>
             ))}
-          </motion.div>
-          <div className=' w-[450px] sticky top-[100px] h-screen '>
-            <div className='text-[48px] leading-[57px] text-white break-all'>
-              Leveraging FHE to Bring Encryption
-              Everywhere
-            </div>
-            <div className='text-[16px] leading-[19px] text-[#999999] mt-5'>
-              Unlock countless possibilities across industries, from on-chain applications like confidential voting and decentralized identity, to broader fields including AI, healthcare, finance, etc. Whether it&apos;s trustless gaming, private social networks, or secure data processing, Fhera empowers you to innovate securely.
-            </div>
-            {/* <Image width={136} height={136} className='w-[136px] h-[136px] mt-5' src={vars.urls.leftStar} alt='star' /> */}
-            <div className='w-[136px] h-[136px]'></div>
+          </div>
 
+          <div className="w-full p-4">
+            <Carousel />
           </div>
         </div>
+      ) : (
+        // Desktop layout - 50/50 split
+        <div className="flex flex-1">
+          <div className="w-1/2 overflow-y-auto p-8">
+            {sections.map((section) => (
+              <section key={section.id} id={section.id} className="min-h-[80vh] mb-8">
+                <h2 className="text-2xl font-bold mb-4">{section.title}</h2>
+                <div className="bg-muted/30 p-6 rounded-lg">
+                  <p>{section.content}</p>
+                  <div className="mt-4 grid grid-cols-2 gap-4">
+                    <div className="aspect-video bg-muted rounded-lg"></div>
+                    <div className="aspect-video bg-muted rounded-lg"></div>
+                    <div className="aspect-video bg-muted rounded-lg"></div>
+                    <div className="aspect-video bg-muted rounded-lg"></div>
+                  </div>
+                </div>
+              </section>
+            ))}
+          </div>
+
+          <div className="w-1/2 p-8">
+            <div className="sticky top-8 h-[calc(100vh-4rem)]">
+              <Carousel />
+            </div>
+          </div>
+        </div>
+      )}
+    </main>
+  )
+}
+
+function Carousel() {
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const slides = [
+    { id: 1, color: "bg-blue-100" },
+    { id: 2, color: "bg-green-100" },
+    { id: 3, color: "bg-yellow-100" },
+    { id: 4, color: "bg-red-100" },
+    { id: 5, color: "bg-purple-100" },
+  ]
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
+  }
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1))
+  }
+
+  return (
+    <div className="relative h-full rounded-xl overflow-hidden">
+      <div className="absolute inset-0 flex transition-all duration-500 ease-in-out">
+        {slides.map((slide, index) => (
+          <motion.div
+            key={slide.id}
+            className={cn("min-w-full h-full flex items-center justify-center text-2xl font-bold", slide.color)}
+            initial={{ x: `${(index - currentSlide) * 100}%` }}
+            animate={{ x: `${(index - currentSlide) * 100}%` }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          >
+            Slide {slide.id}
+          </motion.div>
+        ))}
       </div>
 
-      {/* h5 */}
-      {/* <div className="flex pt-[151px] w-full sm:hidden flex-col px-[10px]">
-        <div className='w-full '>
-          <div className='flex justify-end mb-4'>
-          </div>
-          <div className='text-[32px] leading-[38px] text-white break-all'>
-            Leveraging FHE to Bring Encryption
-            Everywhere
-          </div>
-          <div className='text-[14px] leading-[16px] text-[#999999] mt-5 break-all'>
-            Unlock countless possibilities across industries, from on-chain applications like confidential voting and decentralized identity, to broader fields including AI, healthcare, finance, etc. Whether it&apos;s trustless gaming, private social networks, or secure data processing, Fhera empowers you to innovate securely.
-          </div>
-          {dataList.map((item, index) => (
-            <div key={index} className='mt-10'>
-              <div className='w-full h-full flex flex-col'>
-                <div className='flex flex-col gap-[10px] justify-center mb-[10px]'>
-                  <div className='text-[32px] leading-[38px] text-white'>{item.title}</div>
-                  <div className='text-[14px] leading-[16px] text-[#999] break-all'>{item.content}</div>
-                  {
-                    index === 5 && (
-                      <div className='mt-5 w-[140px] text-white cursor-pointer hover:opacity-80 transform duration-300 px-[20px] py-[10px] border border-[#666] flex items-center justify-center font-medium text-[16px] leading-[19px] rounded-[72px] break-all'>
-                        Learn More
-                      </div>
-                    )
-                  }
-                </div>
-              </div>
-            </div>
+      <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2">
+        {slides.map((slide, index) => (
+          <button
+            key={slide.id}
+            className={cn("w-3 h-3 rounded-full", currentSlide === index ? "bg-primary" : "bg-muted")}
+            onClick={() => setCurrentSlide(index)}
+          />
+        ))}
+      </div>
+
+      <Button
+        variant="outline"
+        size="icon"
+        className="absolute left-4 top-1/2 -translate-y-1/2 rounded-full bg-background/80 backdrop-blur-sm"
+        onClick={prevSlide}
+      >
+        <ChevronLeft className="h-4 w-4" />
+      </Button>
+
+      <Button
+        variant="outline"
+        size="icon"
+        className="absolute right-4 top-1/2 -translate-y-1/2 rounded-full bg-background/80 backdrop-blur-sm"
+        onClick={nextSlide}
+      >
+        <ChevronRight className="h-4 w-4" />
+      </Button>
+    </div>
+  )
+}
+
+interface SidebarProgressProps {
+  sections: { id: string; title: string; content: string }[]
+}
+
+function SidebarProgress({ sections }: SidebarProgressProps) {
+  const [activeSection, setActiveSection] = useState<string>("")
+  const observerRefs = useRef<IntersectionObserver[]>([])
+
+  useEffect(() => {
+    // Clean up previous observers
+    observerRefs.current.forEach((observer) => observer.disconnect())
+    observerRefs.current = []
+
+    // Create new observers for each section
+    sections.forEach((section) => {
+      const element = document.getElementById(section.id)
+      if (!element) return
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setActiveSection(section.id)
+            }
+          })
+        },
+        { threshold: 0.5 }, // Trigger when 50% of the section is visible
+      )
+
+      observer.observe(element)
+      observerRefs.current.push(observer)
+    })
+
+    return () => {
+      observerRefs.current.forEach((observer) => observer.disconnect())
+    }
+  }, [sections])
+
+  return (
+    <div className="fixed left-0 top-0 h-full flex items-center z-10">
+      <div className="h-[60%] flex flex-col items-center">
+        <div className="w-[2px] h-full bg-muted relative">
+          <motion.div
+            className="absolute w-full bg-primary"
+            style={{
+              top: 0,
+              height: `${100 / sections.length}%`,
+            }}
+            animate={{
+              top: `${sections.findIndex((s) => s.id === activeSection) * (100 / sections.length)}%`,
+            }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          />
+        </div>
+        <div className="absolute left-0 h-full flex flex-col justify-between py-8">
+          {sections.map((section, index) => (
+            <a key={section.id} href={`#${section.id}`} className="group flex items-center">
+              <motion.div
+                className={cn(
+                  "w-4 h-4 rounded-full border-2 border-muted flex items-center justify-center mr-2",
+                  activeSection === section.id ? "border-primary" : "border-muted",
+                )}
+                whileHover={{ scale: 1.2 }}
+              >
+                <motion.div
+                  className={cn(
+                    "w-2 h-2 rounded-full",
+                    activeSection === section.id ? "bg-primary" : "bg-transparent group-hover:bg-muted/50",
+                  )}
+                />
+              </motion.div>
+              <span className="opacity-0 group-hover:opacity-100 transition-opacity text-sm">{section.title}</span>
+            </a>
           ))}
         </div>
-      </div> */}
-    </>
-  );
-};
+      </div>
+    </div>
+  )
+}
+
