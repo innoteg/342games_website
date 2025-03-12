@@ -64,8 +64,8 @@ export default function FullscreenScroll() {
 
       {/* Progress bar - fixed at the bottom of the screen */}
 
-      <div className="h-[600vh]">
-        <div className="sticky top-0 h-screen w-screen overflow-hidden">
+      <div className="h-[600vh] z-50">
+        <div className="sticky top-0 h-screen w-screen overflow-hidden z-50">
           {/* Horizontally moving content */}
           <motion.div className="flex h-screen" style={{ x: horizontalMovement }}>
             {items.map((item) => (
@@ -81,9 +81,9 @@ export default function FullscreenScroll() {
                     <div
                       className="flex w-full h-full flex-shrink-0 justify-center items-center py-[20px] z-40"
                     >
-                      <div className='w-full px-[20px] sm:px-[100px] xl:px-0 xl:w-[1250px] flex flex-col justify-center items-center'>
-                        <div className='flex text-white'>
-                          <div className='flex flex-col text-[7px] leading-[9px] sm:text-[15px] sm:leading-[18px] mt-[30px] s gap-[14px]'>
+                      <div className='w-full px-[20px] sm:px-[100px] xl:px-0 xl:w-[1250px] flex flex-col  items-center'>
+                        <div className='flex text-white gap-10'>
+                          <div className='flex flex-col text-[7px] leading-[9px] sm:text-[15px] sm:leading-[18px] mt-[30px] text-left gap-[20px]'>
                             <div className='text-[20px] leading-[24px] sm:text-[40px] sm:leading-[48px] sm:mb-[38px]'>Team Formation</div>
                             <div>• Blockchain Integration: Safe and transparent transactions.</div>
                             <div>• Rune NFTs & In-GameAssets: Own your progress.</div>

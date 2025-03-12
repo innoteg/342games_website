@@ -65,8 +65,8 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="w-[60%] p-8">
-            <div className="sticky top-[120px] h-[calc(100vh-4rem)]" >
+          <div className="w-[60%]">
+            <div className="sticky top-[120px] h-[calc(100vh-4rem)]">
               <Carousel />
             </div>
           </div>
@@ -95,7 +95,7 @@ function Carousel() {
   }
 
   return (
-    <div className="relative sm:h-[600px] rounded-xl overflow-hidden border border-white">
+    <div className="relative sm:h-[600px] rounded-xl overflow-hidden border border-white" >
       <div className="absolute inset-0 flex transition-all duration-500 ease-in-out">
         {slides.map((slide, index) => (
           <motion.div
