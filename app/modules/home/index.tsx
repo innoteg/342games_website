@@ -104,11 +104,11 @@ export default function HomePage() {
         </div>
       </div>
       <div className='w-screen flex flex-col justify-center items-center'>
-        <div className='flex sm:hidden flex-col items-center text-white mt-[125px]'>
-          <div className='text-[25px] leading-[30px] sm:text-[20px] sm:leading-[24px]'>
+        <div className='flex flex-col items-center text-white my-[125px]'>
+          <div className='text-[25px] leading-[30px] sm:text-[50px] sm:leading-[50px]'>
             Who WeAre
           </div>
-          <div className='text-[10px] leading-[12px] sm:text-[20px] sm:leading-[24px] mt-[18px] px-[60px] text-center'>
+          <div className='text-[10px] leading-[12px] sm:text-[20px] sm:leading-[24px] mt-[18px] px-[60px] text-center max-w-[754px]'>
             342 Games is redefining casual gaming through the power of Web3 technology. Our mission is to seamlessly  blend blockchain innovation with accessible, engaging
             gameplay for players worldwide.
           </div>
