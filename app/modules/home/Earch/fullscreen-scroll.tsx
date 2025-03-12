@@ -51,11 +51,6 @@ export default function DiagonalMotion() {
           totalSections={sections.length}
         />
       ))}
-
-      {/* Scroll indicator */}
-      <div className="fixed bottom-8 right-8 bg-black/20 backdrop-blur-md text-white px-4 py-2 rounded-full">
-        Scroll down to see the effect
-      </div>
     </div>
   )
 }
@@ -164,10 +159,10 @@ function Section({ title, description, imageUrl, color, index, containerRef, tot
 
   return (
     <motion.div
-      className={`fixed inset-0 flex items-center justify-center ${color}`}
-      style={{
-        opacity: bgOpacity,
-      }}
+      className={`fixed inset-0 flex items-center justify-center`}
+      // style={{
+      //   opacity: bgOpacity,
+      // }}
     >
       <motion.div
         className="bg-white/10 backdrop-blur-md rounded-xl shadow-xl w-full max-w-5xl h-[500px] relative overflow-hidden"
@@ -194,10 +189,6 @@ function Section({ title, description, imageUrl, color, index, containerRef, tot
           </button>
         </div>
 
-        {/* Section indicator */}
-        <div className="absolute bottom-4 right-4 bg-black/30 text-white/80 text-sm px-3 py-1 rounded-full">
-          {index + 1} / {totalSections}
-        </div>
       </motion.div>
     </motion.div>
   )
