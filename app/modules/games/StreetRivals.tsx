@@ -66,8 +66,6 @@ export default function StreetRivals() {
                 })
               }
             </div>
-
-
           </div>
         </div>
       </div>

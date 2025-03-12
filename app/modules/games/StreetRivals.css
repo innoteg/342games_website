@@ -1,8 +1,0 @@
-.container {
-    display: flex; /* 使用 Flexbox 布局 */
-}
-
-.equal-height-div {
-    flex: 1; /* 使每个 div 占据相同的空间 */
-    /* 其他样式 */
-} 
