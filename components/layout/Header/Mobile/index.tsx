@@ -11,7 +11,8 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle
 } from "@/components/ui/navigation-menu"
-
+import { useRouter } from 'next/navigation';
+import { useUserStore } from '@/lib/stores';
 import React, { useState } from 'react';
 import { cn } from '@/lib/utils';
 import PlayNowDialog from '../PlayNowDialog'
@@ -54,8 +55,16 @@ const listRender = [
   },
 ]
 export default function DesktopHeader() {
+    const router = useRouter();
+  const userInfo = useUserStore((state) => state.userInfo); // Get the setToken function from the store
   const [open, setOpen] = useState(false)
-
+  const handleLoginClick = () => {
+    if (router) {
+      router.push('/login');
+    } else {
+      console.error("Router is not available");
+    }
+  };
   return (
     <>
       {/* 占位div，防止内容被fixed header遮挡 */}
@@ -113,6 +122,7 @@ export default function DesktopHeader() {
           </div> */}
         </div>
         <div className="flex items-center space-x-4">
+          {userInfo?.id ? null : <Button className='mr-2 !h-5 text-xs' onClick={handleLoginClick} variant="common2">Login</Button>}
           <Button variant="common" className='!h-5' onClick={() => {
             setOpen(true);
           }}>Play Now</Button>
