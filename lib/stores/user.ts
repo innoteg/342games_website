@@ -13,6 +13,8 @@ interface UserState {
   setUserInfo: (userInfo: any) => void
   setRunestoneList: (runestoneList: any) => void
   setRunestoneDetail: (runestoneDetail: any) => void
+  clearInfo: () => void
+
 }
 
 export const useUserStore = create<UserState>()(
@@ -28,6 +30,15 @@ export const useUserStore = create<UserState>()(
       setUserInfo: (userInfo) => set({ userInfo }),
       setRunestoneList: (runestoneList) => set({ runestoneList }),
       setRunestoneDetail: (runestoneDetail) => set({ runestoneDetail }),
+      clearInfo: () => {
+        set({
+          session: null,
+          token: null,
+          userInfo: {},
+          runestoneList: [],
+          runestoneDetail: {},
+        })
+      }
     }),
     {
       name: 'user-storage',

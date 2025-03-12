@@ -71,6 +71,7 @@ serviceAxios.interceptors.response.use(
 async function request<T>(options: AxiosRequestConfig) {
   try {
     const response = await serviceAxios.request<T>(options);
+    console.log('response', response)
     const { status, data = {} }: any = response;
     // 处理 HTTP 状态码
     if (status == 500 && data?.message === "Error deleting encryption key") {
@@ -81,6 +82,10 @@ async function request<T>(options: AxiosRequestConfig) {
     }
     if (status < 200 || status >= 500) {
       return Promise.reject(data);
+    }
+    if (data?.code === 403) {
+      console.log('useUserStore', useUserStore)
+      useUserStore.getState().clearInfo()
     }
     console.log('data', data);
 
