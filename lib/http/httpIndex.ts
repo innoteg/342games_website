@@ -12,7 +12,7 @@ import { defaultConfig } from '@/lib/env';
 import toast from 'react-hot-toast'
 import { useUserStore } from '@/lib/stores/user'; // 导入 Zustand store
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_BASE_URL;
+const BACKEND_URL = process.env.NEXT_PUBLIC_BASE_URL || 'https://runestone-api.342games.com/api/';
 
 
 // 创建 axios 请求实例
