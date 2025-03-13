@@ -88,7 +88,7 @@ const AsyncButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
       return (
         <Slot ref={ref} {...props}>
           <>
-            {React.Children.map(children as React.ReactElement, (child: any) => {
+            {React.Children.map(children, (child: any) => {
               return React.cloneElement(child, {
                 className: cn(buttonVariants({ variant, size }), className),
                 children: (

@@ -61,7 +61,7 @@ interface SectionProps {
   imageUrl: string
   color: string
   index: number
-  containerRef: React.RefObject<HTMLDivElement>
+  containerRef: any
   totalSections: number
 }
 
