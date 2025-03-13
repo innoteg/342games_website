@@ -16,12 +16,8 @@ export const IMAGE_URLS = {
     gamesContent :"http://ssqmwdnwb.sabkt.gdipper.com/342website/games/gamesContent.png",
 
   },
-  HeadIcon: '/images/home/headIcon.png',
-  BANNER: '/images/banner.jpg',
-  AVATARS: {
-    USER1: '/images/avatars/user1.png',
-    USER2: '/images/avatars/user2.png',
-  },
+  HeadIcon: 'http://ssqmwdnwb.sabkt.gdipper.com/342website/images/home/headIcon.png',
+
   icons: {
     next : "http://ssqmwdnwb.sabkt.gdipper.com/342website/images/icon/next.png",
     prev : "http://ssqmwdnwb.sabkt.gdipper.com/342website/images/icon/prev.png",

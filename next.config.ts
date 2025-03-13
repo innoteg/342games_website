@@ -28,6 +28,7 @@ export default {
         // loader: 'imgix',
         protocol: 'http',
         hostname: 'ssqmwdnwb.sabkt.gdipper.com',
+        pathname: '/**'
       },
     ]
   },
