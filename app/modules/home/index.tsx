@@ -113,7 +113,7 @@ export default function HomePage() {
             gameplay for players worldwide.
           </div>
           <div className='mt-[25px]'>
-            <div className='text-[10px] leading-[12px] sm:text-[20px] sm:leading-[24px] border border-white rounded-[5px] px-5 py-2'>
+            <div className='text-[10px] cursor-pointer leading-[12px] sm:text-[20px] sm:leading-[24px] border border-white rounded-[5px] px-5 py-2'>
               Discover Our Story
             </div>
           </div>

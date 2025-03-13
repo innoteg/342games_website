@@ -1,10 +1,9 @@
 "use client"
 
 import { motion, AnimatePresence } from "framer-motion"
-import type { Section } from "@/types/section"
 
 interface SectionBlockProps {
-  section: Section
+  section: any
   isActive: boolean
   onClick: () => void
   isMobile?: boolean

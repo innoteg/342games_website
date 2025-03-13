@@ -10,7 +10,7 @@ export default function TokenDistribution({isActive}:any) {
     { value: 484, name: 'Liquidity Pool' },
     { value: 300, name: 'Team & Advisors' }
   ];
-  const option = {
+  const option:any = {
     tooltip: {
       trigger: 'item',
     },

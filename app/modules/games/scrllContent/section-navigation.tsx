@@ -1,11 +1,10 @@
 "use client"
 
 import { motion } from "framer-motion"
-import type { Section } from "@/types/section"
 import type { MouseEvent } from "react"
 
 interface SectionNavigationProps {
-  sections: Section[]
+  sections: any[]
   activeSection: number
   setActiveSection: (index: number) => void
 }
