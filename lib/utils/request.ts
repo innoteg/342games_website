@@ -1,5 +1,5 @@
 const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://runestone-api.342games.com/api/'; // 从环境变量中获取 baseUrl
-
+console.log('baseUrl', baseUrl)
 export async function fetchData(endpoint: string, data: any, options: RequestInit = {}): Promise<any> {
     const defaultOptions:any = {    
         method: "POST",
