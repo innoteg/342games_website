@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 
-export const openUrl = (url:any) => {
+export const openUrl = (url: any) => {
   if (!url) {
     return toast.error('Coming soon');
   }
@@ -16,7 +16,7 @@ export const openUrl = (url:any) => {
   }
 };
 
-export const openLocationUrl = (url:any, query?:any) => {
+export const openLocationUrl = (url: any, query?: any) => {
   if (!url) {
     return toast.error('Coming soon');
   }

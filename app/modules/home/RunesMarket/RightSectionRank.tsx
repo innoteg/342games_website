@@ -20,7 +20,7 @@ const generateMockData = (startId: number, count: number) => {
   }));
 };
 
-export default function RightSectionRank({isActive}:any) {
+export default function RightSectionRank({ isActive }: any) {
   const [items, setItems] = useState(initialMockData);
   const [loading, setLoading] = useState(false);
   const observer = useRef<IntersectionObserver | null>(null);

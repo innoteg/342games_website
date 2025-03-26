@@ -3,7 +3,7 @@ import getConfig from 'next/config';
 const { publicRuntimeConfig, serverRuntimeConfig } = getConfig();
 const {
   NEXT_PUBLIC_BASE,
-  
+
 } = publicRuntimeConfig || {};
 export const defaultConfig = {
   NEXT_PUBLIC_BASE

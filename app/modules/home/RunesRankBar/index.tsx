@@ -11,9 +11,9 @@ import {
 import { IMAGE_URLS } from '@/lib/constants/urls'
 
 
-export default function RunesRankBar({isActive}:any) {
-  
-  const [data, setData]:any = useState<any>([]);
+export default function RunesRankBar({ isActive }: any) {
+
+  const [data, setData]: any = useState<any>([]);
 
   const [selected, setSelected] = useState<number | null>(null);
   const scrollRef = useRef<HTMLDivElement>(null); // Reference for scrolling
@@ -31,7 +31,7 @@ export default function RunesRankBar({isActive}:any) {
 
   const handlePrev = () => {
     if (selected !== null) {
-      const selectedIndex = data.findIndex((item:any) => item.id === selected);
+      const selectedIndex = data.findIndex((item: any) => item.id === selected);
       const targetIndex = selectedIndex > 0 ? selectedIndex - 1 : data.length - 1; // Wrap to last if at the first
       const targetElement = document.getElementById(`item-${data[targetIndex].id}`);
       if (targetElement && scrollRef.current) {
@@ -47,7 +47,7 @@ export default function RunesRankBar({isActive}:any) {
 
   const handleNext = () => {
     if (selected !== null) {
-      const selectedIndex = data.findIndex((item:any) => item.id === selected);
+      const selectedIndex = data.findIndex((item: any) => item.id === selected);
       const targetIndex = selectedIndex < data.length - 1 ? selectedIndex + 1 : 0; // Wrap to first if at the last
       const targetElement = document.getElementById(`item-${data[targetIndex].id}`);
       if (targetElement && scrollRef.current) {
@@ -61,7 +61,7 @@ export default function RunesRankBar({isActive}:any) {
     }
   };
 
-  const handleFilterClick = (item:any) => {
+  const handleFilterClick = (item: any) => {
     console.log('Filter clicked', item);
   };
 
@@ -79,7 +79,7 @@ export default function RunesRankBar({isActive}:any) {
             <div className='flex items-center'>
               <Select onValueChange={handleFilterClick}>
                 <SelectTrigger className="bg-[#18141a] border-none focus-within:outline-none">
-                  <SelectValue className='bg-[#18141a]'/>
+                  <SelectValue className='bg-[#18141a]' />
                 </SelectTrigger>
                 <SelectContent className='bg-[#18141a]'>
                   <SelectItem value="light" className=''>
@@ -93,14 +93,14 @@ export default function RunesRankBar({isActive}:any) {
             </div>
           </div>
           <div className="flex items-end mb-4 overflow-x-auto cursor-pointer scrollbar-hidden" ref={scrollRef} style={{ maxWidth: 'calc(72px * 7 + 16px * 6)' }}>
-            {data.map((item:any) => (
+            {data.map((item: any) => (
               <div key={item.id} id={`item-${item.id}`} className="flex flex-col items-center pr-4"
-              onClick={() => handleImageClick(item.id)}
+                onClick={() => handleImageClick(item.id)}
               >
                 <div className='h-[100px] w-[35px] xl:h-[130px] xl:w-[72px] flex flex-col justify-end'>
                   <div
                     className={`w-[35px] xl:h-[130px] xl:w-[72px] cursor-pointer rounded-[10px]
-                       ${selected === item.id ? (isActive ? 'bg-[#FC03EA] ' : 'bg-gradient-to-b from-blue-500 to-purple-500') : 
+                       ${selected === item.id ? (isActive ? 'bg-[#FC03EA] ' : 'bg-gradient-to-b from-blue-500 to-purple-500') :
                         (isActive ? 'bg-[#8B1EDD]' : 'bg-gray-700 ')
                       }`}
                     style={{ height: `${Math.min(item.value / 10, 100)}px` }}

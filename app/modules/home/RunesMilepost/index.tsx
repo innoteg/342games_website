@@ -4,13 +4,13 @@ import { IMAGE_URLS } from '@/lib/constants/urls'
 
 
 
-export default function RunesMilepostDesktop({isActive}:any) {
+export default function RunesMilepostDesktop({ isActive }: any) {
 
   const data = {
     name: 'Name',
     type: 'Type',
     rarity: 3,
-    value: 85,  
+    value: 85,
     attack: 85,
     defense: 85,
     magic: 85,
@@ -95,7 +95,7 @@ export default function RunesMilepostDesktop({isActive}:any) {
 
             <div className='grid grid-cols-4 gap-[20px] mt-5'>
               {
-                data2.map((item, index) => (  
+                data2.map((item, index) => (
                   <div key={index} className='flex items-center'>
                     <div className='text-[#5B5B5B] xl:text-[12px] text-[8px] leading-[16px]'>
                       <div>{item.label}</div>

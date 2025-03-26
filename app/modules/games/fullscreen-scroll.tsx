@@ -128,28 +128,28 @@ export default function FullscreenScroll() {
 
 
       <div className='w-full flex flex-col items-center justify-center px-[10%] relative'>
-      <div
-        className={` h-[2px] w-[100%]  rounded-full bg-white/20 ${!isVisible ? '' : 'hidden '}`}
-        aria-hidden="true"
-      >
-        <div className='flex w-[80%] absolute -translate-y-1/2 '>
-          {items.map((item, index) => (
-            <div key={item.id} className=' w-1/5 flex justify-center items-center flex-col'>
-              <div className={`absolute bottom-10 border border-white rounded-sm p-1 px-2 ${index === items.length -1 ? 'bg-white text-[#3f3e41]' : 'bg-white/20 text-white'}`}>
-                {item.title}
-              </div>
-              <motion.div
-                className={`h-[10px] w-[10px] rounded-[16px] ${index === items.length -1 ? 'bg-white' : 'bg-white/20'}`}
-              />
-            </div>
-          ))}
-        </div>
-        <motion.div
-          className="h-full rounded-full bg-white"
-          style={{ scaleX: scrollYProgress, transformOrigin: "left" }}
+        <div
+          className={` h-[2px] w-[100%]  rounded-full bg-white/20 ${!isVisible ? '' : 'hidden '}`}
+          aria-hidden="true"
         >
-        </motion.div>
-      </div>
+          <div className='flex w-[80%] absolute -translate-y-1/2 '>
+            {items.map((item, index) => (
+              <div key={item.id} className=' w-1/5 flex justify-center items-center flex-col'>
+                <div className={`absolute bottom-10 border border-white rounded-sm p-1 px-2 ${index === items.length - 1 ? 'bg-white text-[#3f3e41]' : 'bg-white/20 text-white'}`}>
+                  {item.title}
+                </div>
+                <motion.div
+                  className={`h-[10px] w-[10px] rounded-[16px] ${index === items.length - 1 ? 'bg-white' : 'bg-white/20'}`}
+                />
+              </div>
+            ))}
+          </div>
+          <motion.div
+            className="h-full rounded-full bg-white"
+            style={{ scaleX: scrollYProgress, transformOrigin: "left" }}
+          >
+          </motion.div>
+        </div>
       </div>
 
     </div>

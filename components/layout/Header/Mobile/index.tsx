@@ -55,7 +55,7 @@ const listRender = [
   },
 ]
 export default function DesktopHeader() {
-    const router = useRouter();
+  const router = useRouter();
   const userInfo = useUserStore((state) => state.userInfo); // Get the setToken function from the store
   const [open, setOpen] = useState(false)
   const handleLoginClick = () => {
@@ -72,10 +72,10 @@ export default function DesktopHeader() {
         <div className="flex items-center space-x-4">
           <div className="text-xl font-bold text-white">
             <Link href="/">
-              <Image 
-                width={64} 
-                height={14} 
-                src={IMAGE_URLS.HeadIcon} 
+              <Image
+                width={64}
+                height={14}
+                src={IMAGE_URLS.HeadIcon}
                 alt='headerIcon'
                 loading='lazy'
                 className="cursor-pointer hover:opacity-80 transition-opacity"
@@ -128,7 +128,7 @@ export default function DesktopHeader() {
           }}>Play Now</Button>
         </div>
       </header>
-      <PlayNowDialog open={open} setOpen={setOpen}/>
+      <PlayNowDialog open={open} setOpen={setOpen} />
     </>
   )
 }

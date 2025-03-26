@@ -31,12 +31,12 @@ export default function RunesCollectionDesktop() {
             <Image onClick={() => openUrl(MEDIA_URLS.discord)} className='w-[15px] sm:w-[30px] cursor-pointer hover:opacity-80' src={IMAGE_URLS.v1.discord} alt='logo' width={30} height={30} />
           </div>
           <div className='w-full flex justify-center items-center text-[9px] leading-[12px] sm:text-[17px] sm:leading-[20px] text-[#fff] my-[25px] sm:my-[50px] gap-5'>
-            
+
             <span className='font-light hover:underline hover:opacity-80'>Terms of Service </span>
             <span className='font-light hover:underline hover:opacity-80'>Privacy Policy</span>
             <span className='font-light hover:underline hover:opacity-80'>lockchain Disclaimer</span>
 
-             
+
           </div>
           <div className='w-full flex justify-center items-center text-[#7E7E7E text-[9px] leading-[12px] sm:text-[17px] sm:leading-[20px] text-[#7e7e7e]'>
             © 2025 342 Games.All rights reserved.

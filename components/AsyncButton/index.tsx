@@ -65,14 +65,14 @@ const buttonVariants = cva(
 
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
+  VariantProps<typeof buttonVariants> {
   asChild?: boolean;
   loading?: boolean;
   isFreeze?: boolean;
 }
 
 const AsyncButton = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, loading, isFreeze, children, ...props }:any, ref) => {
+  ({ className, variant, size, asChild = false, loading, isFreeze, children, ...props }: any, ref) => {
     const [localLoading, setLocalLoading] = React.useState(false);
 
     const handleClick = async () => {

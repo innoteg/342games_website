@@ -31,7 +31,7 @@ export const modal = createAppKit({
   }
 })
 
-function ContextProvider({ children }: { children: ReactNode}) {
+function ContextProvider({ children }: { children: ReactNode }) {
   return (
     <>{children}</>
   )

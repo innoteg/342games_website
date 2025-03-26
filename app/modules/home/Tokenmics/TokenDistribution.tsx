@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactECharts from 'echarts-for-react';
 
-export default function TokenDistribution({isActive}:any) {
+export default function TokenDistribution({ isActive }: any) {
   const colors = ['#5F6A86', '#C305C3', '#A15DF9', '#94D3BC', '#451FDD'];
   const DataList = [
     { value: 1048, name: 'Game Rewards' },
@@ -10,7 +10,7 @@ export default function TokenDistribution({isActive}:any) {
     { value: 484, name: 'Liquidity Pool' },
     { value: 300, name: 'Team & Advisors' }
   ];
-  const option:any = {
+  const option: any = {
     tooltip: {
       trigger: 'item',
     },
@@ -32,7 +32,7 @@ export default function TokenDistribution({isActive}:any) {
         animation: true,
         itemStyle: {
           borderRadius: 10,
-          color: (params:any) => {
+          color: (params: any) => {
             return colors[params.dataIndex]; // 根据数据索引返回对应颜色
           },
         },
@@ -69,7 +69,7 @@ export default function TokenDistribution({isActive}:any) {
             {DataList.map((item, index) => (
               <div key={index} className='flex items-center mb-2'>
                 <div
-                className='rounded-full sm:w-[20px] sm:h-[20px] w-[10px] h-[10px]'
+                  className='rounded-full sm:w-[20px] sm:h-[20px] w-[10px] h-[10px]'
                   style={{
                     backgroundColor: colors[index],
                     marginRight: '10px',
@@ -80,7 +80,7 @@ export default function TokenDistribution({isActive}:any) {
             ))}
           </div>
           <div className='w-1/2'> {/* 调整图表大小 */}
-            <ReactECharts option={option} className='!h-[150px] sm:h-[auto]'/>
+            <ReactECharts option={option} className='!h-[150px] sm:h-[auto]' />
           </div>
         </div>
       </div>

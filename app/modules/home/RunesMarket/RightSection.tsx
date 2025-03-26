@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { useUserStore } from '@/lib/stores/user';
 
 
-export default function RightSection({isActive}:any) {
+export default function RightSection({ isActive }: any) {
   const userInfo = useUserStore((state) => state.userInfo);
   return (
     <div className={`gradient-border ${isActive ? 'g-none' : ''}`} >
